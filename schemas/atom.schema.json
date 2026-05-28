@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/BenjaminJohnSchulz/ym3d-constructive-rg/schemas/atom.schema.json",
+  "title": "YM3D Atom Row Schema (canonical)",
+  "description": "Stage-discriminated atom row. Discrimination is by if/then/else keyed on schema_stage (not oneOf), which yields readable validator errors and removes the v1.7 'gauge_geometric declared but unrepresentable' trap. Each stage branch sets additionalProperties:false, so combinatorial and gauge_geometric rows FORBID analytic certificate fields by omission rather than by nullability.",
+  "type": "object",
+  "required": ["schema_stage"],
+  "properties": {
+    "schema_stage": { "enum": ["combinatorial", "gauge_geometric", "analytic"] }
+  },
+  "allOf": [
+    { "if": {"properties": {"schema_stage": {"const": "combinatorial"}}, "required": ["schema_stage"]},
+      "then": {"$ref": "#/$defs/combinatorialAtom"} },
+    { "if": {"properties": {"schema_stage": {"const": "gauge_geometric"}}, "required": ["schema_stage"]},
+      "then": {"$ref": "#/$defs/gaugeGeometricAtom"} },
+    { "if": {"properties": {"schema_stage": {"const": "analytic"}}, "required": ["schema_stage"]},
+      "then": {"$ref": "#/$defs/analyticAtom"} }
+  ],
+  "$defs": {
+    "rationalInterval": {
+      "type": "object", "additionalProperties": false,
+      "required": ["lower", "upper", "closed"],
+      "properties": {
+        "lower": {"type": "string", "pattern": "^-?[0-9]+(/[1-9][0-9]*)?$"},
+        "upper": {"type": "string", "pattern": "^-?[0-9]+(/[1-9][0-9]*)?$"},
+        "closed": {"const": true}
+      }
+    },
+    "linkRef": {
+      "type": "object", "additionalProperties": false,
+      "required": ["x", "mu", "orientation_sign"],
+      "properties": {
+        "x": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "integer"}},
+        "mu": {"type": "integer", "minimum": 0, "maximum": 2},
+        "orientation_sign": {"type": "integer", "enum": [-1, 1]}
+      }
+    },
+    "combinatorialAtom": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schema_stage","schema_profile","milestone_target","row_id","atom_kind","support_id","anchor_type","orientation","gauge_lane","orbit_rep_id","constituent_links"],
+      "properties": {
+        "schema_stage": {"const": "combinatorial"},
+        "schema_profile": {"const": "strict"},
+        "milestone_target": {"const": "M1A"},
+        "row_id": {"type": "string", "pattern": "^atom:[A-Za-z0-9_.:-]+$"},
+        "atom_kind": {"type": "string", "enum": ["link","plaquette","cube","block","multiblock"]},
+        "support_id": {"type": "string", "pattern": "^support:[A-Za-z0-9_.:-]+$"},
+        "anchor_type": {"type": "string", "enum": ["vertex","link","plaquette","cube","block"]},
+        "orientation": {"type": "string", "enum": ["positive","negative","mixed","unoriented"]},
+        "gauge_lane": {"type": "string", "enum": ["invariant","tree_gauge","block_axial"]},
+        "orbit_rep_id": {"type": "string", "pattern": "^orbitrep:[A-Za-z0-9_.:-]+$"},
+        "constituent_links": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/linkRef"}}
+      }
+    },
+    "gaugeGeometricAtom": {
+      "type": "object", "additionalProperties": false,
+      "description": "Gauge-metadata stage. Adds optional Jacobian/ghost/background hooks; still FORBIDS analytic certificate fields by omission + additionalProperties:false.",
+      "required": ["schema_stage","schema_profile","milestone_target","row_id","atom_kind","support_id","anchor_type","orientation","gauge_lane","orbit_rep_id","constituent_links"],
+      "properties": {
+        "schema_stage": {"const": "gauge_geometric"},
+        "schema_profile": {"const": "strict"},
+        "milestone_target": {"type": "string", "enum": ["M1A","M1","gauge_geometric"]},
+        "row_id": {"type": "string", "pattern": "^atom:[A-Za-z0-9_.:-]+$"},
+        "atom_kind": {"type": "string", "enum": ["link","plaquette","cube","block","multiblock"]},
+        "support_id": {"type": "string", "pattern": "^support:[A-Za-z0-9_.:-]+$"},
+        "anchor_type": {"type": "string", "enum": ["vertex","link","plaquette","cube","block"]},
+        "orientation": {"type": "string", "enum": ["positive","negative","mixed","unoriented"]},
+        "gauge_lane": {"type": "string", "enum": ["invariant","tree_gauge","block_axial","residual","gauge_covariant_background","averaged","internal_only"]},
+        "orbit_rep_id": {"type": "string", "pattern": "^orbitrep:[A-Za-z0-9_.:-]+$"},
+        "constituent_links": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/linkRef"}},
+        "jacobian_type": {"type": "string", "enum": ["constant_haar","configuration_dependent_fp","ghost_expanded","determinant_ratio"]},
+        "jacobian_determinant_id": {"type": "string", "pattern": "^determinant:[A-Za-z0-9_.:-]+$"},
+        "ghost_field_dependence": {"type": "boolean"},
+        "background_field_id": {"type": "string", "pattern": "^background:[A-Za-z0-9_.:-]+$"}
+      }
+    },
+    "analyticAtom": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schema_stage","schema_profile","milestone_target","row_id","support_id","coefficient_bound","norm_id","primitive_enclosure_ids"],
+      "properties": {
+        "schema_stage": {"const": "analytic"},
+        "schema_profile": {"const": "strict"},
+        "milestone_target": {"type": "string", "enum": ["M2","M3","M4","analytic"]},
+        "row_id": {"type": "string", "pattern": "^atom:[A-Za-z0-9_.:-]+$"},
+        "support_id": {"type": "string", "pattern": "^support:[A-Za-z0-9_.:-]+$"},
+        "coefficient_bound": {"$ref": "#/$defs/rationalInterval"},
+        "norm_id": {"type": "string", "pattern": "^norm:[A-Za-z0-9_.:-]+$"},
+        "primitive_enclosure_ids": {"type": "array", "items": {"type": "string", "pattern": "^primitive:[A-Za-z0-9_.:-]+$"}},
+        "boundary_surface_multiplier_id": {"type": "string", "pattern": "^boundary:[A-Za-z0-9_.:-]+$"},
+        "determinant_expansion_id": {"type": "string", "pattern": "^determinant:[A-Za-z0-9_.:-]+$"},
+        "ghost_loop_degree": {"type": "integer", "minimum": 0}
+      }
+    }
+  }
+}

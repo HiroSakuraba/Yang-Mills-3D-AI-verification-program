@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "boundary_surface_certificate.schema.json",
+  "title": "YM3D Sharp Boundary Surface Certificate",
+  "type": "object",
+  "required": ["boundary_surface_multiplier_id", "boundary_surface_multiplier"],
+  "properties": {
+    "boundary_surface_multiplier_id": {"type": "string"},
+    "cutoff_boundary_type": {"enum": ["sharp_boundary", "smooth_transition"]},
+    "boundary_surface_multiplier": {"$ref": "#/$defs/rational_interval"},
+    "trace_operator_id": {"type": ["string", "null"]},
+    "trace_constant": {"$ref": "#/$defs/rational_interval"},
+    "boundary_measure_enclosure_id": {"type": ["string", "null"]}
+  },
+  "$defs": {
+    "rational_interval": {
+      "type": "object",
+      "required": ["lo", "hi"],
+      "properties": {"lo": {"type": "string"}, "hi": {"type": "string"}},
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": true
+}

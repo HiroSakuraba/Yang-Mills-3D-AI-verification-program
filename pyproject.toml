@@ -1,0 +1,15 @@
+[project]
+name = "ym3d-constructive-rg"
+version = "1.8.0"
+description = "Ledger-gated constructive RG program for 3D Yang-Mills, with an auditable gate harness."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Benjamin John Schulz" }]
+dependencies = ["pyyaml>=6.0", "jsonschema>=4.21"]
+
+[project.urls]
+Homepage = "https://github.com/BenjaminJohnSchulz/ym3d-constructive-rg"
+
+[tool.pytest.ini_options]
+addopts = "-q"

@@ -1,0 +1,2833 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{\textbf{#1}}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{}
+
+\begin{document}
+
+\section{A Ledger-Gated Constructive RG Program for Three-Dimensional
+Yang--Mills
+Theory}\label{a-ledger-gated-constructive-rg-program-for-three-dimensional-yangmills-theory}
+
+\textbf{Version:} 1.8\\
+\textbf{Date:} 2026-05-28\\
+\textbf{Author:} Benjamin John Schulz\\
+\textbf{License:} MIT\\
+\textbf{Note:} This PDF/\LaTeX{} rendering tracks the Markdown source. Version~1.8 adds an open-source orchestration harness and seven structural improvements (single authoritative gate graph, explicit kill/pivot budget, physically enforced checker independence, an automated claim ratchet, resource schedules, a pinned exact-arithmetic/determinism policy, and schema-discriminator repairs); these are documented in full in Section~20 of \texttt{YM3D\_CONSTRUCTIVE\_RG\_DESIGN.md} and shipped as code in the repository.
+
+\subsection{Abstract}\label{abstract}
+
+This document specifies a ledger-gated constructive
+renormalization-group (RG) program for three-dimensional Euclidean
+lattice Yang--Mills theory, initially for compact gauge group (SU(2))
+with Wilson action. The program is not presented as a completed proof.
+It is a formal architecture for converting local block-RG calculations
+into auditable mathematical claims, with exact arithmetic, hard
+acceptance gates, scale-indexed polymer activity bounds, block-gauge
+metadata, small/large-field partition ledgers, and periodic
+thermodynamic-limit compatibility checks. Version 1.7 is the
+validation-lane and claim-anchoring revision: it preserves the v1.6
+implementation-readiness gates and adds an exact two-dimensional SU(N)
+validation lane, a numerical anchor lane, an observable registry focused
+on gauge-invariant Wilson-loop and glueball observables, explicit
+claim-strength annotations in the pipeline DAG, expanded
+primitive-enclosure backends, and a staged formal finite-group audit
+lane after Milestone 1A.
+
+The design is motivated by a successful micro-lemma pattern extracted
+from recent K-star terminal-factor work:
+
+{[} \text{local atoms} \to \text{collision graph} \to
+\text{absolute majorant} \to \text{cluster/Neumann control} \to
+\text{periodic lift} \to \text{KP activity map} \to
+\text{explicit residual budget}. {]}
+
+The central thesis is that this pattern can be transferred to
+three-dimensional Yang--Mills only after several 3D-specific corrections
+are made: all activity bounds must be scale/coupling-indexed; all atoms
+must carry gauge-lane and reflection-positivity metadata; all Taylor
+terms must carry small/large-field cutoff data; local geometry must be
+symmetry-reduced before full expansion; block-gauge scale-transition
+ripples must enter the coupling-flow error budget; and large-field
+defect suppression must strictly dominate the relevant vector-valued
+defect entropy rate.
+
+Version 1.2 adds an executable-spine discipline: no additional ledger
+family is introduced unless it blocks an acceptance gate; terminal
+K-star closure exports a typed activity vector rather than an RG rung;
+polymer convergence criteria are modular; fallback-basin certification
+is separated from UV descent; and comparison lanes for scalar, abelian,
+stochastic, and Hamiltonian approaches are advisory rather than
+dependencies.
+
+Version 1.3 is a schema-freeze readiness revision. It repairs the
+reflection-positivity transfer pipeline, fixes dyadic blocking as the
+default production scale, restricts tree/block-axial gauge lanes to
+local UV and intermediate-scale coordinate use, generalizes large-field
+defects from scalar surface area to vector-valued support measures,
+makes the lattice-spacing-uniform gap milestone explicitly dependent on
+Gate S13, and specifies the cubic group implementation by signed
+permutation matrices with an independent link-coordinate audit.
+
+Version 1.4 adds primitive enclosure certificates, reflection-plane
+factorization checks, determinant-expansion hooks, boundary-surface
+multiplier certificates, and mixed-defect junction entropy metadata.
+Version 1.5 removes the null-field schema risk by requiring
+discriminated unions keyed by \texttt{schema\_stage} or
+\texttt{milestone\_target}; it also defines composite support action
+rules, determinant/ghost measure hooks, norm-typed flow errors, and the
+default order of limits. Version 1.6 adds the last
+implementation-readiness controls before Milestone 1A: orbit-closure
+consistency, ghost determinant sign admissibility, a diagrammatic and
+machine-readable pipeline DAG, and schema-discriminator null tests.
+Version 1.7 adds validation lanes and claim-anchoring controls: exact
+two-dimensional SU(N) validation before analytic rows, numerical anchor
+checks, an observable registry, claim-strength DAG annotations, and an
+earlier formal finite-group audit lane.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{1. Scope and Claim
+Boundaries}\label{scope-and-claim-boundaries}
+
+\subsubsection{1.1 Target model}\label{target-model}
+
+The initial target is three-dimensional Euclidean lattice Yang--Mills
+theory on a cubic lattice with compact gauge group (SU(2)). The baseline
+measure is the Wilson lattice measure
+
+{[} Z\_\Lambda(\beta) = \int \prod\emph{\{e\in E(\Lambda)\} dU\_e
+\exp\left( \frac{\beta}{2}\sum}\{p\in P(\Lambda)\}
+\operatorname{Re}\operatorname{Tr} U\_p \right), {]}
+
+where (dU\_e) is normalized Haar measure on (SU(2)), (U\_p) is the
+plaquette holonomy, and (\Lambda) is a finite periodic cubic box unless
+otherwise stated.
+
+The physical three-dimensional coupling (g\_3\^{}2) has mass dimension
+one. In the Wilson normalization used here, the weak-coupling scaling
+has the schematic form
+
+{[} \beta(a)\asymp \frac{1}{g_3^2 a}. {]}
+
+Thus, under dyadic coarse-graining (a\_\{k+1\}=2a\_k), the leading
+dimensional flow is expected to move (\beta\_k) toward the
+strong-coupling/fallback regime.
+
+\subsubsection{1.2 Near-term theorem
+target}\label{near-term-theorem-target}
+
+The near-term target is not the full continuum theorem. The first
+serious theorem target is a scale-indexed one-step RG rung:
+
+{[} \mathcal N\_\{\rm KP\}\^{}\{(k+1)\}(S'\emph{\{\rm eff\}) \le
+\Theta\emph{k,\mathcal N}\{\rm KP\}\^{}\{(k)\}(S}\{\rm eff\}) +E\_k,
+\qquad \Theta\_k\textless1, {]}
+
+or a finite-step controlled descent into a certified fallback basin.
+
+\subsubsection{1.3 Longer-term theorem
+target}\label{longer-term-theorem-target}
+
+The longer-term target is a volume-uniform and lattice-spacing-uniform
+clustering estimate for gauge-invariant local observables (O):
+
+{[} \left\textbar{}\langle O(x)O(y)\rangle\emph{c\right\textbar{} \le
+C\_O e\^{}\{-m}\{\rm phys\}\textbar x-y\textbar\}, \qquad
+m\_\{\rm phys\}\ge c g\_3\^{}2, \qquad c\textgreater0, {]}
+
+with constants that survive the continuum scaling window.
+
+\subsubsection{1.4 Non-claims}\label{non-claims}
+
+This document does not claim:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  a completed construction of continuum Yang--Mills theory;
+\item
+  a completed proof of a mass gap;
+\item
+  a completed Balaban-style RG proof;
+\item
+  validity of any uncomputed K-star or nonterminal remainder estimate;
+\item
+  use of signed cancellation unless separately certified;
+\item
+  reflection-positivity transfer for gauge-fixed or smeared observables
+  unless separately certified.
+\end{enumerate}
+
+\subsubsection{1.5 Anti-bureaucracy rule and minimal executable
+spine}\label{anti-bureaucracy-rule-and-minimal-executable-spine}
+
+The ledger machinery is intentionally strict, but it must not become an
+independent bureaucracy. A new ledger family may be added only if it
+blocks an acceptance gate, closes a named milestone, or supplies an
+independent negative control for an already-declared gate.
+
+The first implementation target is the minimal viable ledger spine
+
+{[} \mathrm{MVL}\text{-}1 = \mathrm{geometry} + \mathrm{gauge\ trees} +
+\mathrm{orbit\ representatives} + \mathrm{expanded\ graph\ audit}. {]}
+
+The associated row sequence is
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{YM3D\_SCHEMA\_DISCRIMINATOR\_NULL\_TEST\_1}
+\NormalTok{YM3D\_LOCAL\_ATOM\_GEOMETRY\_1}
+\NormalTok{YM3D\_BLOCK\_GAUGE\_FIXING\_LEDGER\_1}
+\NormalTok{YM3D\_BALABAN\_TREE\_AXIAL\_GAUGE\_HOOK\_1}
+\NormalTok{YM3D\_HAAR\_REVERSIBILITY\_GAUGE\_CHECK\_1}
+\NormalTok{YM3D\_CUBIC\_SYMMETRY\_ORBIT\_REDUCTION\_1}
+\NormalTok{YM3D\_ORBIT\_CLOSURE\_CONSISTENCY\_CHECK\_1}
+\NormalTok{YM3D\_ORBIT\_REDUCTION\_EXPANDED\_GRAPH\_AUDIT\_1}
+\end{Highlighting}
+\end{Shaded}
+
+No Taylor, BKAR, defect-tail, continuum-limit, or mass-gap claim is part
+of MVL-1.
+
+\subsubsection{1.6 Schema-stage discipline and discriminated
+unions}\label{schema-stage-discipline-and-discriminated-unions}
+
+Version 1.5 replaces nullable analytic fields with stage-discriminated
+schema branches. A row must declare either a \texttt{schema\_stage} or a
+\texttt{milestone\_target}, and the JSON Schema must use \texttt{oneOf}
+branches keyed by that discriminator.
+
+The baseline stages are:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{combinatorial}
+\NormalTok{gauge\_geometric}
+\NormalTok{analytic}
+\NormalTok{rp\_transfer}
+\NormalTok{continuum\_uniformity}
+\end{Highlighting}
+\end{Shaded}
+
+A combinatorial Milestone 1A row must not merely set analytic fields to
+\texttt{null}; those fields are forbidden unless a later stage branch
+explicitly requires them. Conversely, an analytic row that invokes a
+primitive constant, determinant expansion, cutoff boundary, or RP
+transfer must populate the corresponding certificate identifiers.
+
+The design therefore separates responsibilities:
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Layer
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Responsibility
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+JSON Schema & structural typing, required/forbidden fields, enums,
+rational interval shape \\
+Python generator & canonical row and artifact generation \\
+Independent Python checker & mathematical validation: orbits,
+stabilizers, graph counts, support intersections, interval arithmetic,
+DAG dependencies \\
+Later proof-assistant lane & formalization of stable finite
+combinatorics after the object model stabilizes \\
+\end{longtable}
+
+A typical structural pattern is:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\{}
+  \DataTypeTok{"oneOf"}\FunctionTok{:} \OtherTok{[}
+    \FunctionTok{\{}
+      \DataTypeTok{"properties"}\FunctionTok{:} \FunctionTok{\{}\DataTypeTok{"schema\_stage"}\FunctionTok{:} \FunctionTok{\{}\DataTypeTok{"const"}\FunctionTok{:} \StringTok{"combinatorial"}\FunctionTok{\}\},}
+      \DataTypeTok{"required"}\FunctionTok{:} \OtherTok{[}\StringTok{"schema\_stage"}\OtherTok{,} \StringTok{"support\_id"}\OtherTok{,} \StringTok{"anchor\_type"}\OtherTok{,} \StringTok{"orientation"}\OtherTok{,} \StringTok{"orbit\_rep\_id"}\OtherTok{]}\FunctionTok{,}
+      \DataTypeTok{"not"}\FunctionTok{:} \FunctionTok{\{}
+        \DataTypeTok{"anyOf"}\FunctionTok{:} \OtherTok{[}
+          \FunctionTok{\{}\DataTypeTok{"required"}\FunctionTok{:} \OtherTok{[}\StringTok{"primitive\_enclosure\_ids"}\OtherTok{]}\FunctionTok{\}}\OtherTok{,}
+          \FunctionTok{\{}\DataTypeTok{"required"}\FunctionTok{:} \OtherTok{[}\StringTok{"boundary\_surface\_multiplier\_id"}\OtherTok{]}\FunctionTok{\}}\OtherTok{,}
+          \FunctionTok{\{}\DataTypeTok{"required"}\FunctionTok{:} \OtherTok{[}\StringTok{"determinant\_expansion\_id"}\OtherTok{]}\FunctionTok{\}}
+        \OtherTok{]}
+      \FunctionTok{\}}
+    \FunctionTok{\}}\OtherTok{,}
+    \FunctionTok{\{}
+      \DataTypeTok{"properties"}\FunctionTok{:} \FunctionTok{\{}\DataTypeTok{"schema\_stage"}\FunctionTok{:} \FunctionTok{\{}\DataTypeTok{"const"}\FunctionTok{:} \StringTok{"analytic"}\FunctionTok{\}\},}
+      \DataTypeTok{"required"}\FunctionTok{:} \OtherTok{[}\StringTok{"schema\_stage"}\OtherTok{,} \StringTok{"support\_id"}\OtherTok{,} \StringTok{"coefficient\_bound"}\OtherTok{,} \StringTok{"norm\_id"}\OtherTok{,} \StringTok{"primitive\_enclosure\_ids"}\OtherTok{]}
+    \FunctionTok{\}}
+  \OtherTok{]}
+\FunctionTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{1.7 Schema-discriminator null
+test}\label{schema-discriminator-null-test}
+
+Before the Milestone 1A generator emits any geometric atom, the
+repository must run a discriminator null-test harness:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{YM3D\_SCHEMA\_DISCRIMINATOR\_NULL\_TEST\_1}
+\NormalTok{validate\_schema\_discriminators.py}
+\end{Highlighting}
+\end{Shaded}
+
+The null-test verifies that the \texttt{oneOf}/\texttt{anyOf}
+discriminator branches are not merely documentary. At minimum it
+contains four fixtures:
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Fixture
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Expected result
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+valid combinatorial row with only combinatorial fields & pass \\
+combinatorial row containing analytic-only fields such as
+\texttt{primitive\_enclosure\_ids} & fail \\
+analytic row missing required analytic certificate fields & fail \\
+row with an invalid discriminator value such as
+\texttt{schema\_stage\ =\ partial} & fail \\
+\end{longtable}
+
+A failed null-test blocks Milestone 1A generation. This is a structural
+test, not a mathematical proof, but it prevents the generator from
+building expensive data on top of permissive or ambiguous schemas.
+
+\subsubsection{1.8 Pipeline DAG
+discipline}\label{pipeline-dag-discipline}
+
+The proof pipeline must be represented both in prose and as
+machine-readable artifacts:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{docs/pipeline\_dag.mmd}
+\NormalTok{artifacts/pipeline\_dag.json}
+\NormalTok{schemas/pipeline\_dag.schema.json}
+\end{Highlighting}
+\end{Shaded}
+
+The conceptual pipeline is:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flowchart TD}
+\NormalTok{    A[Local Atomic Geometry] {-}{-}\textgreater{} B[Gauge{-}Lane Assignment]}
+\NormalTok{    B {-}{-}\textgreater{} C[O\_h Link Action]}
+\NormalTok{    C {-}{-}\textgreater{} D[Upward Support Composition]}
+\NormalTok{    D {-}{-}\textgreater{} E[Orbit Representatives]}
+\NormalTok{    E {-}{-}\textgreater{} F[Orbit{-}Closure Consistency]}
+\NormalTok{    F {-}{-}\textgreater{} G[Expanded{-}Graph Audit]}
+\NormalTok{    G {-}{-}\textgreater{} H[Scale/Coupling Slabs]}
+\NormalTok{    H {-}{-}\textgreater{} I[Terminal Activity Vector]}
+\NormalTok{    I {-}{-}\textgreater{} J[Majorant Matrix]}
+\NormalTok{    J {-}{-}\textgreater{} K[Polymer Convergence Gate]}
+
+\NormalTok{    H {-}{-}\textgreater{} L[Small/Large{-}Field Partition]}
+\NormalTok{    L {-}{-}\textgreater{} M[Taylor Bucket]}
+\NormalTok{    L {-}{-}\textgreater{} N[Tail/Defect Bucket]}
+\NormalTok{    M {-}{-}\textgreater{} O[Nonterminal Inventory]}
+\NormalTok{    N {-}{-}\textgreater{} O}
+\NormalTok{    O {-}{-}\textgreater{} K}
+
+\NormalTok{    B {-}{-}\textgreater{} P[Haar/RP Transfer]}
+\NormalTok{    P {-}{-}\textgreater{} K}
+
+\NormalTok{    O {-}{-}\textgreater{} Q[Ghost/Determinant Sign Check]}
+\NormalTok{    Q {-}{-}\textgreater{} K}
+\end{Highlighting}
+\end{Shaded}
+
+The machine-readable DAG records node identifiers, artifact types,
+required parent nodes, allowed schema stages, checker entry points, and
+claims unlocked by successful validation. A row that is not reachable
+from the declared DAG is advisory and may not be imported as a proof
+dependency without a transfer row.
+
+\subsubsection{1.9 Exact validation and numerical anchor
+policy}\label{exact-validation-and-numerical-anchor-policy}
+
+The schema/generator pipeline must be tested on solved or externally
+constrained cases before analytic three-dimensional rows are allowed to
+close.
+
+The primary validation lane is
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{YM2D\_SUN\_EXACT\_VALIDATION\_LANE\_0}
+\end{Highlighting}
+\end{Shaded}
+
+This lane is not a prerequisite for the purely combinatorial Milestone
+1A generator, because Milestone 1A is three-dimensional geometry and
+symmetry infrastructure. It is, however, a prerequisite for any analytic
+row claiming terminal KP smallness, Taylor/tail remainder control,
+clustering, or fallback-basin certification. The purpose is to run the
+same ledger machinery on two-dimensional SU(N) Yang--Mills, where exact
+Wilson-loop and area-law formulas are available for comparison.
+
+A second advisory lane is
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{YM3D\_NUMERICAL\_ANCHOR\_LANE\_0}
+\end{Highlighting}
+\end{Shaded}
+
+This lane compares generated terminal activity vectors, Taylor
+coefficients, Wilson-loop estimates, and glueball-correlator proxies
+against high-precision small-volume or public lattice numerical data.
+Numerical anchors never close theorem gates by themselves. They produce
+source-audit warnings when analytic coefficients, normalization
+conventions, or gauge-ripple budgets disagree with independent numerical
+evidence.
+
+\subsubsection{1.10 Observable-driven claim
+discipline}\label{observable-driven-claim-discipline}
+
+Every clustering, fallback, or continuum-uniformity claim must specify
+the gauge-invariant observables to which it applies. The project
+therefore maintains
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{YM3D\_OBSERVABLE\_REGISTRY\_1}
+\end{Highlighting}
+\end{Shaded}
+
+with initial observable classes:
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Observable
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Role
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Wilson loop \texttt{W(C)} & area/perimeter-law diagnostics and exact 2D
+validation \\
+scalar glueball operator \texttt{O\_\{0++\}} & mass-gap/clustering
+target \\
+connected scalar glueball correlator \texttt{G\_\{0++\}(x,y)} &
+quantitative exponential-clustering target \\
+Polyakov loop \texttt{P(x)} & finite-temperature diagnostic only, not a
+zero-temperature mass-gap observable \\
+\end{longtable}
+
+Gate S13 must ultimately connect lattice-spacing-uniformity to an
+observable-specific statement such as
+
+{[} G\_\{0\^{}\{++\}\}(x,y) \le C
+e\^{}\{-m\_\{\rm phys\}\textbar x-y\textbar\}, \qquad
+m\_\{\rm phys\}\ge c g\_3\^{}2, \qquad c\textgreater0, {]}
+
+with constants uniform over the declared scaling window. Until such an
+observable-specific certificate exists, the project may claim only the
+weaker lattice or volume-uniform bounds explicitly unlocked by earlier
+gates.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{2. Lessons Extracted from the K-Star Micro-Lemma
+Chain}\label{lessons-extracted-from-the-k-star-micro-lemma-chain}
+
+\subsubsection{2.1 A formula is not a result until it closes a ledger
+row}\label{a-formula-is-not-a-result-until-it-closes-a-ledger-row}
+
+The micro-lemma construction became mathematically useful only when
+local formulas were converted into rows with:
+
+\begin{itemize}
+\tightlist
+\item
+  exact scope;
+\item
+  parent-row dependencies;
+\item
+  exact arithmetic;
+\item
+  machine-checkable acceptance criteria;
+\item
+  negative controls;
+\item
+  explicit non-claims;
+\item
+  and a named next obligation.
+\end{itemize}
+
+For the 3D program, a row is considered closed only if it answers:
+
+{[} \text{What precise theorem fragment is now proved?} {]}
+
+and
+
+{[} \text{What precise theorem fragment remains open?} {]}
+
+\subsubsection{2.2 Terminal and nonterminal activity must be
+separated}\label{terminal-and-nonterminal-activity-must-be-separated}
+
+The K-star terminal factor closed because it was sharply scoped. It was
+possible to enumerate terminal atoms, form a collision graph, majorize
+it, lift it to periodic boxes, and place it inside a KP/Balaban activity
+map. The nonterminal remainder did not close until a source inventory
+existed.
+
+Therefore the 3D program must maintain two lanes:
+
+{[} \mathcal A\_\{\rm terminal\}\^{}\{3D\}(k,I\_k) {]}
+
+and
+
+{[} \mathcal R\_\{\rm nonterminal\}\^{}\{3D\}(k,I\_k). {]}
+
+Terminal success must never be promoted to full-RG success.
+
+\subsubsection{2.3 Sign balance is diagnostic, not
+foundational}\label{sign-balance-is-diagnostic-not-foundational}
+
+A sign-orientation ledger may reveal structure, but no signed
+cancellation is usable unless a signed analytic covariance or signed
+mixed-term estimate is separately imported and checked. The default
+closure route is absolute majorization.
+
+\subsubsection{2.4 Typed KP activity is preferred over scalar
+smallness}\label{typed-kp-activity-is-preferred-over-scalar-smallness}
+
+Scalar KP screens are too crude. The 3D program should use a typed
+activity vector
+
+{[} \mathbf z(k,I\_k)=\left(z\_1(k,I\_k),\ldots,z\_T(k,I\_k)\right) {]}
+
+with compatibility matrix (A\_\{ts\}\^{}\{3D\}(k)) and penalties
+(a\_s(k)):
+
+{[} \sum\emph{s A}\{ts\}\^{}\{3D\}(k)
+\Bigl(z\_s\textsuperscript{\{\rm term\}(k,I\_k)+z\_s}\{\rm nonterm\}(k,I\_k)\Bigr)
+e\^{}\{a\_s(k)\} \le a\_t(k). {]}
+
+A scalar fallback condition such as
+
+{[} 3\bigl(b\_\{3D\}(k,I\_k)+R\_\{3D\}(k,I\_k)\bigr)\textless1 {]}
+
+may be used only as a conservative diagnostic or early prototype.
+
+\subsubsection{2.5 A terminal bound should export a residual
+budget}\label{a-terminal-bound-should-export-a-residual-budget}
+
+A terminal graph is useful if it produces not only a pass/fail result
+but also a residual budget for all remaining activity:
+
+{[} R\_\{\max\}(k,I\_k) \quad\text{or}\quad \mathbf R\_\{\max\}(k,I\_k).
+{]}
+
+The full nonterminal program is then constrained by this exported
+budget.
+
+\subsubsection{2.6 Periodic volume uniformity is a separate theorem
+fragment}\label{periodic-volume-uniformity-is-a-separate-theorem-fragment}
+
+A finite local graph does not automatically imply a thermodynamic bound.
+Every finite graph row must have a periodic-template successor proving a
+volume-independent estimate:
+
+{[} \sup\emph{\Lambda\sup}\{x\in\Lambda\}
+\sum\emph{\{y\in\Lambda\}B}\Lambda(x,y;k,I\_k) \le b\_\{3D\}(k,I\_k).
+{]}
+
+\subsubsection{2.7 Source-audit failures are useful
+failures}\label{source-audit-failures-are-useful-failures}
+
+If a row fails because a required source object does not exist, the
+architecture is working. In particular, no Taylor remainder bound may be
+claimed until the nonterminal term inventory exists.
+
+\subsubsection{2.8 Terminal success exports a vector, not an RG
+rung}\label{terminal-success-exports-a-vector-not-an-rg-rung}
+
+The terminal K-star pattern is a useful micro-lemma template, but it
+must not be promoted into a full RG theorem. A terminal gate must export
+a typed activity vector and an absorption contract, not merely a scalar
+smallness number.
+
+The required terminal output is a typed vector, with components for
+link, plaquette, face, corner, cube, multiblock, gauge, and tail
+activity.
+
+The next-scale or full-RG row must prove an absorption statement
+
+{[}
+\mathbf z\_\{3D\}\textsuperscript{\{\rm term\}(k,I\_k)+\mathbf z\_\{3D\}}\{\rm nonterm\}(k,I\_k)
+\in \mathcal D\_\{\rm conv\}(k,I\_k), {]}
+
+where the declared convergence domain is KP, Dobrushin, or a tree-graph
+improved polymer domain.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{3. Scale-Indexed Activity
+Architecture}\label{scale-indexed-activity-architecture}
+
+\subsubsection{3.1 Coupling slabs}\label{coupling-slabs}
+
+At each RG scale (k), the coupling is represented by an interval slab
+
+{[} I\_k={[}\beta\_k\^{}-,\beta\_k\^{}+{]}. {]}
+
+All activity bounds must be uniform over (\beta\in I\_k).
+
+\subsubsection{3.2 Terminal activity
+weight}\label{terminal-activity-weight}
+
+For a terminal atom class (\alpha) of type (t), define
+
+{[} z\_\{t,\alpha\}\^{}\{\rm term\}(k,I\_k) = m\_\alpha
+\sup\emph{\{\beta\in I\_k\}\textbar c}\alpha(\beta,k)\textbar{}
+W\_\alpha(k), {]}
+
+where:
+
+\begin{itemize}
+\tightlist
+\item
+  (m\_\alpha) is the exact orbit/multiplicity factor;
+\item
+  (c\_\alpha(\beta,k)) is the coefficient bound;
+\item
+  (W\_\alpha(k)) is the polymer weight, including support diameter,
+  representation penalty, scale penalty, and locality penalty.
+\end{itemize}
+
+The full terminal activity type is
+
+{[} z\_t\^{}\{\rm term\}(k,I\_k) =
+\sum\emph{\{\alpha\in T\_t\}z}\{t,\alpha\}\^{}\{\rm term\}(k,I\_k). {]}
+
+\subsubsection{3.3 Nonterminal activity
+weight}\label{nonterminal-activity-weight}
+
+The nonterminal activity is similarly decomposed:
+
+{[} z\_t\^{}\{\rm nonterm\}(k,I\_k) = z\_t\^{}\{\rm Taylor\}
++z\_t\^{}\{\rm nonlinear\} +z\_t\^{}\{\rm multiblock\}
++z\_t\^{}\{\rm gauge/RP\} +z\_t\^{}\{\rm tail\}
++z\_t\^{}\{\rm leakage\}. {]}
+
+Every summand must be generated by a source ledger and bounded uniformly
+over (I\_k).
+
+\subsubsection{3.4 Polymer convergence-domain
+modularity}\label{polymer-convergence-domain-modularity}
+
+The activity gate must not be hard-coded to the classical
+Kotecky--Preiss criterion. The checker schema should allow a declared
+convergence criterion
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{criterion ∈ \{KP, Dobrushin, Fernandez{-}Procacci, custom\_tree\_graph\}}
+\end{Highlighting}
+\end{Shaded}
+
+with an accompanying proof row for the chosen sufficient condition. The
+default criterion is KP, but the design must allow sharper tree-graph or
+Penrose-identity bounds when absolute majorization is too crude.
+
+For each criterion, the row must declare:
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Field
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Meaning
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{criterion\_id} & KP, Dobrushin, Fernandez--Procacci, or
+custom \\
+\texttt{activity\_vector\_id} & typed vector being tested \\
+\texttt{compatibility\_matrix\_id} & graph or matrix used by the
+criterion \\
+\texttt{tree\_graph\_bound\_id} & required if using tree-graph
+improvement \\
+\texttt{domain\_certificate} & exact inequality defining the convergence
+domain \\
+\texttt{negative\_controls} & known overbudget vectors rejected by the
+criterion \\
+\end{longtable}
+
+The fallback scalar gate remains diagnostic only.
+
+\subsubsection{3.5 Dimensional-flow monotonicity with gauge-ripple
+correction}\label{dimensional-flow-monotonicity-with-gauge-ripple-correction}
+
+The scale ledger must prove that the RG flow moves toward the fallback
+basin. If the effective map has the form
+
+{[} \beta\_\{k+1\}=\frac{\beta_k}{L}+\Delta\_k, {]}
+
+then the correction term must be decomposed, not treated as a single
+unstructured error:
+
+{[} \textbar{}\Delta\emph{k\textbar{}}\{\max\} =
+\textbar{}\Delta\emph{k\^{}\{\rm analytic\}\textbar{}}\{\max\}
++\textbar{}\Delta\emph{k\^{}\{\rm trunc\}\textbar{}}\{\max\}
++\textbar{}\Delta\emph{k\^{}\{\rm gauge\}\textbar{}}\{\max\}
++\textbar{}\Delta\emph{k\^{}\{\rm tail\}\textbar{}}\{\max\}. {]}
+
+Here ( \textbar{}\Delta\emph{k\^{}\{\rm gauge\}\textbar{}}\{\max\} )
+records the analytic effect of changing local block-axial or tree-gauge
+coordinates between scale (k) and scale (k+1). Such gauge-ripple terms
+can cross block boundaries and must be included before a monotone
+coupling descent is claimed.
+
+The corrected monotonicity gate is
+
+{[} \frac{\beta_k^+}{L}
++\textbar{}\Delta\emph{k\^{}\{\rm analytic\}\textbar{}}\{\max\}
++\textbar{}\Delta\emph{k\^{}\{\rm trunc\}\textbar{}}\{\max\}
++\textbar{}\Delta\emph{k\^{}\{\rm gauge\}\textbar{}}\{\max\}
++\textbar{}\Delta\emph{k\^{}\{\rm tail\}\textbar{}}\{\max\}
+\textless{}\beta\_k\^{}-. {]}
+
+Equivalently, in interval form,
+
+{[} I\_\{k+1\}\textsuperscript{+\textless I\_k}-. {]}
+
+All four components of (\textbar{}\Delta\emph{k\textbar{}}\{\max\}) must
+be computed in the same declared metric space. The scale-coupling ledger
+must include a \texttt{flow\_error\_norm} object with fields
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Field
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Meaning
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{norm\_id} & stable identifier for the norm used by all
+(\Delta\_k) components \\
+\texttt{space} & \texttt{effective\_coupling\_parameter},
+\texttt{effective\_action\_density}, \texttt{polymer\_activity\_norm},
+or \texttt{transfer\_operator\_norm} \\
+\texttt{domain} & scale slab and volume class over which the supremum is
+taken \\
+\texttt{uniform\_over\_beta} & whether the estimate is uniform over
+(eta\in I\_k) \\
+\texttt{uniform\_over\_volume} & whether the estimate is volume
+independent \\
+\texttt{unit} & units used for comparison with (eta) \\
+\texttt{conversion\_certificate\_ids} & certificates converting any
+component proved in another norm \\
+\end{longtable}
+
+If a component is naturally bounded in another norm, the row must
+include a conversion certificate
+
+{[} \textbar{}\Delta\textbar{}\emph{\{eta\}\le C}\{ m
+conv\}\textbar{}\Delta\textbar\_\{\mathcal N\}. {]}
+
+No dimensional-flow row may add heterogeneous error components unless
+all have been converted into the declared \texttt{flow\_error\_norm}.
+
+Any exception must be explicitly declared and bounded. The default
+production blocking factor is dyadic,
+
+{[} L=2. {]}
+
+If the inequality fails at (L=2), the standard remedies are to sharpen
+field-localization bounds, reduce or rescale the small-field threshold
+(p\_k), refine the scale slab (I\_k), improve the gauge-ripple estimate,
+or split the block phase cell more finely. Blindly increasing (L) is not
+an accepted default remedy, because the block volume grows as (L\^{}3),
+increasing internal phase space and potentially enlarging
+(\textbar{}\Delta\emph{k\^{}\{\rm gauge\}\textbar{}}\{\max\}). Larger
+blocking factors may be explored only in an explicitly marked
+experimental lane with their own gauge-ripple and boundary-fluctuation
+budget.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{4. Gauge Handling and Reflection-Positivity
+Discipline}\label{gauge-handling-and-reflection-positivity-discipline}
+
+\subsubsection{4.1 Gauge lanes}\label{gauge-lanes}
+
+Every local atom, term, or polymer activity must carry a
+\texttt{gauge\_lane} field:
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Lane
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Meaning
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{invariant} & Gauge-invariant object, safe for external
+observables if also RP-compatible \\
+\texttt{block\_axial} & Object expressed in a block axial/tree gauge \\
+\texttt{tree\_gauge} & Object expressed after local spanning-tree gauge
+fixing \\
+\texttt{residual} & Object depending on residual boundary gauge
+variables \\
+\texttt{gauge\_covariant\_background} & Object aligned to a covariant
+background description for IR/fallback use \\
+\texttt{averaged} & Object transferred back by explicit gauge
+averaging \\
+\texttt{internal\_only} & Proof-device object not allowed in final
+OS-facing claims \\
+\end{longtable}
+
+A gauge-lane assignment alone is not sufficient. If an object enters a
+covariant-background lane or any lane with a nontrivial Jacobian, the
+atom or term must link to a determinant certificate rather than assuming
+the tree-gauge Haar identity. The base atom schema therefore includes
+optional hooks \texttt{jacobian\_type},
+\texttt{jacobian\_determinant\_id}, and
+\texttt{ghost\_field\_dependence}.
+
+\subsubsection{4.2 Tree-axial gauge
+metadata}\label{tree-axial-gauge-metadata}
+
+A Balaban-style maximally tree-axial gauge option is included. For each
+block (B), a spanning tree (T\_B) is declared and links on the tree are
+fixed:
+
+{[} U\_b=\mathbf 1, \qquad b\in T\_B. {]}
+
+The corresponding ledger must verify:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  (T\_B) is connected;
+\item
+  (T\_B) contains no cycles;
+\item
+  (T\_B) touches all block vertices;
+\item
+  every interior link has bounded distance to the block boundary;
+\item
+  residual gauge transformations are represented exactly;
+\item
+  the Haar measure change of variables is exactly ledgered.
+\end{enumerate}
+
+The lanes \texttt{tree\_gauge} and \texttt{block\_axial} are local
+UV/intermediate-scale coordinate lanes only. They are not permanent
+infrared descriptions. Repeated block transformations must eventually
+transfer these objects through a certified gauge-covariant or
+gauge-invariant lane before fallback-basin or clustering claims are
+made. The required long-scale transition has the schematic form
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tree\_gauge or block\_axial}
+\NormalTok{  {-}\textgreater{} gauge\_covariant\_background}
+\NormalTok{  {-}\textgreater{} haar\_averaged\_invariant}
+\NormalTok{  {-}\textgreater{} polymer\_or\_character\_activity}
+\end{Highlighting}
+\end{Shaded}
+
+A row that leaves tree/block-axial discontinuities to propagate
+indefinitely into the infrared fails, because block-boundary coordinate
+jumps can generate nonlocal artifacts in effective polymer weights.
+
+\subsubsection{4.3 Haar reversibility}\label{haar-reversibility}
+
+For a gauge-fixing map
+
+{[} U\mapsto (U\^{}\{\rm gf\},h), {]}
+
+the checker must verify
+
+{[} dU=dU\^{}\{\rm gf\},dh,J\_\{\rm gf\}. {]}
+
+For compact finite-dimensional lattice tree gauges, the expected
+Jacobian may be (J\_\{\rm gf\}=1), but this must be a proved ledger row.
+The residual Haar integral must satisfy
+
+{[} \int dh=1 {]}
+
+with normalized Haar measure.
+
+\subsubsection{4.4 Configuration-dependent determinant
+hooks}\label{configuration-dependent-determinant-hooks}
+
+Tree and block-axial gauges in finite-dimensional lattice variables may
+have a constant Haar Jacobian, often certified as
+
+{[} J\_\{\rm gf\}=1. {]}
+
+This simplification is restricted to the declared tree/block-axial lane.
+If repeated block transformations transfer an object into a
+gauge-covariant background lane, the row must allow a
+configuration-dependent Faddeev--Popov or determinant factor. Such a
+factor is not a static coefficient; it may depend on background and
+fluctuation variables and may generate nonterminal ghost or
+determinant-loop terms.
+
+The determinant metadata is represented by optional fields:
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Field
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Meaning
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{jacobian\_type} & \texttt{constant\_haar},
+\texttt{configuration\_dependent\_fp}, \texttt{ghost\_expanded}, or
+\texttt{determinant\_ratio} \\
+\texttt{jacobian\_determinant\_id} & link to determinant certificate \\
+\texttt{ghost\_field\_dependence} & whether ghost variables or ghost
+loops appear \\
+\texttt{determinant\_expansion\_id} & expansion ledger for nontrivial
+determinant terms \\
+\texttt{ghost\_loop\_degree} & loop/degree order if ghost expansion is
+used \\
+\texttt{background\_field\_id} & covariant-background field reference \\
+\texttt{fp\_operator\_id} & discrete FP operator or determinant matrix
+reference \\
+\end{longtable}
+
+If \texttt{gauge\_lane\ =\ gauge\_covariant\_background}, then
+determinant metadata is mandatory unless a row proves that the
+determinant contribution cancels or is identically one in the declared
+finite setting.
+
+A determinant/ghost expansion is not automatically admissible in a
+positive polymer criterion. Grassmann variables do not define a positive
+measure in the ordinary bosonic sense, and ghost loops carry signs.
+Therefore any ghost-expanded determinant contribution must pass
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{YM3D\_GHOST\_DETERMINANT\_SIGN\_CONSISTENCY\_CHECK\_1}
+\end{Highlighting}
+\end{Shaded}
+
+before it can enter a convergence gate. The row must distinguish among
+exact determinant retention, ghost expansion, determinant ratios, and
+perturbative determinant truncations. If
+\texttt{ghost\_field\_dependence=true}, the row must specify whether the
+contribution is handled by a signed/fermionic cluster expansion, by an
+absolute-majorant certificate, or by an exact determinant-positivity
+certificate. A ghost-dependent row may not enter an ordinary positive KP
+activity vector unless \texttt{positive\_activity\_admissible=true} is
+imported from the determinant sign certificate.
+
+The determinant sign certificate records:
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Field
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Meaning
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{determinant\_sign\_certificate\_id} & sign/positivity or
+signed-cluster certificate \\
+\texttt{requires\_signed\_cluster\_certificate} & whether ordinary
+positive activity criteria are forbidden \\
+\texttt{positive\_activity\_admissible} & whether the term may enter a
+positive polymer bound \\
+\texttt{absolute\_majorant\_certificate\_id} & certificate replacing
+signed ghost loops by a positive majorant \\
+\texttt{determinant\_ratio\_lower\_bound\_id} & lower-bound certificate
+for determinant denominators \\
+\texttt{ghost\_loop\_sign\_rule} & convention for loop signs and
+anticommutation ordering \\
+\end{longtable}
+
+\subsubsection{4.5 Gauge-ripple flow
+correction}\label{gauge-ripple-flow-correction}
+
+Because gauge fixing is performed locally inside coarse blocks, changing
+the block scale changes the block trees, residual boundary variables,
+and gauge-averaging maps. The difference between the scale-(k) and
+scale-(k+1) gauge coordinates is a proof-device effect, but its analytic
+size can affect the certified coupling-flow interval.
+
+The ledger \texttt{YM3D\_GAUGE\_RIPPLE\_FLOW\_CORRECTION\_1} records
+this effect through
+
+{[} \textbar{}\Delta\emph{k\^{}\{\rm gauge\}\textbar{}}\{\max\}. {]}
+
+Each row must include:
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Field
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Meaning
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{scale\_slab\_id} & source interval (I\_k) \\
+\texttt{block\_size\_L} & blocking factor \\
+\texttt{source\_tree\_id} & scale-(k) tree/axial gauge data \\
+\texttt{target\_tree\_id} & scale-(k+1) tree/axial gauge data \\
+\texttt{boundary\_orbit\_id} & residual block-boundary gauge orbit \\
+\texttt{ripple\_support} & support affected by the gauge-coordinate
+transition \\
+\texttt{analytic\_bound\_source} & row proving the ripple estimate \\
+\texttt{delta\_gauge\_bound} & certified value of ( \\
+\texttt{flow\_gate\_link} & monotonicity row using this term \\
+\end{longtable}
+
+No dimensional-flow monotonicity row may pass unless the corresponding
+gauge-ripple contribution is either zero by exact symmetry or included
+explicitly in the (\Delta\_k) budget.
+
+\subsubsection{4.6 Reflection-positivity
+discipline}\label{reflection-positivity-discipline}
+
+The Wilson lattice measure is the OS-positive object. Gauge-fixed,
+block-averaged, or internally smeared variables are proof devices unless
+transferred to gauge-invariant, reflection-compatible objects.
+
+No OS-facing claim may be made from a gauge-fixed row unless the row has
+passed:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  gauge averaging;
+\item
+  Haar reversibility;
+\item
+  reflection-parity tagging;
+\item
+  reflection-plane factorization;
+\item
+  an explicit \texttt{rp\_safe\_use} check.
+\end{enumerate}
+
+The reflection-plane factorization condition is geometric. For each
+reflection plane (\Pi) used in an OS-facing claim, the Haar-averaging
+support must either be contained in one half-space or be exactly
+symmetric under reflection:
+
+{[} H\_\{\rm avg\}\subset \Pi\^{}+, \qquad
+H\_\{\rm avg\}\subset \Pi\^{}-, \qquad \text{or} \qquad
+\theta(H\_\{\rm avg\})=H\_\{\rm avg\}. {]}
+
+A support that crosses the reflection plane asymmetrically fails Gate
+S12 unless a separate exact factorization proof is attached. The
+corresponding certificate records
+\texttt{spatial\_factorization\_plane}, \texttt{support\_relation}, and
+\texttt{factorization\_certificate\_id}.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{5. Small/Large-Field Partition
+Policy}\label{smalllarge-field-partition-policy}
+
+\subsubsection{5.1 Default choice: sharp characteristic
+cutoffs}\label{default-choice-sharp-characteristic-cutoffs}
+
+The first implementation uses sharp cutoffs:
+
+{[} \chi\emph{\{\rm SF\}(A)+\chi}\{\rm LF\}(A)=1. {]}
+
+The small-field region may be defined, for example, by
+
+{[} \max\_\{p\subset B\} d(U\_p,\mathbf 1)\le p\_k, {]}
+
+or by a gauge-fixed block curvature norm
+
+{[} \textbar F\_A\textbar\_\{B,k\}\le p\_k. {]}
+
+\subsubsection{5.2 Sharp-cutoff rule}\label{sharp-cutoff-rule}
+
+No Taylor, BKAR, cluster, or interpolation derivative may hit a sharp
+cutoff unless a boundary-integration subledger is supplied.
+
+If a derivative hits (\chi\emph{\{\rm SF\}) or (\chi}\{\rm LF\}), the
+row fails unless the resulting boundary contribution is explicitly
+integrated and placed in a valid residual bucket.
+
+A valid sharp-boundary row must include a boundary-surface multiplier
+certificate. The bound has the form
+
+{[} \textbar{}\mathcal B\textbar{} \le
+\textbar f\textbar{}\emph{\{\infty\} ,M}\{\partial{\rm SF}\}, {]}
+
+where (M\_\{\partial{\rm SF}\}) is an exact rational or interval
+enclosure of the relevant configuration-space hypersurface volume,
+coarea factor, or trace-theorem constant. The nonterminal row must
+record \texttt{boundary\_surface\_multiplier\_id},
+\texttt{trace\_operator\_id}, and
+\texttt{boundary\_measure\_enclosure\_id} whenever a sharp cutoff
+boundary contributes.
+
+\subsubsection{5.3 Smooth-cutoff upgrade
+branch}\label{smooth-cutoff-upgrade-branch}
+
+A later smooth branch may use Gevrey-class partitions
+
+{[} \chi\emph{\{\rm core\}+\chi}\{\rm trans\}+\chi\_\{\rm tail\}=1 {]}
+
+with derivative bounds
+
+{[} \textbar{}\partial\^{}m\chi\textbar{}
+\le C\_\chi\textsuperscript{\{m+1\}(m!)}\sigma p\_k\^{}\{-m\}. {]}
+
+The derivative leakage gate must then prove that these losses fit inside
+a declared leakage budget:
+
+{[} R\_\{\rm leakage\}(k,I\_k) \le R\_\{\rm leakage,max\}(k,I\_k). {]}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{6. Symmetry-Reduced Local
+Geometry}\label{symmetry-reduced-local-geometry}
+
+\subsubsection{6.1 Cubic group representation and orbit
+representatives}\label{cubic-group-representation-and-orbit-representatives}
+
+The production generator represents the full local cubic group (O\_h) by
+signed permutation matrices
+
+{[} M\in \mathrm{Mat}\_\{3\times 3\}(\mathbb Z), \qquad M\^{}TM=I,
+\qquad M e\_i=\pm e\_j. {]}
+
+Unless a row explicitly restricts to the orientation-preserving
+subgroup, the local symmetry group has
+
+{[} \textbar O\_h\textbar=48. {]}
+
+This signed-matrix representation is the source of truth. It induces
+permutations of oriented links, plaquettes, supports, anchors, and
+collision pairs. For an oriented link (\ell=(x,\mu)) from (x) to
+(x+e\_\mu), if
+
+{[} M e\_\mu=s e\_\nu, \qquad s\in\{+1,-1\}, {]}
+
+then for (s=+1),
+
+{[} M\cdot(x,\mu)=(Mx,\nu), {]}
+
+while for (s=-1), the transformed negative-oriented link is rewritten as
+a positive-oriented link with an orientation-flip tag:
+
+{[} M\cdot(x,\mu)=(Mx-e\_\nu,\nu). {]}
+
+The matrix action on links lifts upward to all composite supports by a
+mandatory composition rule:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  apply the signed permutation matrix to every constituent oriented
+  link;
+\item
+  canonicalize each transformed link to the positive-axis convention
+  with an orientation-flip tag;
+\item
+  sort the transformed links into a canonical integer tuple;
+\item
+  compute the transformed support identifier from this tuple;
+\item
+  verify that plaquette, cube, and multiblock transforms agree with the
+  transforms of their constituent links.
+\end{enumerate}
+
+The orbit schema must record:
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Field
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Meaning
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{group\_action\_source} & \texttt{signed\_permutation\_matrix} \\
+\texttt{fundamental\_action} & \texttt{oriented\_link\_action} \\
+\texttt{composition\_rule\_id} & canonical link-tuple lift rule \\
+\texttt{support\_lift\_rule.plaquette} & ordered boundary-link lift \\
+\texttt{support\_lift\_rule.cube} & face or boundary-link lift \\
+\texttt{support\_lift\_rule.multiblock} & canonical union of block
+supports \\
+\texttt{orientation\_canonicalization} & positive-axis plus flip tag \\
+\texttt{canonical\_hash\_rule} & deterministic lexicographic integer
+tuple rule \\
+\end{longtable}
+
+An independent audit mode reconstructs the same orbit partition by pure
+link-coordinate transformations and verifies equality with the
+signed-matrix implementation.
+
+The local cubic symmetry group acts on atoms, supports, anchors, and
+collision pairs. The program stores orbit representatives ({[}\alpha{]})
+with exact stabilizers:
+
+{[}
+m\_\{{[}\alpha{]}\}=\frac{|G_{\rm local}|}{|\operatorname{Stab}(\alpha)|}.
+{]}
+
+For the default full cubic group, this specializes to
+
+{[}
+\textbar{}\operatorname{Orb}(\alpha)\textbar=\frac{48}{|\operatorname{Stab}(\alpha)|}.
+{]}
+
+Collision edges are likewise represented by orbit pairs
+
+{[} ({[}\alpha{]},{[}\beta{]},\mathrm{collision\_type}) {]}
+
+with exact multiplicity.
+
+\paragraph{Orbit-closure consistency}\label{orbit-closure-consistency}
+
+The orbit schema must also include an explicit orbit-closure proof. For
+each representative ({[}\alpha{]}), with canonical representative map
+(\operatorname{rep}), the checker verifies
+
+{[} \forall g\in O\_h,\qquad
+\operatorname{rep}(g\cdot r\_\alpha)=r\_\alpha. {]}
+
+Equivalently, for every concrete atom (\alpha) and every group element
+(g),
+
+{[} \operatorname{rep}(g\cdot \alpha)=\operatorname{rep}(\alpha) {]}
+
+whenever (g\cdot\alpha) lies in the same orbit. The representative map
+must also be idempotent:
+
+{[} \operatorname{rep}(\operatorname{rep}(\alpha))=
+\operatorname{rep}(\alpha). {]}
+
+The checker row
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{YM3D\_ORBIT\_CLOSURE\_CONSISTENCY\_CHECK\_1}
+\end{Highlighting}
+\end{Shaded}
+
+is a hard prerequisite for the expanded-graph audit. It ensures that
+inconsistent choices of representatives at the link, plaquette, cube, or
+multiblock level cannot corrupt stabilizer sizes or majorant
+multiplicities.
+
+\subsubsection{6.2 Orbit-reduced majorant}\label{orbit-reduced-majorant}
+
+The typed majorant matrix is computed from orbit data:
+
+{[} B\_\{ts\}\^{}\{3D\}(k,I\_k) = \sum\emph{\{{[}\alpha{]}\in T\_t\}
+\sum}\{{[}\beta{]}\in T\_s\} m\_\{{[}\alpha{]},{[}\beta{]}\}
+w\_\{{[}\alpha{]},{[}\beta{]}\}(k,I\_k). {]}
+
+The full expanded graph is generated only for audit boxes and negative
+controls.
+
+\subsubsection{6.3 Expanded-graph audit on small
+lattices}\label{expanded-graph-audit-on-small-lattices}
+
+Orbit reduction is a production representation, not a substitute for
+validation. The validator must generate fully expanded collision graphs
+on designated small periodic audit lattices and compare them to the
+orbit-reduced graph by explicit projection and multiplicity checks.
+
+Let (G\_\{\rm exp\}=(V\_\{\rm exp\},E\_\{\rm exp\})) be the fully
+expanded atom collision graph, and let
+
+{[} \pi:V\_\{\rm exp\}\to V\_\{\rm orb\} {]}
+
+be the projection to orbit representatives. For every orbit-pair
+collision type (q), the checker must verify
+
+{[} M\^{}\{\rm expanded\}\emph{\{{[}\alpha{]},{[}\beta{]},q\} =
+\#\{(u,v)\in E}\{\rm exp\}:\pi(u)={[}\alpha{]},\pi(v)={[}\beta{]},~q(u,v)=q\}
+= M\^{}\{\rm reduced\}\_\{{[}\alpha{]},{[}\beta{]},q\}. {]}
+
+It must also verify stabilizer multiplicities
+
+{[}
+m\_\{{[}\alpha{]}\}=\frac{|G_{\rm local}|}{|\operatorname{Stab}(\alpha)|}.
+{]}
+
+This audit is a hard acceptance gate for
+\texttt{YM3D\_CUBIC\_SYMMETRY\_ORBIT\_REDUCTION\_1}. If the expanded
+graph and reduced graph disagree on any audit box, the orbit-reduction
+row fails.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{7. K-Star Terminal Graph
+Program}\label{k-star-terminal-graph-program}
+
+\subsubsection{7.1 Terminal atom export}\label{terminal-atom-export}
+
+The first 3D K-star artifact is
+
+\texttt{YM3D\_KSTAR\_TERMINAL\_ATOM\_EXPORT\_1}.
+
+Each atom row must include:
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Field
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Meaning
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{atom\_id} & stable unique identifier \\
+\texttt{orbit\_id} & cubic symmetry orbit \\
+\texttt{support\_id} & local support \\
+\texttt{anchor\_type} & link, plaquette, cube, face, edge, corner,
+multiblock \\
+\texttt{orientation} & declared orientation convention \\
+\texttt{representation\_label} & spin/character/spin-network label \\
+\texttt{gauge\_lane} & gauge state of the object \\
+\texttt{rp\_parity\_tag} & reflection behavior \\
+\texttt{coefficient\_formula} & exact symbolic coefficient \\
+\texttt{coefficient\_bound} & interval/rational upper bound over
+(I\_k) \\
+\texttt{scale\_slab} & (k,I\_k) validity \\
+\end{longtable}
+
+\subsubsection{7.2 Collision graph}\label{collision-graph}
+
+The terminal collision graph records geometric overlap, shared boundary
+variables, shared gauge residues, or support incompatibility. Every edge
+carries a typed collision label.
+
+\subsubsection{7.3 Terminal KP gate}\label{terminal-kp-gate}
+
+The terminal-only gate is
+
+{[} \sum\emph{s
+A}\{ts\}\textsuperscript{\{3D\}(k)z\_s}\{\rm term\}(k,I\_k)e\^{}\{a\_s(k)\}
+\le a\_t(k). {]}
+
+Passing this gate exports a residual budget for nonterminal activity. It
+does not close the full RG rung.
+
+\subsubsection{7.4 Terminal vector-export
+contract}\label{terminal-vector-export-contract}
+
+A terminal row must export the full vector
+
+{[} \mathbf z\_\{3D\}\^{}\{\rm term\}(k,I\_k) {]}
+
+plus a machine-readable contract describing which nonterminal types may
+absorb, refine, or interact with each component. The contract must
+include:
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Field
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Meaning
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{terminal\_vector\_id} & identifier for the terminal activity
+vector \\
+\texttt{component\_type} & link, plaquette, face, corner, cube,
+multiblock, gauge, tail \\
+\texttt{bound\_value} & exact rational/interval bound for that
+component \\
+\texttt{scale\_slab\_id} & scale/coupling interval \\
+\texttt{absorption\_target} & nonterminal bucket or next-scale object
+that absorbs it \\
+\texttt{convergence\_domain\_id} &
+KP/Dobrushin/Fernandez--Procacci/custom domain \\
+\texttt{nonclaim} & explicit statement that terminal success is not an
+RG rung \\
+\end{longtable}
+
+A scalar terminal bound may be recorded for readability, but it is not
+sufficient for a full RG transition.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{8. Nonterminal Taylor and Forest Remainder
+Program}\label{nonterminal-taylor-and-forest-remainder-program}
+
+\subsubsection{8.1 Required inventory
+fields}\label{required-inventory-fields}
+
+Every nonterminal Taylor or forest-generated term must include:
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Field
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Meaning
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{term\_id} & unique term identifier \\
+\texttt{source\_expansion} & Taylor, cumulant, BKAR, character, or other
+source \\
+\texttt{forest\_id} & forest identifier if BKAR/interpolation is used \\
+\texttt{support\_id} & local support \\
+\texttt{anchor\_type} & support anchor \\
+\texttt{representation\_label} & spin/character/spin-network label \\
+\texttt{degree} & Taylor or derivative degree \\
+\texttt{coefficient\_formula} & exact symbolic coefficient \\
+\texttt{interval\_upper\_bound} & certified upper bound over (I\_k) \\
+\texttt{multiplicity} & exact local multiplicity \\
+\texttt{bucket} & Taylor, nonlinear, multiblock, gauge/RP, tail,
+leakage \\
+\texttt{small\_field\_cutoff\_id} & valid Taylor domain \\
+\texttt{field\_norm} & norm used for small-field region \\
+\texttt{cutoff\_threshold} & (p\_k) or equivalent \\
+\texttt{boundary\_leakage\_bound} & if applicable \\
+\texttt{boundary\_surface\_multiplier\_id} & boundary/trace certificate
+if a sharp cutoff boundary is used \\
+\texttt{primitive\_enclosure\_ids} & analytic primitive intervals
+imported by the term \\
+\texttt{jacobian\_determinant\_id} & determinant/FP certificate if the
+term contains nontrivial Jacobian data \\
+\texttt{determinant\_expansion\_id} & expansion ledger for
+configuration-dependent determinants \\
+\texttt{ghost\_field\_dependence} & whether the term depends on ghost
+variables \\
+\texttt{ghost\_loop\_degree} & degree/order of ghost loop if
+applicable \\
+\texttt{ghost\_measure\_id} & Berezin/ghost integration measure
+certificate if ghost fields appear \\
+\texttt{ghost\_cutoff\_policy} & \texttt{none},
+\texttt{inherited\_from\_gauge}, or \texttt{separate\_grassmann} \\
+\texttt{grassmann\_cutoff\_id} & optional algebraic/Grassmann cutoff or
+truncation certificate \\
+\texttt{tail\_bucket\_link} & complement/tail assignment \\
+\texttt{parent\_rows} & required source rows \\
+\end{longtable}
+
+Configuration-dependent determinant terms must never be compressed into
+an untyped coefficient. If \texttt{determinant\_expansion\_id} is
+present, the row must also specify the determinant source,
+background-field dependence, fluctuation-field dependence, and the
+certificate proving the interval enclosure for each
+determinant-generated primitive.
+
+If \texttt{ghost\_field\_dependence=true}, the row must provide a
+\texttt{ghost\_measure\_id}. Grassmann variables are not ordinary
+bosonic amplitude variables; therefore the design uses the neutral field
+\texttt{ghost\_measure\_id} and an explicit
+\texttt{ghost\_cutoff\_policy} rather than assuming that ghost fields
+inherit the gauge-field small/large-field partition. A separate
+\texttt{grassmann\_cutoff\_id} is required only if a later analytic lane
+introduces an algebraic ghost truncation or cutoff boundary.
+
+\subsubsection{8.2 BKAR/forest
+declaration}\label{bkarforest-declaration}
+
+If BKAR or another forest formula is used, the inventory must declare:
+
+\begin{itemize}
+\tightlist
+\item
+  forest edge set;
+\item
+  interpolation parameters;
+\item
+  differentiated factors;
+\item
+  induced support;
+\item
+  connectivity class;
+\item
+  symmetry factor;
+\item
+  derivative order;
+\item
+  cutoff-interaction status.
+\end{itemize}
+
+The multiblock combinatorics must match the typed compatibility matrix.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{9. Large-Field and Defect-Tail
+Ledger}\label{large-field-and-defect-tail-ledger}
+
+The large-field complement is represented as thermodynamic defects. The
+ledger must not assume that all non-abelian defects are closed dual
+surfaces measured only by area. The schema supports a vector-valued
+support measure
+
+{[}
+\mathbf m(D)=(A(D),\ell(D),V(D),n\_\partial(D),J(D),B(D),E(D),\ldots),
+{]}
+
+where (A) is surface area, (\ell) is line length or tube length, (V) is
+localized block volume, (n\_\partial) records boundary-pinned
+contributions, (J) records junctions, (B) records branching nodes, and
+(E) records endpoints or attachment points when relevant. This allows
+the tail ledger to represent co-dimension-one center-vortex-like sheets,
+line-like tubes, localized high-curvature lumps, boundary-pinned
+defects, and mixed complexes in which lower-dimensional and
+higher-dimensional supports intersect.
+
+Each defect row includes:
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Field
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Meaning
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{defect\_id} & unique defect identifier \\
+\texttt{support} & support set \\
+\texttt{scale} & RG scale (k) \\
+\texttt{scale\_slab\_id} & coupling interval (I\_k) \\
+\texttt{defect\_type} & surface, tube, localized\_high\_curvature,
+boundary\_pinned, mixed, gauge, tail \\
+\texttt{support\_codimension} & declared codimension or mixed-complex
+label \\
+\texttt{support\_measure\_vector} & vector
+(\mathbf m=(A,\ell,V,n\_\partial,J,B,E,\ldots)) \\
+\texttt{area\_component} & surface/plaquette area, if applicable \\
+\texttt{length\_component} & line/tube length, if applicable \\
+\texttt{volume\_component} & localized block volume, if applicable \\
+\texttt{junction\_count} & number of topology-changing junctions \\
+\texttt{branching\_node\_count} & number of branching nodes in mixed
+complexes \\
+\texttt{endpoint\_count} & number of endpoints or boundary
+attachments \\
+\texttt{topological\_modifier\_rate} & entropy-rate component assigned
+to junction/branching data \\
+\texttt{defect\_topology\_type} & closed surface, vortex sheet, tube,
+lump, boundary-pinned defect, or mixed complex \\
+\texttt{action\_cost\_vector} & coefficient vector for scale-slab action
+suppression \\
+\texttt{entropy\_model\_id} & source row for the entropy bound \\
+\texttt{entropy\_rate\_vector} & entropy-rate vector for the declared
+support measure \\
+\texttt{entropy\_prefactor} & prefactor (C\_\{\rm ent\}) \\
+\texttt{dominance\_margin} & certified lower bound for action-cost minus
+entropy-rate against the support measure \\
+\texttt{tail\_sum\_bound} & resulting geometric/exponential sum \\
+\texttt{suppression\_factor} & exponential or character-tail
+suppression \\
+\texttt{interaction\_range} & compatibility range \\
+\texttt{kp\_type} & typed activity class \\
+\end{longtable}
+
+The tail gate checks estimates of the form
+
+{[} \sum\emph{\{D\ni x\} M(D)
+\exp\left[-\mathbf c_{\rm tail}(k,I_k)\cdot \mathbf m(D)\right]\le R}\{\rm tail\}(k,I\_k).
+{]}
+
+\subsubsection{9.1 Defect entropy
+dominance}\label{defect-entropy-dominance}
+
+For each declared defect class, the ledger must provide an entropy
+estimate
+
+{[} N(\mathbf m)\le C\_\{\rm ent\}
+\exp\left(\boldsymbol\mu\_\{\rm ent\}\cdot \mathbf m\right). {]}
+
+The large-field tail row may pass only if action cost strictly dominates
+entropy over the full scale slab. In vector form, the required condition
+is
+
+{[}
+\left(\mathbf c\_\{\rm tail\}(k,I\_k)-\boldsymbol\mu\emph{\{\rm ent\}\right)\cdot\mathbf m
+\ge \delta}\{\rm tail\}\textbar{}\mathbf m\textbar{} {]}
+
+for all admissible support-measure vectors (\mathbf m), with
+(\delta\_\{\rm tail\}\textgreater0) recorded. For a pure surface-defect
+specialization, this reduces to
+
+{[}
+c\_\{\rm tail\}(k,I\_k)-\mu\emph{\{\rm ent\}\ge\delta}\{\rm tail\}\textgreater0.
+{]}
+
+This generalization is required because the Göpfert--Mack compact (U(1))
+surface-defect template is only a structural guide. The non-abelian
+(SU(2)) ledger must also audit lower-dimensional or localized
+high-curvature defect supports.
+
+Required artifact:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{YM3D\_DEFECT\_SUPPORT\_MEASURE\_LEDGER\_1}
+\end{Highlighting}
+\end{Shaded}
+
+and dominance checker:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{YM3D\_DEFECT\_ENTROPY\_DOMINANCE\_CHECK\_1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{10. Fallback Basin
+Certification}\label{fallback-basin-certification}
+
+The UV ladder does not by itself prove infrared clustering. A separate
+row must certify entry into a fallback basin where a strong-coupling,
+character-expansion, defect-expansion, transfer-matrix, or terminal
+polymer argument supplies volume-uniform decay.
+
+The required artifact is
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{YM3D\_FALLBACK\_BASIN\_CERTIFICATION\_1}
+\end{Highlighting}
+\end{Shaded}
+
+It must not be replaced by the weaker handoff row. The handoff row
+records that the UV flow has reached the relevant scale; the
+certification row proves that the terminal-scale theory lies inside a
+convergence region with explicit constants.
+
+A valid certification row must include:
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Field
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Meaning
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{fallback\_method} & character expansion, defect expansion,
+polymer expansion, transfer matrix, or hybrid \\
+\texttt{terminal\_scale\_id} & scale (k\^{}\ast) entering the fallback
+analysis \\
+\texttt{input\_activity\_vector} & vector imported from the UV ladder \\
+\texttt{convergence\_criterion} & KP, Dobrushin, Fernandez--Procacci, or
+other certified criterion \\
+\texttt{mass\_scale\_bound} & decay scale or spectral-gap lower bound at
+the terminal scale \\
+\texttt{volume\_uniformity\_row} & proof that constants are independent
+of periodic volume \\
+\texttt{overlap\_or\_majorization\_check} & comparison between UV
+terminal action and fallback representation \\
+\texttt{nonclaims} & no continuum claim unless (a)-uniformity is
+separately proved \\
+\end{longtable}
+
+The fallback certification gate is
+
+{[}
+\mathbf z\_\{3D\}\textsuperscript{\{\rm terminal\}(k}\ast,I\_\{k\^{}\ast\})
+\in \mathcal D\_\{\rm fallback\} {]}
+
+with the fallback convergence domain explicitly defined by the chosen
+convergence criterion.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{11. Mandatory Sanity Gates}\label{mandatory-sanity-gates}
+
+\subsubsection{Gate S1: cutoff leakage}\label{gate-s1-cutoff-leakage}
+
+For smooth cutoffs, every derivative contribution must be bounded:
+
+{[} C\_\{\rm deriv\}(k,m)p\_k\^{}\{-m\}z\_\{\rm local\}(k,I\_k)
+\le R\_\{\rm leakage\}(k,I\_k). {]}
+
+For sharp cutoffs, no derivative may hit a cutoff unless an explicit
+boundary-integration row exists. Any such row must include
+\texttt{boundary\_surface\_multiplier\_id} and an independently
+checkable trace/surface-volume certificate.
+
+\subsubsection{Gate S2: Haar
+reversibility}\label{gate-s2-haar-reversibility}
+
+Every transition from gauge-fixed to invariant lane must prove
+
+{[} dU=dU\^{}\{\rm gf\},dh,J\_\{\rm gf\}, \qquad \int dh=1. {]}
+
+\subsubsection{Gate S3: typed compatibility
+sparsity}\label{gate-s3-typed-compatibility-sparsity}
+
+If two support types cannot geometrically intersect under the declared
+block geometry, then
+
+{[} A\_\{ts\}\^{}\{3D\}=0. {]}
+
+A nonzero entry in such a slot fails the row.
+
+\subsubsection{Gate S4: dimensional-flow monotonicity with gauge-ripple
+budget}\label{gate-s4-dimensional-flow-monotonicity-with-gauge-ripple-budget}
+
+Every scale transition must verify
+
+{[} \frac{\beta_k^+}{L}
++\textbar{}\Delta\emph{k\^{}\{\rm analytic\}\textbar{}}\{\max\}
++\textbar{}\Delta\emph{k\^{}\{\rm trunc\}\textbar{}}\{\max\}
++\textbar{}\Delta\emph{k\^{}\{\rm gauge\}\textbar{}}\{\max\}
++\textbar{}\Delta\emph{k\^{}\{\rm tail\}\textbar{}}\{\max\}
+\textless{}\beta\_k\^{}-. {]}
+
+The gauge-ripple contribution must be zero by proof or explicitly
+bounded. All components in this inequality must be expressed in the same
+declared \texttt{flow\_error\_norm}; heterogeneous bounds require
+conversion certificates before summation.
+
+\subsubsection{Gate S5: orbit-reduction expanded-graph
+audit}\label{gate-s5-orbit-reduction-expanded-graph-audit}
+
+Orbit-reduced counts must agree with fully expanded counts on designated
+small audit boxes by explicit projection/isomorphism and multiplicity
+checks.
+
+\subsubsection{Gate S5a: orbit-closure
+consistency}\label{gate-s5a-orbit-closure-consistency}
+
+For every stored orbit representative and every declared element of
+(O\_h), the transformed atom must map back to the same representative
+under the canonical representative map. The checker must verify
+representative idempotence, group-action closure on the valid atom
+universe, and agreement of orbit sizes with stabilizer sizes. This gate
+closes before the expanded-graph audit.
+
+\subsubsection{Gate S6: periodic volume
+uniformity}\label{gate-s6-periodic-volume-uniformity}
+
+Every thermodynamic claim must prove constants independent of periodic
+volume.
+
+\subsubsection{Gate S7: terminal/nonterminal
+separation}\label{gate-s7-terminalnonterminal-separation}
+
+Terminal-only rows may not claim full RG smallness.
+
+\subsubsection{Gate S8: exact
+arithmetic}\label{gate-s8-exact-arithmetic}
+
+All smallness margins must be stored in exact rational or interval form.
+Decimal values are display-only.
+
+\subsubsection{Gate S8b: primitive enclosure
+certificates}\label{gate-s8b-primitive-enclosure-certificates}
+
+Any analytic row using a non-rational primitive constant must link to a
+\texttt{primitive\_enclosure\_certificate}. This includes
+Bessel/character coefficients, lattice Green's functions, heat-kernel
+coefficients, spectral constants, quadrature values, and
+recurrence-generated constants. The certificate must state the
+mathematical origin of the primitive, the rational input interval, the
+rational output enclosure, the certification method, and a truncation or
+remainder bound that an independent checker can verify using rational
+arithmetic.
+
+\subsubsection{Gate S9: vector-valued defect entropy
+dominance}\label{gate-s9-vector-valued-defect-entropy-dominance}
+
+The large-field defect-tail ledger must prove
+
+{[}
+\left(\mathbf c\_\{\rm tail\}(k,I\_k)-\boldsymbol\mu\emph{\{\rm ent\}\right)\cdot\mathbf m
+\ge\delta}\{\rm tail\}\textbar{}\mathbf m\textbar{} {]}
+
+for every admissible support-measure vector (\mathbf m) and every
+relevant scale/coupling interval, with the resulting exponential defect
+sum included in (R\_\{\rm tail\}(k,I\_k)). The scalar surface-area test
+is only a specialization.
+
+\subsubsection{Gate S10: convergence-criterion
+declaration}\label{gate-s10-convergence-criterion-declaration}
+
+Every polymer/activity gate must declare its convergence criterion. If
+the row uses a tree-graph improvement rather than classical KP, it must
+import the relevant tree-graph or Penrose-identity bound and provide
+negative controls showing that overbudget vectors are rejected.
+
+\subsubsection{Gate S10b: ghost determinant sign
+consistency}\label{gate-s10b-ghost-determinant-sign-consistency}
+
+A determinant-generated or ghost-expanded term may not enter an ordinary
+positive polymer activity bound unless a determinant sign or
+absolute-majorant certificate proves that this use is admissible. If the
+term is handled by a signed/fermionic cluster expansion, the row must
+declare the signed convergence criterion separately and must not be
+counted as a positive KP activity without transfer.
+
+\subsubsection{Gate S11: fallback-basin
+certification}\label{gate-s11-fallback-basin-certification}
+
+The UV ladder may not claim infrared clustering until
+\texttt{YM3D\_FALLBACK\_BASIN\_CERTIFICATION\_1} proves that the
+terminal-scale effective theory lies in a certified strong-coupling,
+character-expansion, defect-expansion, transfer-matrix, or polymer
+convergence domain.
+
+\subsubsection{Gate S12: reflection-positivity transfer after gauge
+averaging}\label{gate-s12-reflection-positivity-transfer-after-gauge-averaging}
+
+If a row enters an OS-facing claim, the checker must verify the
+machine-parseable transition pipeline
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{gauge\_fixed\_object}
+\NormalTok{  {-}\textgreater{} haar\_averaged\_invariant\_object}
+\NormalTok{  {-}\textgreater{} reflection\_tagged\_object}
+\NormalTok{  {-}\textgreater{} os\_admissible\_object}
+\end{Highlighting}
+\end{Shaded}
+
+Equivalently, the mathematical transition is
+
+{[} \text{gauge-fixed object} \to \text{Haar-averaged invariant object}
+\to \text{reflection-parity-tagged object} \to
+\text{OS-admissible observable}. {]}
+
+Gauge-lane metadata and Haar reversibility are necessary but not
+sufficient; the final object must also carry an
+\texttt{rp\_safe\_use=true} tag imported from a parity/reflection
+ledger. In addition, the Haar-averaging support must pass the
+reflection-plane factorization test: it must lie strictly in one
+half-space relative to the declared reflection plane, or be exactly
+reflection-symmetric with a certified pairing of integrated gauge
+variables. An asymmetric crossing of the reflection plane fails Gate
+S12.
+
+\subsubsection{Gate S13: continuum-uniformity
+placeholder}\label{gate-s13-continuum-uniformity-placeholder}
+
+No row may promote volume-uniform lattice clustering to a continuum
+mass-gap statement unless an implemented (a)-uniformity ledger proves
+that the physical mass lower bound remains positive as (a\to 0). This
+gate is a placeholder in the present design, but it is a hard dependency
+for any lattice-spacing-uniform physical gap claim.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{12. Operational Milestones}\label{operational-milestones}
+
+\subsubsection{Milestone 0: Exact two-dimensional SU(N) validation
+lane}\label{milestone-0-exact-two-dimensional-sun-validation-lane}
+
+Milestone 0 is achieved when
+\texttt{YM2D\_SUN\_EXACT\_VALIDATION\_LANE\_0} runs the ledger pipeline
+on a two-dimensional SU(N) benchmark and compares its observable output
+against exact Wilson-loop/area-law formulas.
+
+Milestone 0 is not required before the three-dimensional combinatorial
+Milestone 1A generator. It is required before analytic three-dimensional
+rows close.
+
+Allowed claim:
+
+{[}
+\text{The ledger pipeline reproduces the declared exact 2D benchmark observables.}
+{]}
+
+Not allowed:
+
+{[} \text{3D analytic smallness, RG contraction, or mass-gap claims.}
+{]}
+
+\subsubsection{Milestone 1: Pure combinatorial
+closure}\label{milestone-1-pure-combinatorial-closure}
+
+Closed rows:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{YM3D\_LOCAL\_ATOM\_GEOMETRY\_1}
+\item
+  \texttt{YM3D\_BLOCK\_GAUGE\_FIXING\_LEDGER\_1}
+\item
+  \texttt{YM3D\_BALABAN\_TREE\_AXIAL\_GAUGE\_HOOK\_1}
+\item
+  \texttt{YM3D\_HAAR\_REVERSIBILITY\_GAUGE\_CHECK\_1}
+\item
+  \texttt{YM3D\_CUBIC\_SYMMETRY\_ORBIT\_REDUCTION\_1}
+\item
+  \texttt{YM3D\_ORBIT\_REDUCTION\_EXPANDED\_GRAPH\_AUDIT\_1}
+\end{itemize}
+
+Meaning: the local geometry, gauge trees, residual gauge metadata, orbit
+representatives, support types, stabilizer multipliers, and
+reduced-vs-expanded collision graph multiplicities are verified. No
+analytic smallness has been proved.
+
+\subsubsection{Milestone 1A: Single-block executable
+audit}\label{milestone-1a-single-block-executable-audit}
+
+This is the first executable checkpoint after pure design. On one or
+more small periodic audit boxes, the generator must produce both:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  the fully expanded atom/collision graph; and
+\item
+  the orbit-reduced graph with stabilizer and multiplicity data.
+\end{enumerate}
+
+The independent checker must verify the exact projection identity
+
+{[} M\^{}\{\rm expanded\}\emph{\{{[}\alpha{]},{[}\beta{]},q\} =
+M\^{}\{\rm reduced\}}\{{[}\alpha{]},{[}\beta{]},q\} {]}
+
+for every orbit-pair collision type (q).
+
+Milestone 1A is the first target for automated testing. It is
+deliberately decoupled from analytic smallness.
+
+\subsubsection{Milestone 2: Single-scale UV
+bound}\label{milestone-2-single-scale-uv-bound}
+
+For the first weak-coupling slab (I\_0), the full scale-indexed activity
+gate passes:
+
+{[} \sum\emph{s A}\{ts\}\^{}\{3D\}(0)
+\left(z\_s\textsuperscript{\{\rm term\}(0,I\_0)+z\_s}\{\rm nonterm\}(0,I\_0)\right)e\^{}\{a\_s(0)\}
+\le a\_t(0). {]}
+
+Meaning: one UV scale has local KP stability.
+
+\subsubsection{Milestone 3: Multi-scale UV
+ladder}\label{milestone-3-multi-scale-uv-ladder}
+
+A sequence
+
+{[} I\_0\to I\_1\to\cdots\to I\_K {]}
+
+passes both dimensional-flow monotonicity and the full activity gate at
+each scale.
+
+\subsubsection{Milestone 4: Fallback basin
+certification}\label{milestone-4-fallback-basin-certification}
+
+The ladder reaches a threshold (k\^{}\ast) where
+
+{[} g\_3\^{}2 a\_\{k\^{}\ast\}\asymp 1 {]}
+
+or (I\_\{k\^{}\ast\}) lies in a certified fallback interval. The proof
+then transitions from the UV Taylor/small-field map to a
+strong-coupling, character-expansion, defect-expansion, transfer-matrix,
+or terminal polymer map, and
+\texttt{YM3D\_FALLBACK\_BASIN\_CERTIFICATION\_1} proves that the
+terminal-scale effective theory lies inside the declared convergence
+domain.
+
+\subsubsection{Milestone 5: Volume-uniform
+clustering}\label{milestone-5-volume-uniform-clustering}
+
+The cluster/polymer expansion proves
+
+{[} \textbar{}\langle O(x)O(y)\rangle\_c\textbar{}
+\le C\_O(k)e\^{}\{-m\_k d(x,y)\} {]}
+
+with constants independent of finite periodic volume.
+
+\subsubsection{Milestone 6: Lattice-spacing-uniform physical gap
+window}\label{milestone-6-lattice-spacing-uniform-physical-gap-window}
+
+This milestone is closed only after Gate S13 is implemented and passed.
+The required result is that the clustering scale yields
+
+{[} m\_\{\rm phys\}\ge c g\_3\^{}2, \qquad c\textgreater0, {]}
+
+uniformly in the continuum scaling window. Before Gate S13 closes, the
+strongest allowed claim is volume-uniform lattice clustering inside
+certified slabs, not a continuum-stable physical mass lower bound.
+Milestone 6 uses the default sequential limit order: first
+(\Lambda  o\infty) at fixed (a), then (a o0) under Gate S13 uniformity.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{13. Artifact Sequence}\label{artifact-sequence}
+
+The recommended first sequence is:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{-1}
+\tightlist
+\item
+  \texttt{YM3D\_SCHEMA\_STAGE\_DISCRIMINATOR\_1} 0a.
+  \texttt{YM3D\_SCHEMA\_DISCRIMINATOR\_NULL\_TEST\_1} 0b.
+  \texttt{YM3D\_PIPELINE\_DAG\_DECLARATION\_1}
+\item
+  \texttt{YM3D\_LOCAL\_ATOM\_GEOMETRY\_1}
+\item
+  \texttt{YM3D\_BLOCK\_GAUGE\_FIXING\_LEDGER\_1}
+\item
+  \texttt{YM3D\_BALABAN\_TREE\_AXIAL\_GAUGE\_HOOK\_1}
+\item
+  \texttt{YM3D\_HAAR\_REVERSIBILITY\_GAUGE\_CHECK\_1}
+\item
+  \texttt{YM3D\_CUBIC\_SYMMETRY\_ORBIT\_REDUCTION\_1} 5a.
+  \texttt{YM3D\_ORBIT\_CLOSURE\_CONSISTENCY\_CHECK\_1}
+\item
+  \texttt{YM3D\_ORBIT\_REDUCTION\_EXPANDED\_GRAPH\_AUDIT\_1}
+\item
+  \texttt{YM3D\_SCALE\_COUPLING\_SLAB\_LEDGER\_1} 7a.
+  \texttt{YM3D\_FLOW\_ERROR\_NORM\_LEDGER\_1}
+\item
+  \texttt{YM3D\_SMALL\_LARGE\_FIELD\_PARTITION\_LEDGER\_1}
+\item
+  \texttt{YM3D\_CUTOFF\_LEAKAGE\_CHECK\_1}
+\item
+  \texttt{YM3D\_KSTAR\_TERMINAL\_ATOM\_EXPORT\_1}
+\item
+  \texttt{YM3D\_KSTAR\_TERMINAL\_COLLISION\_GRAPH\_1}
+\item
+  \texttt{YM3D\_KP\_SPARSITY\_GEOMETRY\_CHECK\_1}
+\item
+  \texttt{YM3D\_TERMINAL\_KP\_ACTIVITY\_MAP\_SCALE\_INDEXED\_1}
+\item
+  \texttt{YM3D\_NONTERMINAL\_TAYLOR\_TERM\_INVENTORY\_1}
+\item
+  \texttt{YM3D\_FP\_DETERMINANT\_EXPANSION\_LEDGER\_1} 15a.
+  \texttt{YM3D\_GHOST\_DETERMINANT\_SIGN\_CONSISTENCY\_CHECK\_1}
+\item
+  \texttt{YM3D\_BOUNDARY\_SURFACE\_MULTIPLIER\_LEDGER\_1}
+\item
+  \texttt{YM3D\_PRIMITIVE\_ENCLOSURE\_CERTIFICATE\_LEDGER\_1}
+\item
+  \texttt{YM3D\_RP\_SPATIAL\_FACTORIZATION\_CHECK\_1}
+\item
+  \texttt{YM3D\_GAUGE\_RIPPLE\_FLOW\_CORRECTION\_1}
+\item
+  \texttt{YM3D\_THERMODYNAMIC\_DEFECT\_TAIL\_LEDGER\_1}
+\item
+  \texttt{YM3D\_DEFECT\_SUPPORT\_MEASURE\_LEDGER\_1}
+\item
+  \texttt{YM3D\_DEFECT\_ENTROPY\_DOMINANCE\_CHECK\_1}
+\item
+  \texttt{YM3D\_BKAR\_FOREST\_REMAINDER\_LEDGER\_1} if forest
+  interpolation is used
+\item
+  \texttt{YM3D\_ONE\_STEP\_RG\_RUNG\_SCALE\_INDEXED\_1}
+\item
+  \texttt{YM3D\_FALLBACK\_BASIN\_HANDOFF\_1}
+\item
+  \texttt{YM3D\_FALLBACK\_BASIN\_CERTIFICATION\_1}
+\item
+  \texttt{YM3D\_VOLUME\_UNIFORM\_CLUSTERING\_1}
+\item
+  \texttt{YM3D\_A\_UNIFORM\_GAP\_WINDOW\_1} Validation and advisory
+  lanes are maintained outside the critical three-dimensional proof DAG
+  unless a formal transfer row is added:
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{YM2D\_SUN\_EXACT\_VALIDATION\_LANE\_0} -- mandatory before
+  analytic three-dimensional rows close;
+\item
+  \texttt{YM3D\_NUMERICAL\_ANCHOR\_LANE\_0} -- advisory
+  numerical/source-audit lane;
+\item
+  \texttt{YM3D\_OBSERVABLE\_REGISTRY\_1} -- mandatory registry for
+  observable-specific claims;
+\item
+  \texttt{YM3D\_PHI4\_BENCHMARK\_LANE\_0} -- advisory scalar benchmark;
+\item
+  \texttt{YM3D\_U1\_BENCHMARK\_LANE\_0} -- advisory compact abelian
+  benchmark;
+\item
+  \texttt{YM3D\_SPDE\_COMPARISON\_LANE\_0} -- advisory
+  stochastic-quantization comparison lane;
+\item
+  \texttt{YM3D\_HAMILTONIAN\_COMPARISON\_LANE\_0} -- advisory
+  Hamiltonian/orbit-space comparison lane;
+\item
+  \texttt{YM3D\_FORMAL\_FINITE\_GROUP\_AUDIT\_LANE\_1} -- formalization
+  lane for stable finite group-action/orbit invariants after Milestone
+  1A.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{14. Checker Requirements}\label{checker-requirements}
+
+Every checker must include positive and negative controls. The design
+distinguishes hard mathematical negative controls from routine
+schema-hygiene checks. The document foregrounds hard controls;
+duplicated identifiers, missing parent IDs, malformed references, and
+similar hygiene failures belong in CI/checker documentation.
+
+Hard negative controls include:
+
+\begin{itemize}
+\tightlist
+\item
+  illegal signed cancellation;
+\item
+  finite-volume claim promoted to thermodynamic or continuum claim;
+\item
+  terminal-only row promoted to full-RG row;
+\item
+  gauge-fixed row used in invariant claim without Haar transfer;
+\item
+  asymmetric Haar/RP support crossing a reflection plane;
+\item
+  smooth cutoff derivative leakage omitted;
+\item
+  sharp cutoff differentiated without a boundary-surface multiplier
+  ledger;
+\item
+  nonzero compatibility entry where geometry requires zero;
+\item
+  nonmonotone (\beta\_k) flow accepted;
+\item
+  heterogeneous (\Delta\_k) norms summed without conversion
+  certificates;
+\item
+  gauge-ripple correction omitted from the flow-error budget;
+\item
+  vector-valued defect entropy rate not dominated by the tail
+  action-cost vector;
+\item
+  scalar surface-area defect model used for a lower-dimensional,
+  junctioned, or localized high-curvature defect;
+\item
+  missing junction/branching entropy component for a mixed defect
+  complex;
+\item
+  orbit-reduction multipliers not verified against expanded audit
+  graphs;
+\item
+  orbit representative fails closure under an element of \texttt{O\_h};
+\item
+  representative map is not idempotent;
+\item
+  composite support orbit action does not match the lift from
+  transformed constituent links;
+\item
+  bounded-field approximation reported as full large-field control;
+\item
+  fallback-basin handoff reported as fallback-basin certification;
+\item
+  terminal scalar bound used without typed vector export;
+\item
+  polymer criterion changed without updating the convergence-domain
+  certificate;
+\item
+  ghost-dependent determinant term missing a ghost-measure certificate;
+\item
+  ghost-expanded determinant term entering a positive polymer bound
+  without sign/absolute-majorant admissibility;
+\item
+  configuration-dependent determinant compressed into an untyped static
+  coefficient;
+\item
+  primitive enclosure interval accepted without an independently
+  checkable remainder certificate;
+\item
+  primitive enclosure backend accepted without version, precision,
+  directed-rounding, or rationalized output metadata;
+\item
+  comparison-lane or numerical-anchor result imported as a proof
+  dependency without a formal transfer row;
+\item
+  tree/block-axial gauge lane propagated into fallback or clustering
+  claims without gauge-covariant or invariant transfer;
+\item
+  Milestone 6 claimed before Gate S13 is implemented and closed;
+\item
+  analytic fields accepted as nullable in a combinatorial schema branch
+  rather than forbidden by a stage discriminator;
+\item
+  pipeline DAG dependency missing or inconsistent with row parent IDs;
+\item
+  discriminator null-test fixtures do not produce the expected pass/fail
+  pattern;
+\item
+  observable-specific clustering claim made without an
+  observable-registry entry;
+\item
+  claim-strength upgrade made without passing the corresponding DAG node
+  and checker;
+\item
+  analytic three-dimensional row closed before the exact two-dimensional
+  validation lane has passed or an explicit waiver has been recorded.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{15. Automation and Formalization
+Strategy}\label{automation-and-formalization-strategy}
+
+The first implementation should prioritize executable correctness over
+full proof-assistant formalization. The first executable target is not
+atom generation; it is the discriminator null-test harness:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{validate\_schema\_discriminators.py}
+\end{Highlighting}
+\end{Shaded}
+
+Only after this harness passes should
+\texttt{YM3D\_LOCAL\_ATOM\_GEOMETRY\_1} emit concrete atoms.
+
+The staged stack is:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Python exact-arithmetic generator for finite geometry, group actions,
+  orbit representatives, and expanded audit graphs.
+\item
+  JSON Schema or equivalent machine-readable schemas for all row types.
+\item
+  Independent checker scripts that do not share internal generator code.
+\item
+  Property-based negative controls for orbit counts, gauge-lane misuse,
+  illegal support intersections, and missing stabilizers.
+\item
+  Lean 4 or another proof assistant for the finite
+  group-action/orbit/stabilizer invariants immediately after Milestone
+  1A stabilizes the object vocabulary. This formal lane should cover
+  \texttt{O\_h} action closure, representative idempotence,
+  stabilizer/orbit identities, and canonical lift consistency.
+\end{enumerate}
+
+The repository should treat generated ledgers as artifacts and checkers
+as independent validators. A generator success is not a proof; only an
+independent checker pass closes a row.
+
+The schema layer must use discriminated unions keyed by
+\texttt{schema\_stage} or \texttt{milestone\_target}; milestone-specific
+enforcement is not deferred to Python alone. The Python checker verifies
+semantic mathematics, but the JSON Schema must reject structurally
+invalid rows immediately.
+
+Recommended schema families:
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Schema
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Purpose
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{stage\_discriminated\_row.schema.json} & common \texttt{oneOf}
+discriminator pattern for combinatorial, gauge-geometric, analytic,
+RP-transfer, and continuum-uniformity rows \\
+\texttt{pipeline\_dag.schema.json} & machine-readable proof/data-flow
+DAG with node dependencies and claims unlocked \\
+\texttt{convergence\_criterion.schema.json} & KP, Dobrushin, tree-graph,
+signed/fermionic, and determinant-admissibility convergence modes \\
+\texttt{atom.schema.json} & local atom/support/gauge metadata \\
+\texttt{orbit.schema.json} & cubic orbit representatives, stabilizers,
+and upward composition rules from links to
+plaquettes/cubes/multiblocks \\
+\texttt{collision.schema.json} & expanded and reduced collision edges \\
+\texttt{nonterminal\_term.schema.json} & Taylor, forest, determinant,
+ghost-measure, cutoff, and primitive-certificate fields for analytic
+terms \\
+\texttt{activity\_vector.schema.json} & typed terminal/nonterminal
+activity vectors \\
+\texttt{convergence\_criterion.schema.json} & KP/Dobrushin/tree-graph
+domain certificates \\
+\texttt{defect\_support.schema.json} & vector-valued support measures,
+junction/branching data, and entropy dominance data \\
+\texttt{defect\_entropy\_certificate.schema.json} & action-cost/entropy
+dominance certificates for mixed defects \\
+\texttt{fp\_determinant\_certificate.schema.json} &
+configuration-dependent FP or determinant-expansion certificates \\
+\texttt{rp\_transfer.schema.json} & reflection-plane factorization and
+OS-transfer certificates \\
+\texttt{boundary\_surface\_certificate.schema.json} & sharp-cutoff
+boundary surface/trace multiplier certificates \\
+\texttt{primitive\_enclosure\_certificate.schema.json} & rationally
+checkable enclosures for non-rational analytic constants \\
+\texttt{scale\_coupling\_slab.schema.json} & scale slabs, common
+flow-error norm, converted (\Delta\_k) components, and monotonicity
+claims \\
+\texttt{continuum\_limit\_policy.schema.json} & thermodynamic/continuum
+limit-order policy and Gate S13 dependencies \\
+\texttt{milestone.schema.json} & closed rows and non-claims per
+milestone \\
+\end{longtable}
+
+Base geometry rows do not carry nullable analytic certificate fields.
+Instead, their discriminated schema branch forbids analytic-only fields.
+Later analytic branches require the relevant certificate IDs. This
+preserves Milestone 1A as a combinatorial task while preventing both
+breaking schema changes and accidental acceptance of incomplete analytic
+rows.
+
+Rapid prototyping may use a separate
+\texttt{schema\_profile:\ "experimental"} branch, but experimental
+artifacts cannot close gates. Gate-closing artifacts must use
+\texttt{schema\_profile:\ "strict"} and the stage-discriminated
+production schemas.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{16. Validation, Benchmark, Numerical, and Comparison
+Lanes}\label{validation-benchmark-numerical-and-comparison-lanes}
+
+The main proof DAG remains the lattice constructive RG path. Validation
+and comparison lanes do not close proof gates unless a formal transfer
+row is added. They are nevertheless required to prevent the
+schema/checker machinery from drifting away from known mathematics and
+external data.
+
+\subsubsection{16.1 Exact two-dimensional SU(N) validation
+lane}\label{exact-two-dimensional-sun-validation-lane}
+
+\texttt{YM2D\_SUN\_EXACT\_VALIDATION\_LANE\_0} is the strongest
+validation lane. It runs the combinatorial, orbit-reduction, observable,
+and Wilson-loop portions of the ledger pipeline on two-dimensional SU(N)
+Yang--Mills and compares output against exact Wilson-loop/area-law
+formulas.
+
+This lane is not a prerequisite for Milestone 1A, but it blocks analytic
+three-dimensional rows unless an explicit waiver is recorded. The lane
+is intended to catch errors in link-to-plaquette lifting, orbit
+multipliers, gauge-lane transfers, reflection-factorization metadata,
+and observable normalization before the three-dimensional
+Taylor/defect/BKAR rows are attempted.
+
+\subsubsection{16.2 Numerical anchor lane}\label{numerical-anchor-lane}
+
+\texttt{YM3D\_NUMERICAL\_ANCHOR\_LANE\_0} compares generator outputs
+against small-volume exact enumeration where possible and against
+external Monte Carlo or high-precision lattice data where appropriate.
+Numerical anchors may compare:
+
+\begin{itemize}
+\tightlist
+\item
+  terminal activity vector components;
+\item
+  small-field Taylor coefficients;
+\item
+  Wilson-loop estimates;
+\item
+  scalar glueball correlator proxies;
+\item
+  string-tension or glueball-mass ratios used only as external sanity
+  checks.
+\end{itemize}
+
+Numerical anchors never prove a theorem. They emit source-audit warnings
+when analytic normalizations, coefficient bounds, or gauge-ripple
+estimates disagree with independent numerical evidence.
+
+\subsubsection{16.3 Observable registry}\label{observable-registry}
+
+\texttt{YM3D\_OBSERVABLE\_REGISTRY\_1} is mandatory for any claim beyond
+pure combinatorics. Each analytic, clustering, fallback, or
+continuum-uniformity row must declare which registered gauge-invariant
+observables it controls.
+
+The initial registry contains Wilson loops, scalar glueball operators,
+connected scalar glueball correlators, and Polyakov-loop diagnostics.
+Polyakov loops are finite-temperature diagnostics and do not by
+themselves constitute a zero-temperature mass-gap claim.
+
+\subsubsection{16.4 Scalar benchmark lane}\label{scalar-benchmark-lane}
+
+\texttt{YM3D\_PHI4\_BENCHMARK\_LANE\_0} tests polymer/KP, cutoff
+leakage, forest formulas, and periodic lifts without gauge-lane
+complexity. It should not delay Milestone 1 for Yang--Mills.
+
+\subsubsection{16.5 Abelian compact gauge benchmark
+lane}\label{abelian-compact-gauge-benchmark-lane}
+
+\texttt{YM3D\_U1\_BENCHMARK\_LANE\_0} tests compact gauge variables,
+defect tails, and entropy suppression against known three-dimensional
+compact abelian confinement structures. It is a benchmark for tail
+accounting, not a substitute for non-Abelian control.
+
+\subsubsection{16.6 Stochastic quantization comparison
+lane}\label{stochastic-quantization-comparison-lane}
+
+\texttt{YM3D\_SPDE\_COMPARISON\_LANE\_0} tracks continuum
+stochastic-quantization work as a comparison route. It may inform
+lattice-to-continuum observables, gauge-covariant state spaces,
+renormalization metadata, or quotient-space design, but it is not a
+dependency of the lattice proof DAG.
+
+\subsubsection{16.7 Hamiltonian/orbit-space comparison
+lane}\label{hamiltonianorbit-space-comparison-lane}
+
+\texttt{YM3D\_HAMILTONIAN\_COMPARISON\_LANE\_0} tracks
+Karabali--Kim--Nair-type Hamiltonian/orbit-space approaches in (2+1)
+dimensions. This lane may suggest relevant operators or mass scales, but
+it does not replace Euclidean lattice RG certification.
+
+\subsubsection{16.8 Formal finite-group audit
+lane}\label{formal-finite-group-audit-lane}
+
+\texttt{YM3D\_FORMAL\_FINITE\_GROUP\_AUDIT\_LANE\_1} begins after
+Milestone 1A stabilizes the finite object vocabulary. It should
+formalize the cubic group action, orbit-closure theorem,
+stabilizer/orbit identity, canonical representative idempotence, and
+upward composition of link actions to composite supports. The initial
+production generator remains Python exact-arithmetic; the formal lane
+prevents finite-combinatorial drift after the objects are known.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{17. Literature Anchors}\label{literature-anchors}
+
+The design uses the following established methods as anchors or
+cautionary templates.
+
+\subsubsection{Balaban ultraviolet
+stability}\label{balaban-ultraviolet-stability}
+
+Balaban proved ultraviolet stability for three-dimensional Wilson
+lattice pure Yang--Mills theories using a renormalization-group method
+for lattice gauge theories. This is the closest methodological anchor
+for the present program.
+
+\subsubsection{Tree-axial gauge methods}\label{tree-axial-gauge-methods}
+
+Balaban-style block gauge fixing motivates the explicit tree-axial gauge
+ledger. The program must treat gauge fixing, residual gauge variables,
+and Haar reversibility as first-class proof objects.
+
+\subsubsection{Göpfert--Mack three-dimensional U(1)
+confinement}\label{guxf6pfertmack-three-dimensional-u1-confinement}
+
+Göpfert and Mack proved confinement of static quarks in
+three-dimensional compact (U(1)) lattice gauge theory for all couplings.
+This is not a direct non-Abelian (SU(2)) substitute. It is used here as
+a structural guide for thermodynamic defect-tail accounting.
+
+\subsubsection{Dimock/Balaban RG expositions and bounded-field
+approximations}\label{dimockbalaban-rg-expositions-and-bounded-field-approximations}
+
+Dimock's expositions and applications of Balaban-style RG methods
+clarify the role of bounded-field approximations and the danger of
+confusing a bounded-field result with full large-field control.
+
+\subsubsection{BKAR/forest formulas}\label{bkarforest-formulas}
+
+If nonterminal remainders are organized by forest interpolation, the
+Brydges--Kennedy--Abdesselam--Rivasseau family of forest formulas must
+be declared explicitly. The formula determines multiblock combinatorics
+and compatibility types.
+
+\subsubsection{Abstract polymer convergence
+improvements}\label{abstract-polymer-convergence-improvements}
+
+Classical KP is the default starting point, but improved abstract
+polymer criteria, including Dobrushin-type and
+Fernandez--Procacci/tree-graph bounds, should be available as
+alternative convergence domains when absolute KP majorization is too
+crude.
+
+\subsubsection{Stochastic quantization and SPDE
+comparison}\label{stochastic-quantization-and-spde-comparison}
+
+Recent stochastic-quantization constructions for three-dimensional
+Yang--Mills--Higgs theories provide a parallel analytic context
+involving gauge-covariant stochastic flows and Markov processes on gauge
+orbits. These results are comparison material, not proof dependencies.
+
+\subsubsection{Hamiltonian/orbit-space
+approaches}\label{hamiltonianorbit-space-approaches}
+
+Karabali--Kim--Nair-type Hamiltonian methods in (2+1)-dimensional
+Yang--Mills supply independent physical and analytic intuition for mass
+generation. They may guide operator selection but are not used as a
+Euclidean lattice RG proof substitute.
+
+\subsubsection{Two-dimensional Yang--Mills exact
+validation}\label{two-dimensional-yangmills-exact-validation}
+
+Two-dimensional Yang--Mills provides an exact validation target for the
+ledger machinery. The discrete and continuum constructions on compact
+surfaces provide exact Wilson-loop and area-law comparison data against
+which orbit lifting, gauge normalization, and observable export can be
+tested before three-dimensional analytic rows close.
+
+\subsubsection{Numerical lattice anchors in 2+1
+dimensions}\label{numerical-lattice-anchors-in-21-dimensions}
+
+Lattice calculations of SU(N) gauge theories in (2+1) dimensions provide
+external numerical anchors for glueball spectra, string tensions, and
+dimensionless continuum ratios. These data are not proof inputs, but
+they are useful source-audit checks for normalization and
+coefficient-bound sanity.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{18. Minimal Repository
+Layout}\label{minimal-repository-layout}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ym3d{-}constructive{-}rg/}
+\NormalTok{  README.md}
+\NormalTok{  YM3D\_CONSTRUCTIVE\_RG\_DESIGN.md}
+\NormalTok{  references.bib}
+\NormalTok{  ledgers/}
+\NormalTok{    README.md}
+\NormalTok{  schemas/}
+\NormalTok{    README.md}
+\NormalTok{    stage\_discriminated\_row.schema.json}
+\NormalTok{    atom.schema.json}
+\NormalTok{    orbit.schema.json}
+\NormalTok{    collision.schema.json}
+\NormalTok{    nonterminal\_term.schema.json}
+\NormalTok{    activity\_vector.schema.json}
+\NormalTok{    convergence\_criterion.schema.json}
+\NormalTok{    observable\_registry.schema.json}
+\NormalTok{    numerical\_anchor.schema.json}
+\NormalTok{    ym2d\_exact\_validation.schema.json}
+\NormalTok{    defect\_support.schema.json}
+\NormalTok{    defect\_entropy\_certificate.schema.json}
+\NormalTok{    fp\_determinant\_certificate.schema.json}
+\NormalTok{    rp\_transfer.schema.json}
+\NormalTok{    boundary\_surface\_certificate.schema.json}
+\NormalTok{    primitive\_enclosure\_certificate.schema.json}
+\NormalTok{    scale\_coupling\_slab.schema.json}
+\NormalTok{    continuum\_limit\_policy.schema.json}
+\NormalTok{  checkers/}
+\NormalTok{    README.md}
+\NormalTok{  generators/}
+\NormalTok{    README.md}
+\NormalTok{  artifacts/}
+\NormalTok{    README.md}
+\NormalTok{  lanes/}
+\NormalTok{    ym2d\_sun\_exact\_validation/}
+\NormalTok{    numerical\_anchor/}
+\NormalTok{    observable\_registry/}
+\NormalTok{    phi4\_benchmark/}
+\NormalTok{    u1\_benchmark/}
+\NormalTok{    spde\_comparison/}
+\NormalTok{    hamiltonian\_comparison/}
+\NormalTok{    formal\_finite\_group\_audit/}
+\end{Highlighting}
+\end{Shaded}
+
+This initial bundle provides the top-level design and bibliography only.
+The subdirectories are reserved for future machine-readable ledgers,
+schemas, checkers, and generated artifacts.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{19. Schema-Freeze and Validation Additions in Versions
+1.5--1.7}\label{schema-freeze-and-validation-additions-in-versions-1.51.7}
+
+Version 1.5 adds the following schema-freeze requirements before
+Milestone 1A implementation:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  discriminated schema branches keyed by \texttt{schema\_stage} or
+  \texttt{milestone\_target};
+\item
+  forbidden analytic fields in purely combinatorial rows rather than
+  nullable analytic placeholders;
+\item
+  upward composition rules for the (O\_h) action from oriented links to
+  plaquettes, cubes, and multiblocks;
+\item
+  determinant/ghost kinematics, including \texttt{ghost\_measure\_id},
+  \texttt{ghost\_cutoff\_policy}, and optional
+  \texttt{grassmann\_cutoff\_id};
+\item
+  norm-typed flow-error budgets, with all
+  (\textbar{}\Delta\emph{k\textbar{}}\{\max\}) components expressed in a
+  common \texttt{flow\_error\_norm};
+\item
+  conversion certificates for heterogeneous norms;
+\item
+  explicit thermodynamic-before-continuum limit order for Gate S13;
+\item
+  a \texttt{continuum\_limit\_policy.schema.json} recording whether a
+  row uses sequential or joint uniformity.
+\end{enumerate}
+
+The rule for schema freeze is now:
+
+{[} \text{JSON Schema rejects structurally incomplete rows;} \qquad
+\text{independent checkers reject mathematically invalid rows.} {]}
+
+The previous v1.4 schema hooks remain active: mixed-defect topology
+fields, determinant metadata, reflection-transfer geometry,
+sharp-boundary multiplier certificates, and primitive enclosure
+certificates.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+Version 1.6 adds four implementation-readiness controls:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{YM3D\_ORBIT\_CLOSURE\_CONSISTENCY\_CHECK\_1}, requiring
+  closure of representative maps under every declared element of
+  \texttt{O\_h} before expanded-graph audits.
+\item
+  \texttt{YM3D\_GHOST\_DETERMINANT\_SIGN\_CONSISTENCY\_CHECK\_1},
+  preventing ghost-expanded determinant terms from entering positive
+  activity criteria without signed-cluster or absolute-majorant
+  certification.
+\item
+  \texttt{docs/pipeline\_dag.mmd} and
+  \texttt{artifacts/pipeline\_dag.json}, making the proof/data-flow
+  sequence human-readable and machine-auditable.
+\item
+  \texttt{YM3D\_SCHEMA\_DISCRIMINATOR\_NULL\_TEST\_1}, requiring
+  pass/fail fixtures for the stage-discriminated schema branches before
+  generator output.
+\end{enumerate}
+
+Version 1.7 adds validation and claim-anchoring controls:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{YM2D\_SUN\_EXACT\_VALIDATION\_LANE\_0}, mandatory before
+  analytic three-dimensional rows close unless explicitly waived;
+\item
+  \texttt{YM3D\_NUMERICAL\_ANCHOR\_LANE\_0}, an advisory source-audit
+  lane comparing generator output to small-box or lattice numerical
+  data;
+\item
+  \texttt{YM3D\_OBSERVABLE\_REGISTRY\_1}, requiring observable-specific
+  claim targets for clustering, fallback, and continuum-uniformity rows;
+\item
+  \texttt{claim\_strength} annotations in \texttt{pipeline\_dag.json},
+  distinguishing combinatorial, volume-uniform, \texttt{a}-uniform,
+  continuum-subsequential, continuum-mass-gap-candidate, and advisory
+  claims;
+\item
+  explicit DAG nodes for OS reconstruction status and the
+  thermodynamic-before-continuum limit-order policy;
+\item
+  extended primitive-enclosure backend metadata for pure rational, Arb,
+  MPFI, Lean-verified, and custom interval enclosures;
+\item
+  a formal finite-group audit lane for stable \texttt{O\_h}
+  orbit/stabilizer/composition invariants after Milestone 1A.
+\end{enumerate}
+
+\subsection{20. References}\label{references}
+
+See \texttt{references.bib} for machine-readable BibTeX entries. Core
+references include Balaban's 1985 ultraviolet-stability paper,
+Göpfert--Mack's 1982 three-dimensional (U(1)) confinement paper,
+Dimock's expository Balaban-RG papers and 3D bounded-field RG
+applications, Abdesselam--Rivasseau's forest-formula treatment of
+cluster expansions, Fernandez--Procacci tree-graph improvements for
+abstract polymer models, stochastic-quantization work of
+Chandra--Chevyrev--Hairer--Shen, and Karabali--Kim--Nair
+Hamiltonian/orbit-space work in (2+1)-dimensional Yang--Mills theory,
+Thierry Levy's two-dimensional Yang--Mills construction, and
+Athenodorou--Teper/Teper numerical lattice data for SU(N) gauge theories
+in (2+1) dimensions.
+
+\end{document}

@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "numerical_anchor.schema.json",
+  "title": "YM3D Numerical Anchor Report",
+  "type": "object",
+  "required": [
+    "anchor_id",
+    "observable_id",
+    "source_type",
+    "claim_status",
+    "comparison_rows"
+  ],
+  "properties": {
+    "anchor_id": {
+      "type": "string"
+    },
+    "observable_id": {
+      "type": "string"
+    },
+    "source_type": {
+      "enum": [
+        "small_box_exact",
+        "monte_carlo",
+        "public_lattice_data",
+        "synthetic_regression"
+      ]
+    },
+    "claim_status": {
+      "const": "advisory_only"
+    },
+    "comparison_rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "quantity",
+          "ledger_value",
+          "anchor_value",
+          "tolerance",
+          "decision"
+        ],
+        "properties": {
+          "quantity": {
+            "type": "string"
+          },
+          "ledger_value": {
+            "type": "string"
+          },
+          "anchor_value": {
+            "type": "string"
+          },
+          "tolerance": {
+            "type": "string"
+          },
+          "decision": {
+            "enum": [
+              "match",
+              "warning",
+              "source_audit_failure"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

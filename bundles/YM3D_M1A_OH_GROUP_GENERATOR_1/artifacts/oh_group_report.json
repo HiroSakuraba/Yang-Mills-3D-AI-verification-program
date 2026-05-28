@@ -1,0 +1,28 @@
+{
+  "checks": {
+    "all_inverses_present": true,
+    "all_orthogonal": true,
+    "all_signed_permutation_matrices": true,
+    "closed_under_multiplication": true,
+    "determinant_distribution_24_24": true,
+    "determinants_are_pm_one": true,
+    "identity_present": true,
+    "unique_element_count_is_48": true
+  },
+  "definition": "O_h as all 3x3 signed-permutation matrices over Z",
+  "determinant_counts": {
+    "-1": 24,
+    "1": 24
+  },
+  "element_count": 48,
+  "failure_counts": {
+    "closure_failures": 0,
+    "determinant_failures": 0,
+    "inverse_failures": 0,
+    "orthogonality_failures": 0,
+    "signed_permutation_failures": 0
+  },
+  "gate_id": "YM3D_OH_SIGNED_PERMUTATION_GROUP_1",
+  "pass": true,
+  "representation": "row-major tuple of nine exact integers"
+}

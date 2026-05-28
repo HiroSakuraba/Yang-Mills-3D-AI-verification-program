@@ -1,0 +1,16 @@
+{
+  "schema_stage": "analytic",
+  "schema_profile": "strict",
+  "milestone_target": "M2",
+  "row_id": "atom:analytic.example",
+  "support_id": "support:plaquette.origin.xy",
+  "coefficient_bound": {
+    "lower": "0",
+    "upper": "1/16",
+    "closed": true
+  },
+  "norm_id": "norm:effective_coupling_interval_sup_norm_v1",
+  "primitive_enclosure_ids": [
+    "primitive:bessel_ratio.example"
+  ]
+}

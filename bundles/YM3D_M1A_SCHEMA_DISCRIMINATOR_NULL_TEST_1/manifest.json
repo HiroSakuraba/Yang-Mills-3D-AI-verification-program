@@ -1,0 +1,62 @@
+{
+  "bundle": "YM3D_M1A_SCHEMA_DISCRIMINATOR_NULL_TEST_1",
+  "determinism": "exact integer/rational arithmetic; sorted JSON; no floats in decisions",
+  "files": [
+    {
+      "bytes": 1700,
+      "path": "README.md",
+      "sha256": "89252aa918ff845663a6f3473043b0016ea4638ca0d849603606538712689fd7"
+    },
+    {
+      "bytes": 544,
+      "path": "artifacts/decision.json",
+      "sha256": "3707ad62fa6bd2ac460fad2a6004b3edf2b9853d28a284d9f9801a7b6ad094bf"
+    },
+    {
+      "bytes": 2704,
+      "path": "artifacts/schema_null_test_report.json",
+      "sha256": "d7e47739e1dac8b87097000969f95a916ffb165b06efae7c4872f1ba09314308"
+    },
+    {
+      "bytes": 462,
+      "path": "tests/schema_null_tests/invalid_bad_schema_stage.json",
+      "sha256": "55303e274783c94b01ad07ea46676a6a27c5b2caf32271fb18f335622503861b"
+    },
+    {
+      "bytes": 504,
+      "path": "tests/schema_null_tests/invalid_combinatorial_with_analytic_field.json",
+      "sha256": "f16bb2dbb2a47367e223d8d5ca12a1dfeac0683287707b12d210fcae607f9886"
+    },
+    {
+      "bytes": 468,
+      "path": "tests/schema_null_tests/invalid_gauge_geometric_with_analytic_field.json",
+      "sha256": "f852737fc20b033b08e813f3b508ec3e5f434db81bf13259ac74b7547b2ee00f"
+    },
+    {
+      "bytes": 433,
+      "path": "tests/schema_null_tests/invalid_missing_required_combinatorial_field.json",
+      "sha256": "ebe6aef1a0afc1ad8019aa6d752044382195d117e3bda85eec663dac8c56fb59"
+    },
+    {
+      "bytes": 397,
+      "path": "tests/schema_null_tests/valid_analytic_atom.json",
+      "sha256": "e4f210eae97d14c67d64879036b433e908a028da940247af431a0593944bb3b2"
+    },
+    {
+      "bytes": 458,
+      "path": "tests/schema_null_tests/valid_combinatorial_atom.json",
+      "sha256": "b59a3adda8b3a561dc6a86acae5e88f2c3b5ed3e8aff371a11d8c8f40db143f9"
+    },
+    {
+      "bytes": 472,
+      "path": "tests/schema_null_tests/valid_gauge_geometric_atom.json",
+      "sha256": "af48b91d1ed70625b29a35e12be4c8c87f8a818b6ddbe894bd488780e4bdd02b"
+    },
+    {
+      "bytes": 3091,
+      "path": "tools/validate_schema_discriminators.py",
+      "sha256": "8679b488cccb52b2540f90e7495131be7b52989f16f85f2c156e1634c3b7760d"
+    }
+  ],
+  "version": "1"
+}

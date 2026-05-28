@@ -1,0 +1,15 @@
+{
+  "schema_stage": "gauge_geometric",
+  "schema_profile": "strict",
+  "milestone_target": "M1A",
+  "row_id": "atom:link.origin.x.gauge",
+  "atom_kind": "link",
+  "support_id": "support:link.origin.x",
+  "anchor_type": "link",
+  "orientation": "positive",
+  "gauge_lane": "tree_gauge",
+  "orbit_rep_id": "orbitrep:link.axis0",
+  "constituent_links": [{"x": [0,0,0], "mu": 0, "orientation_sign": 1}],
+  "jacobian_type": "constant_haar",
+  "ghost_field_dependence": false
+}

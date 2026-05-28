@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "fp_determinant_certificate.schema.json",
+  "title": "YM3D Faddeev-Popov/Determinant Certificate",
+  "type": "object",
+  "required": [
+    "jacobian_determinant_id",
+    "jacobian_type"
+  ],
+  "properties": {
+    "jacobian_determinant_id": {
+      "type": "string"
+    },
+    "jacobian_type": {
+      "enum": [
+        "constant_haar",
+        "configuration_dependent_fp",
+        "ghost_expanded",
+        "determinant_ratio"
+      ]
+    },
+    "ghost_field_dependence": {
+      "type": "boolean"
+    },
+    "ghost_loop_degree": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "determinant_expansion_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "background_field_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "fp_operator_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "ghost_measure_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "ghost_cutoff_policy": {
+      "enum": [
+        "none",
+        "inherited_from_gauge",
+        "separate_grassmann",
+        null
+      ]
+    },
+    "grassmann_cutoff_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "fluctuation_field_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "determinant_sign_certificate_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "requires_signed_cluster_certificate": {
+      "type": "boolean"
+    },
+    "positive_activity_admissible": {
+      "type": "boolean"
+    },
+    "absolute_majorant_certificate_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "determinant_ratio_lower_bound_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "ghost_loop_sign_rule": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

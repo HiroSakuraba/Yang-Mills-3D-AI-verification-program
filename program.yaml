@@ -1,0 +1,212 @@
+# =====================================================================
+# YM3D constructive-RG program — single authoritative gate DAG.
+#
+# This file reconciles the three overlapping orderings in the design doc
+# (the 28-step artifact sequence, Milestones 0-6/1A, and Gates S1-S13)
+# into ONE machine-readable dependency graph that the scheduler executes
+# and the coding agent reads to pick its next task.
+#
+# Rules the orchestrator enforces from this file:
+#   * a gate may run only when every id in `depends_on` has status CLOSED;
+#   * `meta_requires` lists program-level guards (e.g. "ym2d lane passed"
+#     before any analytic gate closes);
+#   * a gate is CLOSED only when its checker exits 0 AND writes a
+#     decision.json with status == "PASS" AND all listed schemas validate;
+#   * `independence: strict` means the checker is run in a subprocess that
+#     is forbidden from importing the generator package.
+#
+# status values: closed | open | blocked  (open/blocked are advisory;
+# the orchestrator recomputes the real status by running the gate).
+# =====================================================================
+
+program: YM3D_CONSTRUCTIVE_RG
+design_version: "1.7"
+
+# Program-level meta-rules. Keys are referenced by gates via meta_requires.
+meta_rules:
+  ym2d_validation_passed:
+    description: >
+      The exact 2D SU(N) validation lane must be CLOSED before any gate
+      with schema_stage == analytic (or stronger) may close. Mirrors the
+      design's "blocks analytic 3D rows unless an explicit waiver" rule.
+    satisfied_when_closed: [YM2D_SUN_EXACT_VALIDATION_LANE_0]
+    waiver_file: artifacts/ym2d_waiver.json
+
+# Kill / pivot criteria. The orchestrator does not auto-abort the program,
+# but `run.py kill-check` evaluates these and prints a PIVOT recommendation.
+# This is the explicit falsification budget the design currently lacks.
+kill_criteria:
+  - id: UV_DESCENT_CONTRACTION
+    gate: YM3D_ONE_STEP_RG_RUNG_SCALE_INDEXED_1
+    metric: theta_k          # contraction factor reported in decision.json
+    abandon_route_if: ">= 1.0"
+    after_attempts: 5
+    pivot_to: "fallback-basin-only route (Milestone 4 strong-coupling map)"
+  - id: FLOW_MONOTONICITY
+    gate: YM3D_ONE_STEP_RG_RUNG_SCALE_INDEXED_1
+    metric: flow_margin       # beta_k^- - (beta_k^+/L + sum|Delta_k|)
+    abandon_route_if: "<= 0"
+    after_attempts: 5
+    pivot_to: "sharpen field-localization / refine slab; do NOT increase L"
+
+gates:
+
+  # ---------- Milestone 1A: combinatorial spine (executable today) ----------
+  - id: YM3D_SCHEMA_DISCRIMINATOR_NULL_TEST_1
+    title: Schema discriminator null test
+    milestone: 1A
+    schema_stage: meta
+    workdir: bundles/YM3D_M1A_SCHEMA_DISCRIMINATOR_NULL_TEST_1
+    checker_cmd: "python tools/validate_schema_discriminators.py"
+    decision_glob: "artifacts/schema_null_test_report.json"
+    decision_status_key: all_passed       # bool form of PASS
+    schemas_validated: ["../../schemas/atom.schema.json"]
+    independence: na     # this gate IS the schema validator
+    depends_on: []
+    timeout_s: 60
+    claims_unlocked: ["stage discriminators are enforced, not documentary"]
+    claim_strength: structural_only
+
+  - id: YM3D_OH_SIGNED_PERMUTATION_GROUP_1
+    title: O_h as signed-permutation group (group seed)
+    milestone: 1A
+    schema_stage: combinatorial
+    workdir: bundles/YM3D_M1A_OH_GROUP_GENERATOR_1
+    generator_cmd: "python tools/build.py"   # generator writes artifacts...
+    checker_cmd: "python tools/check_oh_group.py"   # ...checker re-derives + audits
+    decision_glob: "artifacts/decision.json"
+    decision_status_key: status            # expects "PASS"
+    independence: strict                   # now genuinely independent (no generator import)
+    depends_on: [YM3D_SCHEMA_DISCRIMINATOR_NULL_TEST_1]
+    timeout_s: 60
+    claims_unlocked: ["|O_h| = 48, closed, det split 24/24"]
+    claim_strength: combinatorial_only
+
+  - id: YM3D_ORIENTED_LINK_ACTION_1
+    title: O_h action on oriented links (canonicalization + flip tags)
+    milestone: 1A
+    schema_stage: combinatorial
+    workdir: bundles/YM3D_ORIENTED_LINK_ACTION_1
+    checker_cmd: "python tools/check_link_action.py"
+    decision_glob: "artifacts/decision.json"
+    decision_status_key: status
+    independence: strict
+    depends_on: [YM3D_OH_SIGNED_PERMUTATION_GROUP_1]
+    timeout_s: 120
+    status: open
+    claims_unlocked: ["oriented-link action is a faithful O_h action"]
+    claim_strength: combinatorial_only
+
+  - id: YM3D_SUPPORT_LIFT_1
+    title: Upward support composition (links -> plaquette/cube/multiblock)
+    milestone: 1A
+    schema_stage: combinatorial
+    workdir: bundles/YM3D_SUPPORT_LIFT_1
+    checker_cmd: "python tools/check_support_lift.py"
+    decision_glob: "artifacts/decision.json"
+    decision_status_key: status
+    independence: strict
+    depends_on: [YM3D_ORIENTED_LINK_ACTION_1]
+    timeout_s: 300
+    status: open
+    claims_unlocked: ["composite-support action == lift of constituent links"]
+    claim_strength: combinatorial_only
+
+  - id: YM3D_CUBIC_SYMMETRY_ORBIT_REDUCTION_1
+    title: Orbit representatives + exact stabilizers
+    milestone: 1A
+    schema_stage: combinatorial
+    workdir: bundles/YM3D_CUBIC_SYMMETRY_ORBIT_REDUCTION_1
+    checker_cmd: "python tools/check_orbits.py"
+    decision_glob: "artifacts/decision.json"
+    decision_status_key: status
+    independence: strict
+    depends_on: [YM3D_SUPPORT_LIFT_1]
+    timeout_s: 300
+    status: open
+    claims_unlocked: ["m_[a] = 48/|Stab(a)| for all reps"]
+    claim_strength: combinatorial_only
+
+  - id: YM3D_ORBIT_CLOSURE_CONSISTENCY_CHECK_1
+    title: Orbit closure + representative idempotence (Gate S5a)
+    milestone: 1A
+    schema_stage: combinatorial
+    workdir: bundles/YM3D_ORBIT_CLOSURE_CONSISTENCY_CHECK_1
+    checker_cmd: "python tools/check_orbit_closure.py"
+    decision_glob: "artifacts/decision.json"
+    decision_status_key: status
+    independence: strict
+    depends_on: [YM3D_CUBIC_SYMMETRY_ORBIT_REDUCTION_1]
+    timeout_s: 300
+    status: open
+    claims_unlocked: ["rep(g.a)=rep(a); rep idempotent"]
+    claim_strength: combinatorial_only
+
+  - id: YM3D_ORBIT_REDUCTION_EXPANDED_GRAPH_AUDIT_1
+    title: Reduced vs fully-expanded collision-graph projection identity (Gate S5)
+    milestone: 1A
+    schema_stage: combinatorial
+    workdir: bundles/YM3D_ORBIT_REDUCTION_EXPANDED_GRAPH_AUDIT_1
+    checker_cmd: "python tools/check_expanded_graph.py"
+    decision_glob: "artifacts/decision.json"
+    decision_status_key: status
+    independence: strict
+    depends_on: [YM3D_ORBIT_CLOSURE_CONSISTENCY_CHECK_1]
+    timeout_s: 1800
+    # Resource schedule for the combinatorial blow-up the design never bounds:
+    box_schedule: [2, 3, 4]      # periodic audit box sizes; agent must not exceed
+    max_expanded_edges: 5_000_000
+    status: open
+    claims_unlocked: ["M_expanded == M_reduced for every collision type q"]
+    claim_strength: combinatorial_only
+    closes_milestone: 1A
+
+  # ---------- Milestone 0: exact 2D SU(N) validation (gates analytic work) ----
+  - id: YM2D_SUN_EXACT_VALIDATION_LANE_0
+    title: Exact 2D SU(N) Wilson-loop / area-law validation
+    milestone: 0
+    schema_stage: analytic_validation
+    workdir: lanes/ym2d_sun_exact_validation
+    checker_cmd: "python tools/check_ym2d_exact.py"
+    decision_glob: "artifacts/decision.json"
+    decision_status_key: status
+    independence: strict
+    depends_on: [YM3D_ORBIT_REDUCTION_EXPANDED_GRAPH_AUDIT_1]
+    timeout_s: 600
+    status: open
+    claims_unlocked: ["ledger pipeline reproduces exact 2D benchmark observables"]
+    claim_strength: validation_only
+
+  # ---------- Milestone 2: first analytic gate (the real cliff) -------------
+  - id: YM3D_TERMINAL_KP_ACTIVITY_MAP_SCALE_INDEXED_1
+    title: Scale-indexed terminal KP activity map (typed vector export)
+    milestone: 2
+    schema_stage: analytic
+    workdir: bundles/YM3D_TERMINAL_KP_ACTIVITY_MAP_SCALE_INDEXED_1
+    checker_cmd: "python tools/check_terminal_kp.py"
+    decision_glob: "artifacts/decision.json"
+    decision_status_key: status
+    independence: strict
+    # NOTE: meta_requires forbids closing this before the 2D lane passes.
+    meta_requires: [ym2d_validation_passed]
+    depends_on: [YM2D_SUN_EXACT_VALIDATION_LANE_0]
+    timeout_s: 1800
+    status: blocked
+    claims_unlocked: ["terminal activity vector inside declared convergence domain at scale 0"]
+    claim_strength: single_scale_uv
+
+  - id: YM3D_ONE_STEP_RG_RUNG_SCALE_INDEXED_1
+    title: One-step RG rung (Theta_k < 1) or certified fallback descent
+    milestone: 3
+    schema_stage: analytic
+    workdir: bundles/YM3D_ONE_STEP_RG_RUNG_SCALE_INDEXED_1
+    checker_cmd: "python tools/check_rg_rung.py"
+    decision_glob: "artifacts/decision.json"
+    decision_status_key: status
+    independence: strict
+    meta_requires: [ym2d_validation_passed]
+    depends_on: [YM3D_TERMINAL_KP_ACTIVITY_MAP_SCALE_INDEXED_1]
+    timeout_s: 3600
+    status: blocked
+    claims_unlocked: ["one certified RG contraction rung"]
+    claim_strength: multi_scale_uv

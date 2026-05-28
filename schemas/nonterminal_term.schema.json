@@ -1,0 +1,165 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "nonterminal_term.schema.json",
+  "title": "YM3D Nonterminal Taylor/Forest/Determinant Term",
+  "type": "object",
+  "oneOf": [
+    {
+      "title": "Analytic nonterminal term",
+      "properties": {
+        "schema_stage": {
+          "const": "analytic"
+        }
+      },
+      "required": [
+        "schema_stage",
+        "term_id",
+        "source_expansion",
+        "support_id",
+        "interval_upper_bound",
+        "bucket",
+        "norm_id"
+      ],
+      "not": {
+        "properties": {
+          "ghost_field_dependence": {
+            "const": true
+          }
+        },
+        "required": [
+          "ghost_field_dependence"
+        ]
+      }
+    },
+    {
+      "title": "Gauge determinant nonterminal term",
+      "properties": {
+        "schema_stage": {
+          "const": "analytic"
+        },
+        "ghost_field_dependence": {
+          "const": true
+        }
+      },
+      "required": [
+        "schema_stage",
+        "term_id",
+        "determinant_expansion_id",
+        "jacobian_determinant_id",
+        "ghost_measure_id",
+        "ghost_cutoff_policy",
+        "fp_operator_id",
+        "interval_upper_bound",
+        "norm_id",
+        "determinant_sign_certificate_id",
+        "requires_signed_cluster_certificate",
+        "positive_activity_admissible"
+      ]
+    }
+  ],
+  "properties": {
+    "schema_stage": {
+      "const": "analytic"
+    },
+    "term_id": {
+      "type": "string"
+    },
+    "source_expansion": {
+      "enum": [
+        "Taylor",
+        "cumulant",
+        "BKAR",
+        "character",
+        "determinant",
+        "ghost",
+        "other"
+      ]
+    },
+    "support_id": {
+      "type": "string"
+    },
+    "interval_upper_bound": {
+      "$ref": "#/$defs/rational_interval"
+    },
+    "bucket": {
+      "type": "string"
+    },
+    "norm_id": {
+      "type": "string"
+    },
+    "determinant_expansion_id": {
+      "type": "string"
+    },
+    "jacobian_determinant_id": {
+      "type": "string"
+    },
+    "ghost_field_dependence": {
+      "type": "boolean"
+    },
+    "ghost_loop_degree": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "ghost_measure_id": {
+      "type": "string"
+    },
+    "ghost_cutoff_policy": {
+      "enum": [
+        "none",
+        "inherited_from_gauge",
+        "separate_grassmann"
+      ]
+    },
+    "grassmann_cutoff_id": {
+      "type": "string"
+    },
+    "fp_operator_id": {
+      "type": "string"
+    },
+    "primitive_enclosure_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "boundary_surface_multiplier_id": {
+      "type": "string"
+    },
+    "determinant_sign_certificate_id": {
+      "type": "string"
+    },
+    "requires_signed_cluster_certificate": {
+      "type": "boolean"
+    },
+    "positive_activity_admissible": {
+      "type": "boolean"
+    },
+    "absolute_majorant_certificate_id": {
+      "type": "string"
+    },
+    "ghost_loop_sign_rule": {
+      "type": "string"
+    }
+  },
+  "$defs": {
+    "rational_interval": {
+      "type": "object",
+      "required": [
+        "lo",
+        "hi"
+      ],
+      "properties": {
+        "lo": {
+          "type": "string",
+          "pattern": "^-?\\d+(/\\d+)?$"
+        },
+        "hi": {
+          "type": "string",
+          "pattern": "^-?\\d+(/\\d+)?$"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

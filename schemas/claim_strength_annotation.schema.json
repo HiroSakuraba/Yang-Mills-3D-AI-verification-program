@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "claim_strength_annotation.schema.json",
+  "title": "YM3D Claim Strength Annotation",
+  "type": "object",
+  "required": [
+    "row_id",
+    "claim_strength",
+    "observable_ids",
+    "upstream_gates"
+  ],
+  "properties": {
+    "row_id": {
+      "type": "string"
+    },
+    "claim_strength": {
+      "enum": [
+        "combinatorial_only",
+        "volume_uniform_lattice",
+        "a_uniform_lattice",
+        "continuum_subsequential",
+        "continuum_mass_gap_candidate",
+        "advisory_only"
+      ]
+    },
+    "observable_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "upstream_gates": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "non_claims": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}

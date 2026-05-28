@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "stage_discriminated_row.schema.json",
+  "title": "YM3D Stage-Discriminated Ledger Row",
+  "type": "object",
+  "oneOf": [
+    {
+      "title": "Combinatorial row",
+      "properties": {
+        "schema_stage": {
+          "const": "combinatorial"
+        }
+      },
+      "required": [
+        "schema_stage",
+        "row_id",
+        "support_id",
+        "anchor_type",
+        "orientation",
+        "orbit_rep_id"
+      ],
+      "not": {
+        "anyOf": [
+          {
+            "required": [
+              "primitive_enclosure_ids"
+            ]
+          },
+          {
+            "required": [
+              "boundary_surface_multiplier_id"
+            ]
+          },
+          {
+            "required": [
+              "determinant_expansion_id"
+            ]
+          },
+          {
+            "required": [
+              "jacobian_determinant_id"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Gauge-geometric row",
+      "properties": {
+        "schema_stage": {
+          "const": "gauge_geometric"
+        }
+      },
+      "required": [
+        "schema_stage",
+        "row_id",
+        "support_id",
+        "gauge_lane",
+        "gauge_certificate_id"
+      ]
+    },
+    {
+      "title": "Analytic row",
+      "properties": {
+        "schema_stage": {
+          "const": "analytic"
+        }
+      },
+      "required": [
+        "schema_stage",
+        "row_id",
+        "support_id",
+        "coefficient_bound",
+        "norm_id"
+      ]
+    },
+    {
+      "title": "Reflection transfer row",
+      "properties": {
+        "schema_stage": {
+          "const": "rp_transfer"
+        }
+      },
+      "required": [
+        "schema_stage",
+        "row_id",
+        "rp_transfer_certificate_id"
+      ]
+    },
+    {
+      "title": "Continuum uniformity row",
+      "properties": {
+        "schema_stage": {
+          "const": "continuum_uniformity"
+        }
+      },
+      "required": [
+        "schema_stage",
+        "row_id",
+        "continuum_limit_policy_id",
+        "a_uniformity_certificate_id"
+      ]
+    }
+  ],
+  "properties": {
+    "schema_stage": {
+      "enum": [
+        "combinatorial",
+        "gauge_geometric",
+        "analytic",
+        "rp_transfer",
+        "continuum_uniformity"
+      ]
+    },
+    "row_id": {
+      "type": "string"
+    },
+    "milestone_target": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

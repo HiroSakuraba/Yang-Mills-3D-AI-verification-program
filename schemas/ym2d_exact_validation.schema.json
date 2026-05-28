@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ym2d_exact_validation.schema.json",
+  "title": "YM2D SU(N) Exact Validation Lane",
+  "type": "object",
+  "required": [
+    "validation_id",
+    "gauge_group",
+    "observable_id",
+    "exact_formula_id",
+    "ledger_output_id",
+    "comparison_decision",
+    "blocks_analytic_rows_until_passed"
+  ],
+  "properties": {
+    "validation_id": {
+      "type": "string"
+    },
+    "gauge_group": {
+      "type": "string"
+    },
+    "observable_id": {
+      "type": "string"
+    },
+    "exact_formula_id": {
+      "type": "string"
+    },
+    "ledger_output_id": {
+      "type": "string"
+    },
+    "comparison_decision": {
+      "enum": [
+        "pass",
+        "fail",
+        "waived"
+      ]
+    },
+    "waiver_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "blocks_analytic_rows_until_passed": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}

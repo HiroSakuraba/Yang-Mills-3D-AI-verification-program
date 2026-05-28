@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "orbit.schema.json",
+  "title": "YM3D Cubic Orbit and Upward Composition Schema",
+  "type": "object",
+  "required": [
+    "orbit_id",
+    "group_action_source",
+    "fundamental_action",
+    "composition_rule_id",
+    "support_lift_rule",
+    "orientation_canonicalization",
+    "canonical_hash_rule",
+    "orbit_closure_required",
+    "representative_map_id"
+  ],
+  "properties": {
+    "orbit_id": {
+      "type": "string"
+    },
+    "group_action_source": {
+      "const": "signed_permutation_matrix"
+    },
+    "group_order": {
+      "type": "integer",
+      "enum": [
+        24,
+        48
+      ]
+    },
+    "fundamental_action": {
+      "const": "oriented_link_action"
+    },
+    "composition_rule_id": {
+      "type": "string"
+    },
+    "support_lift_rule": {
+      "type": "object",
+      "required": [
+        "plaquette",
+        "cube",
+        "multiblock"
+      ],
+      "properties": {
+        "plaquette": {
+          "enum": [
+            "ordered_boundary_links"
+          ]
+        },
+        "cube": {
+          "enum": [
+            "six_face_boundary",
+            "twelve_link_boundary"
+          ]
+        },
+        "multiblock": {
+          "enum": [
+            "canonical_union_of_block_supports"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "orientation_canonicalization": {
+      "const": "positive_axis_with_flip_tag"
+    },
+    "canonical_hash_rule": {
+      "type": "string"
+    },
+    "stabilizer_size": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "orbit_size": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "expanded_audit_required": {
+      "type": "boolean"
+    },
+    "orbit_closure_required": {
+      "type": "boolean"
+    },
+    "orbit_closure_certificate_id": {
+      "type": "string"
+    },
+    "representative_map_id": {
+      "type": "string"
+    },
+    "representative_idempotence_required": {
+      "type": "boolean"
+    },
+    "group_action_closure_required": {
+      "type": "boolean"
+    },
+    "valid_atom_universe_id": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

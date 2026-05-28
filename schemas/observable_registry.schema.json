@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "observable_registry.schema.json",
+  "title": "YM3D Observable Registry",
+  "type": "object",
+  "required": [
+    "registry_id",
+    "version",
+    "observables"
+  ],
+  "properties": {
+    "registry_id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "observables": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "observable_id",
+          "observable_type",
+          "gauge_invariant",
+          "claim_roles"
+        ],
+        "properties": {
+          "observable_id": {
+            "type": "string"
+          },
+          "observable_type": {
+            "enum": [
+              "wilson_loop",
+              "glueball_operator",
+              "connected_glueball_correlator",
+              "polyakov_loop",
+              "other"
+            ]
+          },
+          "gauge_invariant": {
+            "type": "boolean"
+          },
+          "quantum_numbers": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "claim_roles": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "exact_2d_validation",
+                "volume_uniform_clustering",
+                "a_uniform_gap",
+                "finite_temperature_diagnostic",
+                "numerical_anchor"
+              ]
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

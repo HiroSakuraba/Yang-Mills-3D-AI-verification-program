@@ -1,0 +1,467 @@
+{
+  "dag_id": "YM3D_PIPELINE_DAG_DECLARATION_1",
+  "version": "1.7",
+  "nodes": [
+    {
+      "node_id": "local_atomic_geometry",
+      "artifact_type": "geometry",
+      "allowed_schema_stages": [
+        "combinatorial"
+      ],
+      "checker_entry_point": "check_local_geometry.py",
+      "claims_unlocked": [
+        "local atom universe declared"
+      ],
+      "claim_strength": "combinatorial_only"
+    },
+    {
+      "node_id": "gauge_lane_assignment",
+      "artifact_type": "gauge",
+      "allowed_schema_stages": [
+        "gauge_geometric"
+      ],
+      "checker_entry_point": "check_gauge_lanes.py",
+      "claims_unlocked": [
+        "gauge metadata declared"
+      ],
+      "claim_strength": "combinatorial_only"
+    },
+    {
+      "node_id": "oh_link_action",
+      "artifact_type": "symmetry",
+      "allowed_schema_stages": [
+        "combinatorial"
+      ],
+      "checker_entry_point": "check_oh_link_action.py",
+      "claims_unlocked": [
+        "signed permutation action valid"
+      ],
+      "claim_strength": "combinatorial_only"
+    },
+    {
+      "node_id": "upward_support_composition",
+      "artifact_type": "symmetry",
+      "allowed_schema_stages": [
+        "combinatorial"
+      ],
+      "checker_entry_point": "check_support_lift.py",
+      "claims_unlocked": [
+        "composite action valid"
+      ],
+      "claim_strength": "combinatorial_only"
+    },
+    {
+      "node_id": "orbit_representatives",
+      "artifact_type": "symmetry",
+      "allowed_schema_stages": [
+        "combinatorial"
+      ],
+      "checker_entry_point": "check_orbits.py",
+      "claims_unlocked": [
+        "orbit representatives declared"
+      ],
+      "claim_strength": "combinatorial_only"
+    },
+    {
+      "node_id": "orbit_closure_consistency",
+      "artifact_type": "symmetry",
+      "allowed_schema_stages": [
+        "combinatorial"
+      ],
+      "checker_entry_point": "check_orbit_closure.py",
+      "claims_unlocked": [
+        "orbit closure verified"
+      ],
+      "claim_strength": "combinatorial_only"
+    },
+    {
+      "node_id": "expanded_graph_audit",
+      "artifact_type": "graph",
+      "allowed_schema_stages": [
+        "combinatorial"
+      ],
+      "checker_entry_point": "check_expanded_graph_audit.py",
+      "claims_unlocked": [
+        "reduced graph audit verified"
+      ],
+      "claim_strength": "volume_uniform_lattice"
+    },
+    {
+      "node_id": "scale_coupling_slabs",
+      "artifact_type": "scale",
+      "allowed_schema_stages": [
+        "analytic"
+      ],
+      "checker_entry_point": "check_scale_slabs.py",
+      "claims_unlocked": [
+        "scale slabs declared"
+      ],
+      "claim_strength": "volume_uniform_lattice"
+    },
+    {
+      "node_id": "terminal_activity_vector",
+      "artifact_type": "activity",
+      "allowed_schema_stages": [
+        "analytic"
+      ],
+      "checker_entry_point": "check_terminal_activity.py",
+      "claims_unlocked": [
+        "terminal vector exported"
+      ],
+      "claim_strength": "volume_uniform_lattice"
+    },
+    {
+      "node_id": "majorant_matrix",
+      "artifact_type": "activity",
+      "allowed_schema_stages": [
+        "analytic"
+      ],
+      "checker_entry_point": "check_majorant_matrix.py",
+      "claims_unlocked": [
+        "majorant matrix available"
+      ],
+      "claim_strength": "volume_uniform_lattice"
+    },
+    {
+      "node_id": "polymer_convergence_gate",
+      "artifact_type": "convergence",
+      "allowed_schema_stages": [
+        "analytic"
+      ],
+      "checker_entry_point": "check_convergence_gate.py",
+      "claims_unlocked": [
+        "polymer gate pass/fail"
+      ],
+      "claim_strength": "volume_uniform_lattice"
+    },
+    {
+      "node_id": "small_large_field_partition",
+      "artifact_type": "cutoff",
+      "allowed_schema_stages": [
+        "analytic"
+      ],
+      "checker_entry_point": "check_field_partition.py",
+      "claims_unlocked": [
+        "cutoff partition declared"
+      ],
+      "claim_strength": "volume_uniform_lattice"
+    },
+    {
+      "node_id": "taylor_bucket",
+      "artifact_type": "remainder",
+      "allowed_schema_stages": [
+        "analytic"
+      ],
+      "checker_entry_point": "check_taylor_bucket.py",
+      "claims_unlocked": [
+        "Taylor bucket declared"
+      ],
+      "claim_strength": "volume_uniform_lattice"
+    },
+    {
+      "node_id": "tail_defect_bucket",
+      "artifact_type": "remainder",
+      "allowed_schema_stages": [
+        "analytic"
+      ],
+      "checker_entry_point": "check_tail_bucket.py",
+      "claims_unlocked": [
+        "tail bucket declared"
+      ],
+      "claim_strength": "volume_uniform_lattice"
+    },
+    {
+      "node_id": "nonterminal_inventory",
+      "artifact_type": "remainder",
+      "allowed_schema_stages": [
+        "analytic"
+      ],
+      "checker_entry_point": "check_nonterminal_inventory.py",
+      "claims_unlocked": [
+        "nonterminal inventory declared"
+      ],
+      "claim_strength": "volume_uniform_lattice"
+    },
+    {
+      "node_id": "haar_rp_transfer",
+      "artifact_type": "rp_transfer",
+      "allowed_schema_stages": [
+        "rp_transfer"
+      ],
+      "checker_entry_point": "check_rp_transfer.py",
+      "claims_unlocked": [
+        "OS transfer admissibility"
+      ],
+      "claim_strength": "volume_uniform_lattice"
+    },
+    {
+      "node_id": "ghost_determinant_sign_check",
+      "artifact_type": "determinant",
+      "allowed_schema_stages": [
+        "analytic"
+      ],
+      "checker_entry_point": "check_ghost_sign.py",
+      "claims_unlocked": [
+        "ghost determinant admissibility"
+      ],
+      "claim_strength": "volume_uniform_lattice"
+    },
+    {
+      "node_id": "ym2d_sun_exact_validation",
+      "artifact_type": "validation",
+      "allowed_schema_stages": [
+        "combinatorial",
+        "analytic"
+      ],
+      "checker_entry_point": "check_ym2d_exact_validation.py",
+      "claims_unlocked": [
+        "exact 2D validation passed for analytic-row prerequisites"
+      ],
+      "claim_strength": "advisory_only"
+    },
+    {
+      "node_id": "numerical_anchor_lane",
+      "artifact_type": "validation",
+      "allowed_schema_stages": [
+        "analytic"
+      ],
+      "checker_entry_point": "check_numerical_anchors.py",
+      "claims_unlocked": [
+        "external numerical source-audit report emitted"
+      ],
+      "claim_strength": "advisory_only"
+    },
+    {
+      "node_id": "observable_registry",
+      "artifact_type": "observable",
+      "allowed_schema_stages": [
+        "combinatorial",
+        "analytic"
+      ],
+      "checker_entry_point": "check_observable_registry.py",
+      "claims_unlocked": [
+        "observable targets declared"
+      ],
+      "claim_strength": "combinatorial_only"
+    },
+    {
+      "node_id": "volume_uniform_clustering",
+      "artifact_type": "clustering",
+      "allowed_schema_stages": [
+        "analytic"
+      ],
+      "checker_entry_point": "check_volume_uniform_clustering.py",
+      "claims_unlocked": [
+        "volume-uniform lattice clustering for registered observables"
+      ],
+      "claim_strength": "volume_uniform_lattice"
+    },
+    {
+      "node_id": "os_reconstruction_status",
+      "artifact_type": "os_transfer",
+      "allowed_schema_stages": [
+        "rp_transfer"
+      ],
+      "checker_entry_point": "check_os_reconstruction_status.py",
+      "claims_unlocked": [
+        "OS reconstruction status recorded for registered observables"
+      ],
+      "claim_strength": "volume_uniform_lattice"
+    },
+    {
+      "node_id": "thermodynamic_limit_fixed_a",
+      "artifact_type": "limit_policy",
+      "allowed_schema_stages": [
+        "continuum_uniformity"
+      ],
+      "checker_entry_point": "check_thermodynamic_limit_order.py",
+      "claims_unlocked": [
+        "thermodynamic limit at fixed lattice spacing declared"
+      ],
+      "claim_strength": "volume_uniform_lattice"
+    },
+    {
+      "node_id": "a_uniform_continuum_window",
+      "artifact_type": "limit_policy",
+      "allowed_schema_stages": [
+        "continuum_uniformity"
+      ],
+      "checker_entry_point": "check_a_uniform_window.py",
+      "claims_unlocked": [
+        "a-uniform lattice window for registered observables"
+      ],
+      "claim_strength": "a_uniform_lattice"
+    },
+    {
+      "node_id": "continuum_mass_gap_candidate",
+      "artifact_type": "claim",
+      "allowed_schema_stages": [
+        "continuum_uniformity"
+      ],
+      "checker_entry_point": "check_continuum_mass_gap_candidate.py",
+      "claims_unlocked": [
+        "continuum mass-gap candidate claim, still conditional on all upstream gates"
+      ],
+      "claim_strength": "continuum_mass_gap_candidate"
+    },
+    {
+      "node_id": "formal_finite_group_audit",
+      "artifact_type": "formal",
+      "allowed_schema_stages": [
+        "combinatorial"
+      ],
+      "checker_entry_point": "check_formal_group_audit_status.py",
+      "claims_unlocked": [
+        "formal finite group-action audit status recorded"
+      ],
+      "claim_strength": "combinatorial_only"
+    }
+  ],
+  "edges": [
+    {
+      "from": "local_atomic_geometry",
+      "to": "gauge_lane_assignment",
+      "dependency_type": "required_parent"
+    },
+    {
+      "from": "gauge_lane_assignment",
+      "to": "oh_link_action",
+      "dependency_type": "required_parent"
+    },
+    {
+      "from": "oh_link_action",
+      "to": "upward_support_composition",
+      "dependency_type": "required_parent"
+    },
+    {
+      "from": "upward_support_composition",
+      "to": "orbit_representatives",
+      "dependency_type": "required_parent"
+    },
+    {
+      "from": "orbit_representatives",
+      "to": "orbit_closure_consistency",
+      "dependency_type": "required_parent"
+    },
+    {
+      "from": "orbit_closure_consistency",
+      "to": "expanded_graph_audit",
+      "dependency_type": "required_parent"
+    },
+    {
+      "from": "expanded_graph_audit",
+      "to": "scale_coupling_slabs",
+      "dependency_type": "required_parent"
+    },
+    {
+      "from": "scale_coupling_slabs",
+      "to": "terminal_activity_vector",
+      "dependency_type": "required_parent"
+    },
+    {
+      "from": "terminal_activity_vector",
+      "to": "majorant_matrix",
+      "dependency_type": "required_parent"
+    },
+    {
+      "from": "majorant_matrix",
+      "to": "polymer_convergence_gate",
+      "dependency_type": "required_parent"
+    },
+    {
+      "from": "scale_coupling_slabs",
+      "to": "small_large_field_partition",
+      "dependency_type": "required_parent"
+    },
+    {
+      "from": "small_large_field_partition",
+      "to": "taylor_bucket",
+      "dependency_type": "required_parent"
+    },
+    {
+      "from": "small_large_field_partition",
+      "to": "tail_defect_bucket",
+      "dependency_type": "required_parent"
+    },
+    {
+      "from": "taylor_bucket",
+      "to": "nonterminal_inventory",
+      "dependency_type": "required_parent"
+    },
+    {
+      "from": "tail_defect_bucket",
+      "to": "nonterminal_inventory",
+      "dependency_type": "required_parent"
+    },
+    {
+      "from": "nonterminal_inventory",
+      "to": "polymer_convergence_gate",
+      "dependency_type": "required_parent"
+    },
+    {
+      "from": "gauge_lane_assignment",
+      "to": "haar_rp_transfer",
+      "dependency_type": "required_parent"
+    },
+    {
+      "from": "haar_rp_transfer",
+      "to": "polymer_convergence_gate",
+      "dependency_type": "required_parent"
+    },
+    {
+      "from": "nonterminal_inventory",
+      "to": "ghost_determinant_sign_check",
+      "dependency_type": "required_parent"
+    },
+    {
+      "from": "ghost_determinant_sign_check",
+      "to": "polymer_convergence_gate",
+      "dependency_type": "required_parent"
+    },
+    {
+      "from": "ym2d_sun_exact_validation",
+      "to": "terminal_activity_vector",
+      "dependency_type": "transfer_required"
+    },
+    {
+      "from": "numerical_anchor_lane",
+      "to": "terminal_activity_vector",
+      "dependency_type": "advisory"
+    },
+    {
+      "from": "observable_registry",
+      "to": "volume_uniform_clustering",
+      "dependency_type": "required_parent"
+    },
+    {
+      "from": "polymer_convergence_gate",
+      "to": "volume_uniform_clustering",
+      "dependency_type": "required_parent"
+    },
+    {
+      "from": "volume_uniform_clustering",
+      "to": "os_reconstruction_status",
+      "dependency_type": "required_parent"
+    },
+    {
+      "from": "os_reconstruction_status",
+      "to": "thermodynamic_limit_fixed_a",
+      "dependency_type": "required_parent"
+    },
+    {
+      "from": "thermodynamic_limit_fixed_a",
+      "to": "a_uniform_continuum_window",
+      "dependency_type": "required_parent"
+    },
+    {
+      "from": "a_uniform_continuum_window",
+      "to": "continuum_mass_gap_candidate",
+      "dependency_type": "required_parent"
+    },
+    {
+      "from": "orbit_closure_consistency",
+      "to": "formal_finite_group_audit",
+      "dependency_type": "advisory"
+    }
+  ]
+}

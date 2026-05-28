@@ -1,0 +1,34 @@
+flowchart TD
+    V[Exact 2D SU(N) Validation Lane] -. mandatory before analytic rows .-> I[Terminal Activity Vector]
+    NA[Numerical Anchor Lane] -. source-audit warnings .-> I
+    OR[Observable Registry] --> CL[Volume-Uniform Clustering]
+    A[Local Atomic Geometry] --> B[Gauge-Lane Assignment]
+    B --> C[O_h Link Action]
+    C --> D[Upward Support Composition]
+    D --> E[Orbit Representatives]
+    E --> F[Orbit-Closure Consistency]
+    F --> G[Expanded-Graph Audit]
+    G --> H[Scale/Coupling Slabs]
+    H --> I[Terminal Activity Vector]
+    I --> J[Majorant Matrix]
+    J --> K[Polymer Convergence Gate]
+
+    H --> L[Small/Large-Field Partition]
+    L --> M[Taylor Bucket]
+    L --> N[Tail/Defect Bucket]
+    M --> O[Nonterminal Inventory]
+    N --> O
+    O --> K
+
+    B --> P[Haar/RP Transfer]
+    P --> K
+
+    O --> Q[Ghost/Determinant Sign Check]
+    Q --> K
+
+
+    K --> CL[Volume-Uniform Clustering]
+    CL --> OS[OS Reconstruction Status]
+    OS --> TL[Thermodynamic Limit at Fixed a]
+    TL --> CU[a-Uniform Continuum Window]
+    CU --> MG[Continuum Mass-Gap Candidate Claim]

@@ -1,0 +1,112 @@
+{
+  "gate_id": "YM3D_SCHEMA_DISCRIMINATOR_NULL_TEST_1",
+  "schema": "../../schemas/atom.schema.json",
+  "fixtures_dir": "tests/schema_null_tests",
+  "case_count": 7,
+  "passed_count": 7,
+  "failed_count": 0,
+  "all_passed": true,
+  "results": [
+    {
+      "fixture": "invalid_bad_schema_stage.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "passed": true,
+      "error_count": 1,
+      "errors": [
+        {
+          "message": "'partial' is not one of ['combinatorial', 'gauge_geometric', 'analytic']",
+          "path": [
+            "schema_stage"
+          ],
+          "schema_path": [
+            "properties",
+            "schema_stage",
+            "enum"
+          ]
+        }
+      ]
+    },
+    {
+      "fixture": "invalid_combinatorial_with_analytic_field.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "passed": true,
+      "error_count": 1,
+      "errors": [
+        {
+          "message": "Additional properties are not allowed ('primitive_enclosure_ids' was unexpected)",
+          "path": [],
+          "schema_path": [
+            "allOf",
+            0,
+            "then",
+            "additionalProperties"
+          ]
+        }
+      ]
+    },
+    {
+      "fixture": "invalid_gauge_geometric_with_analytic_field.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "passed": true,
+      "error_count": 1,
+      "errors": [
+        {
+          "message": "Additional properties are not allowed ('primitive_enclosure_ids' was unexpected)",
+          "path": [],
+          "schema_path": [
+            "allOf",
+            1,
+            "then",
+            "additionalProperties"
+          ]
+        }
+      ]
+    },
+    {
+      "fixture": "invalid_missing_required_combinatorial_field.json",
+      "expected_valid": false,
+      "actual_valid": false,
+      "passed": true,
+      "error_count": 1,
+      "errors": [
+        {
+          "message": "'support_id' is a required property",
+          "path": [],
+          "schema_path": [
+            "allOf",
+            0,
+            "then",
+            "required"
+          ]
+        }
+      ]
+    },
+    {
+      "fixture": "valid_analytic_atom.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "passed": true,
+      "error_count": 0,
+      "errors": []
+    },
+    {
+      "fixture": "valid_combinatorial_atom.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "passed": true,
+      "error_count": 0,
+      "errors": []
+    },
+    {
+      "fixture": "valid_gauge_geometric_atom.json",
+      "expected_valid": true,
+      "actual_valid": true,
+      "passed": true,
+      "error_count": 0,
+      "errors": []
+    }
+  ]
+}

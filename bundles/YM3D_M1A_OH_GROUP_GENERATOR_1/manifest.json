@@ -1,0 +1,47 @@
+{
+  "bundle": "YM3D_M1A_OH_GROUP_GENERATOR_1",
+  "determinism": "exact integer/rational arithmetic; sorted JSON; no floats in decisions",
+  "files": [
+    {
+      "bytes": 2178,
+      "path": "README.md",
+      "sha256": "5c83b4748265e298a7d66c2f81bf855be19f6b3bd0973d53e92354dad85d9e4a"
+    },
+    {
+      "bytes": 1127,
+      "path": "artifacts/decision.json",
+      "sha256": "b9e136f2d07d34e6f09bb7bdcdd51cefa6b1bb25950af67d7908a8553c7c6c9b"
+    },
+    {
+      "bytes": 10947,
+      "path": "artifacts/oh_group_elements.json",
+      "sha256": "0ff57df0ae468834290b70ac13995d1097067707c720160436ff664f0195d3a3"
+    },
+    {
+      "bytes": 780,
+      "path": "artifacts/oh_group_report.json",
+      "sha256": "acc130f083ec379ee02c563af38f6d58dd50afcbb08d6338d8353f17f2c29e41"
+    },
+    {
+      "bytes": 50,
+      "path": "src/ym3d/__init__.py",
+      "sha256": "ea175c3d1c3ed484227ecf9bd673d3622f3657869fa8aeb4eb245b89443bd7a5"
+    },
+    {
+      "bytes": 5311,
+      "path": "src/ym3d/group_oh.py",
+      "sha256": "1c95c52ac004c5a66498c9ae52ff089bfc469b1da492d20b03df82f31d742901"
+    },
+    {
+      "bytes": 917,
+      "path": "tools/build.py",
+      "sha256": "90fc02da5ab4415daf9e6256a92e7cd0801cd8514f1cd4b393a2eda91154d7d6"
+    },
+    {
+      "bytes": 4323,
+      "path": "tools/check_oh_group.py",
+      "sha256": "63b131601cc65601b84f202a6b5ea8f72ab0aa0809ee8366ec7fe10ed4801bf6"
+    }
+  ],
+  "version": "1"
+}

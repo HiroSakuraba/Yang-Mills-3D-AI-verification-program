@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "scale_coupling_slab.schema.json",
+  "title": "YM3D Scale-Coupling Slab and Flow Error Norm",
+  "type": "object",
+  "required": [
+    "scale_slab_id",
+    "k",
+    "beta_interval",
+    "flow_error_norm",
+    "delta_components"
+  ],
+  "properties": {
+    "scale_slab_id": {
+      "type": "string"
+    },
+    "k": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "beta_interval": {
+      "$ref": "#/$defs/rational_interval"
+    },
+    "flow_error_norm": {
+      "type": "object",
+      "required": [
+        "norm_id",
+        "space",
+        "domain",
+        "uniform_over_beta",
+        "uniform_over_volume",
+        "unit"
+      ],
+      "properties": {
+        "norm_id": {
+          "type": "string"
+        },
+        "space": {
+          "enum": [
+            "effective_coupling_parameter",
+            "effective_action_density",
+            "polymer_activity_norm",
+            "transfer_operator_norm"
+          ]
+        },
+        "domain": {
+          "type": "string"
+        },
+        "uniform_over_beta": {
+          "type": "boolean"
+        },
+        "uniform_over_volume": {
+          "type": "boolean"
+        },
+        "unit": {
+          "type": "string"
+        },
+        "conversion_certificate_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "delta_components": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "object",
+        "required": [
+          "component",
+          "norm_id",
+          "bound"
+        ],
+        "properties": {
+          "component": {
+            "enum": [
+              "analytic",
+              "truncation",
+              "gauge_ripple",
+              "tail"
+            ]
+          },
+          "norm_id": {
+            "type": "string"
+          },
+          "bound": {
+            "$ref": "#/$defs/rational_interval"
+          },
+          "conversion_certificate_id": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "$defs": {
+    "rational_interval": {
+      "type": "object",
+      "required": [
+        "lo",
+        "hi"
+      ],
+      "properties": {
+        "lo": {
+          "type": "string",
+          "pattern": "^-?\\d+(/\\d+)?$"
+        },
+        "hi": {
+          "type": "string",
+          "pattern": "^-?\\d+(/\\d+)?$"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

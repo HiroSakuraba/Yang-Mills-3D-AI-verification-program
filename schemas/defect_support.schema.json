@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "defect_support.schema.json",
+  "title": "YM3D Defect Support",
+  "type": "object",
+  "required": ["defect_id", "support_measure_vector"],
+  "properties": {
+    "defect_id": {"type": "string"},
+    "support_measure_vector": {
+      "type": "object",
+      "properties": {
+        "area": {"$ref": "#/$defs/rational_interval"},
+        "length": {"$ref": "#/$defs/rational_interval"},
+        "volume": {"$ref": "#/$defs/rational_interval"},
+        "boundary_count": {"type": "integer", "minimum": 0},
+        "junction_count": {"type": "integer", "minimum": 0},
+        "branching_node_count": {"type": "integer", "minimum": 0},
+        "endpoint_count": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "topological_modifier_rate": {"$ref": "#/$defs/rational_interval"}
+  },
+  "$defs": {
+    "rational_interval": {
+      "type": "object",
+      "required": ["lo", "hi"],
+      "properties": {"lo": {"type": "string"}, "hi": {"type": "string"}},
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": true
+}

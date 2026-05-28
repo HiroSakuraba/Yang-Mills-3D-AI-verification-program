@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "primitive_enclosure_certificate.schema.json",
+  "title": "YM3D Primitive Enclosure Certificate",
+  "type": "object",
+  "required": [
+    "primitive_id",
+    "constant_type",
+    "output_interval",
+    "certification_method",
+    "remainder_bound",
+    "certification_backend"
+  ],
+  "properties": {
+    "primitive_id": {
+      "type": "string"
+    },
+    "constant_type": {
+      "enum": [
+        "bessel_ratio",
+        "character_coefficient",
+        "lattice_green_function",
+        "heat_kernel_coefficient",
+        "quadrature_integral",
+        "spectral_bound",
+        "other"
+      ]
+    },
+    "mathematical_definition": {
+      "type": "string"
+    },
+    "input_interval": {
+      "$ref": "#/$defs/rational_interval"
+    },
+    "output_interval": {
+      "$ref": "#/$defs/rational_interval"
+    },
+    "certification_method": {
+      "enum": [
+        "taylor_series",
+        "continued_fraction",
+        "riemann_sum",
+        "interval_ode",
+        "recurrence_bound",
+        "rational_majorant",
+        "other"
+      ]
+    },
+    "truncation_order": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "remainder_bound": {
+      "$ref": "#/$defs/rational_interval"
+    },
+    "checker_algorithm": {
+      "type": "string"
+    },
+    "certification_backend": {
+      "enum": [
+        "pure_rational",
+        "arb",
+        "mpfi",
+        "lean_verified",
+        "custom_interval"
+      ]
+    },
+    "backend_version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "directed_rounding_policy": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "precision_bits": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1
+    },
+    "rationalized_output_interval": {
+      "$ref": "#/$defs/rational_interval"
+    }
+  },
+  "$defs": {
+    "rational_interval": {
+      "type": "object",
+      "required": [
+        "lo",
+        "hi"
+      ],
+      "properties": {
+        "lo": {
+          "type": "string"
+        },
+        "hi": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": true
+}

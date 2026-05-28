@@ -1,0 +1,13 @@
+{
+  "bundle_id": "YM3D_M1A_SCHEMA_DISCRIMINATOR_NULL_TEST_1",
+  "gate_id": "YM3D_SCHEMA_DISCRIMINATOR_NULL_TEST_1",
+  "decision": "PASS",
+  "closed_obligation": "Stage-discriminated schema null-test for combinatorial vs analytic atom rows.",
+  "next_obligation": "Implement O_h signed-permutation group generator and group-law checker.",
+  "non_claims": [
+    "Does not generate O_h.",
+    "Does not generate lattice atoms beyond fixtures.",
+    "Does not prove orbit closure or stabilizer identities.",
+    "Does not close Milestone A."
+  ]
+}

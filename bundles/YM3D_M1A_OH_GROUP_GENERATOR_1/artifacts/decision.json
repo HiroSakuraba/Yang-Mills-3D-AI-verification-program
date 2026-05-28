@@ -1,0 +1,34 @@
+{
+  "bundle": "YM3D_M1A_OH_GROUP_GENERATOR_1",
+  "checks": {
+    "closed_under_multiplication": true,
+    "determinant_split_24_24": true,
+    "export_count_is_48": true,
+    "export_equals_derived_group": true,
+    "identity_present": true,
+    "independent_count_is_48": true,
+    "inverses_present_and_correct": true,
+    "no_bad_determinants": true
+  },
+  "closed_obligations": [
+    "independently derived 48 signed-permutation matrices",
+    "verified identity, closure, inverses, orthogonality via transpose",
+    "verified determinant split 24/24",
+    "verified generator export equals the independently derived group"
+  ],
+  "determinant_counts": {
+    "-1": 24,
+    "1": 24
+  },
+  "gate_id": "YM3D_OH_SIGNED_PERMUTATION_GROUP_1",
+  "method": "independent re-derivation; generator export audited as untrusted input",
+  "next_obligation": "YM3D_ORIENTED_LINK_ACTION_1",
+  "non_claims": [
+    "does not define lattice links",
+    "does not prove support lifting",
+    "does not compute atom orbits",
+    "does not audit collision graphs",
+    "does not prove analytic or Yang-Mills estimates"
+  ],
+  "status": "PASS"
+}

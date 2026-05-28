@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pipeline_dag.schema.json",
+  "title": "YM3D Pipeline DAG Schema",
+  "type": "object",
+  "required": [
+    "dag_id",
+    "version",
+    "nodes",
+    "edges"
+  ],
+  "properties": {
+    "dag_id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "node_id",
+          "artifact_type",
+          "allowed_schema_stages",
+          "checker_entry_point",
+          "claims_unlocked",
+          "claim_strength"
+        ],
+        "properties": {
+          "node_id": {
+            "type": "string"
+          },
+          "artifact_type": {
+            "type": "string"
+          },
+          "allowed_schema_stages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "checker_entry_point": {
+            "type": "string"
+          },
+          "claims_unlocked": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "claim_strength": {
+            "enum": [
+              "combinatorial_only",
+              "volume_uniform_lattice",
+              "a_uniform_lattice",
+              "continuum_subsequential",
+              "continuum_mass_gap_candidate",
+              "advisory_only"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "from",
+          "to",
+          "dependency_type"
+        ],
+        "properties": {
+          "from": {
+            "type": "string"
+          },
+          "to": {
+            "type": "string"
+          },
+          "dependency_type": {
+            "enum": [
+              "required_parent",
+              "advisory",
+              "transfer_required"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
