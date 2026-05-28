@@ -1,0 +1,25 @@
+name: Extract zip
+on:
+  workflow_dispatch:
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Unzip and promote contents
+        run: |
+          unzip ym3d-constructive-rg.zip
+          cp -r ym3d-constructive-rg/. .
+          rm -rf ym3d-constructive-rg ym3d-constructive-rg.zip
+
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Extract ym3d-constructive-rg.zip contents"
+          git push
