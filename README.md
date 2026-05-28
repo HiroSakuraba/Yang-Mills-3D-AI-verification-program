@@ -1,5 +1,5 @@
 # YM3D — A Ledger-Gated Constructive RG Program for 3D Yang–Mills
-[![CI](https://github.com/BenjaminJohnSchulz/ym3d-constructive-rg/actions/workflows/ci.yml/badge.svg)](../../actions)
+https://github.com/HiroSakuraba/Yang-Mills-3D-AI-verification-program/actions/workflows/ci.yml/badge.svg
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 A formal, **auditable** architecture for three-dimensional Euclidean lattice
 Yang–Mills theory (compact `SU(2)`, Wilson action), together with an executable
