@@ -7,20 +7,21 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      workflows: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Unzip and promote contents
+      - name: Unzip and copy (skip .github)
         run: |
-          unzip ym3d-constructive-rg.zip
-          cp -r ym3d-constructive-rg/. .
+          unzip -o ym3d-constructive-rg.zip
+          rsync -a --exclude='.github' ym3d-constructive-rg/. .
           rm -rf ym3d-constructive-rg ym3d-constructive-rg.zip
 
-      - name: Commit
+      - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -m "Extract ym3d-constructive-rg.zip contents"
-          git push
+          git commit -m "Extract project files from zip"
+          git push origin main
