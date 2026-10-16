@@ -1,0 +1,548 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>YM4 Coherence Map</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap">
+<style>
+/* Layout: one reading column; the coupling axis is the hero; ledger, chain, bridges, then reference sections. Two program hues (weak = blue, strong = amber), neutral hatch for the gap. */
+:root{
+  --paper:#F4F6F5; --sheet:#FFFFFF; --ink:#16201E; --muted:#56645F; --rule:#D3DBD8;
+  --weak:#34558F; --weak-soft:#DCE4F3; --strong:#93620F; --strong-soft:#F3E7CF;
+  --gap:#7A8783; --ok:#2C7A4B; --cond:#9A6B00; --no:#9C3B32;
+  --f-display:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --f-body:"IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#111715; --sheet:#18201E; --ink:#E2E9E6; --muted:#9DAAA6; --rule:#2B3633;
+  --weak:#93B2EC; --weak-soft:#1F2C44; --strong:#E3B356; --strong-soft:#3A2D12;
+  --gap:#8E9B97; --ok:#6FCF97; --cond:#E8BE5A; --no:#EE8A7E; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#111715; --sheet:#18201E; --ink:#E2E9E6; --muted:#9DAAA6; --rule:#2B3633;
+  --weak:#93B2EC; --weak-soft:#1F2C44; --strong:#E3B356; --strong-soft:#3A2D12;
+  --gap:#8E9B97; --ok:#6FCF97; --cond:#E8BE5A; --no:#EE8A7E; color-scheme:dark}
+
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6}
+.wrap{max-width:860px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:40px 64px;display:grid;gap:48px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.2;margin:0}
+h1{font-size:clamp(2rem,6vw,2.9rem);font-weight:700;letter-spacing:-0.01em}
+h2{font-size:1.55rem;font-weight:600}
+h3{font-size:1.12rem;font-weight:600}
+p{margin:0;max-width:66ch}
+.eyebrow{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+section{display:grid;gap:16px;min-width:0;scroll-margin-top:16px}
+.lede{font-size:1.14rem}
+.who{display:flex;flex-wrap:wrap;gap:10px 22px;font-size:.92rem;color:var(--muted)}
+.who b{font-weight:600}
+.tag{display:inline-block;font-family:var(--f-mono);font-size:.72rem;padding:1px 7px;border-radius:3px;white-space:nowrap}
+.t-weak{background:var(--weak-soft);color:var(--weak)}
+.t-strong{background:var(--strong-soft);color:var(--strong)}
+.t-gap{border:1px dashed var(--gap);color:var(--gap)}
+code,.mono{font-family:var(--f-mono);font-size:.88em}
+.num{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+a{color:var(--weak)}
+a:focus-visible{outline:2px solid var(--weak);outline-offset:2px}
+
+nav.toc{background:var(--sheet);border:1px solid var(--rule);border-radius:6px;padding:14px 16px;display:grid;gap:8px}
+nav.toc ol{margin:0;padding-left:1.3em;columns:2 230px;column-gap:28px;font-size:.92rem}
+nav.toc li{break-inside:avoid;padding-block:2px}
+nav.toc a{text-decoration:none}
+nav.toc a:hover{text-decoration:underline}
+
+.figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:6px;overflow:hidden}
+.fig{background:var(--sheet);padding:12px 14px;display:grid;gap:2px;align-content:start}
+.fig .v{font-family:var(--f-mono);font-variant-numeric:tabular-nums;font-size:1.15rem;font-weight:500}
+.fig .k{font-size:.82rem;color:var(--muted);line-height:1.4}
+.fig.s .v{color:var(--strong)} .fig.w .v{color:var(--weak)}
+
+.figure{background:var(--sheet);border:1px solid var(--rule);border-radius:6px;padding:18px 16px 12px;display:grid;gap:10px;min-width:0}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.scroll svg{display:block;min-width:640px;width:100%;height:auto}
+.caption{font-size:.86rem;color:var(--muted);max-width:none}
+svg text{font-family:var(--f-body);fill:var(--ink)}
+svg .small{font-size:11px;fill:var(--muted)}
+svg .lab{font-size:12.5px;font-weight:600}
+svg .mono{font-family:var(--f-mono);font-size:11px;fill:var(--muted)}
+
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:.9rem}
+table.narrow{min-width:420px}
+th,td{text-align:left;vertical-align:top;padding:9px 10px;border-bottom:1px solid var(--rule)}
+thead th{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);font-weight:500}
+td:first-child{font-weight:500}
+table.ledger td:first-child{width:24%}
+td.n,th.n{font-family:var(--f-mono);font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.st{font-family:var(--f-mono);font-size:.74rem;font-weight:500;display:block;margin-bottom:2px}
+.ok{color:var(--ok)} .cond{color:var(--cond)} .no{color:var(--no)}
+.tablebox{background:var(--sheet);border:1px solid var(--rule);border-radius:6px;padding:4px 6px}
+tr.hit td{background:var(--strong-soft)}
+
+.chain{display:grid}
+.link{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;padding:12px 0;border-top:1px solid var(--rule)}
+.link:first-child{border-top:0}
+.node{font-family:var(--f-mono);font-size:.74rem;padding:3px 8px;border-radius:3px;white-space:nowrap;margin-top:2px}
+.n-weak{background:var(--weak-soft);color:var(--weak)}
+.n-strong{background:var(--strong-soft);color:var(--strong)}
+.n-gap{border:1px dashed var(--gap);color:var(--gap)}
+.link > div{min-width:0}
+.link p{font-size:.95rem}
+
+.bridge{display:grid;gap:12px;padding:20px 18px;background:var(--sheet);border:1px solid var(--rule);border-radius:6px;min-width:0}
+.bridge .head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px}
+.bid{font-family:var(--f-mono);font-size:.8rem;color:var(--muted)}
+.formula{font-family:var(--f-mono);font-size:.88rem;background:var(--paper);border:1px solid var(--rule);border-radius:4px;padding:10px 12px;overflow-x:auto;white-space:pre;line-height:1.55}
+.bridge ul,.plain ul{margin:0;padding-left:1.15em;display:grid;gap:8px}
+.bridge li,.plain li{max-width:64ch}
+.verdict{font-size:.9rem;color:var(--muted);border-top:1px dashed var(--rule);padding-top:10px}
+.verdict b{color:var(--ink);font-weight:600}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.mini{background:var(--sheet);border:1px solid var(--rule);border-radius:6px;padding:16px;display:grid;gap:8px;align-content:start;min-width:0}
+.mini p{font-size:.93rem}
+
+ol.steps{margin:0;padding-left:1.4em;display:grid;gap:10px}
+ol.steps li{max-width:66ch}
+.caveat{border-left:3px solid var(--cond);padding:4px 0 4px 14px;display:grid;gap:8px}
+.sources{font-size:.88rem;color:var(--muted);display:grid;gap:6px}
+.sources ul{margin:0;padding-left:1.1em;display:grid;gap:4px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+</style>
+
+<div class="wrap">
+
+<header style="display:grid;gap:14px">
+  <div class="eyebrow">Yang–Mills in four dimensions · SU(2) · two programs</div>
+  <h1>YM4 Coherence Map</h1>
+  <p class="lede">Ethan Sussman and Levent Alpöge's Theorem&nbsp;0 runs Bałaban's renormalization group down from the cutoff and builds a continuum theory, but it proves no decay, no gap and no uniqueness. Our strong-coupling fragment proves decay, a lattice gap and uniqueness, but only deep at strong coupling. Each program's "not claimed" list is the other's main result. The open question is the stretch of coupling between them.</p>
+  <div class="who">
+    <span><span class="tag t-weak">weak coupling</span> <b>Theorem 0</b>, github.com/ethanwsussman/Yang--Mills-LLM-experiment</span>
+    <span><span class="tag t-strong">strong coupling</span> <b>Fallback heat-kernel fragment</b>, B. J. Schulz</span>
+  </div>
+</header>
+
+<nav class="toc" aria-label="Contents">
+  <div class="eyebrow">On this page</div>
+  <ol>
+    <li><a href="#figures">Key numbers</a></li>
+    <li><a href="#ladder">The coupling ladder</a></li>
+    <li><a href="#ledger">What each side proves</a></li>
+    <li><a href="#chain">How they would join</a></li>
+    <li><a href="#bridges">Six bridge results</a></li>
+    <li><a href="#frontier">Our frontier and the Wilson action</a></li>
+    <li><a href="#shared">Shared tools</a></li>
+    <li><a href="#constants">How the constants are chosen</a></li>
+    <li><a href="#qed3">The QED3 precedent</a></li>
+    <li><a href="#risk">Risk register for Theorem 0</a></li>
+    <li><a href="#crosswalk">Notation crosswalk</a></li>
+    <li><a href="#smaller">Side ideas and housekeeping</a></li>
+    <li><a href="#questions">Questions for the authors</a></li>
+    <li><a href="#next">Order of work</a></li>
+    <li><a href="#limits">Limits of this map</a></li>
+  </ol>
+</nav>
+
+<section id="figures" aria-label="Key numbers">
+  <div class="eyebrow">Key numbers</div>
+  <div class="figs">
+    <div class="fig s"><span class="v">0.961190</span><span class="k">ρ∞, our uncut bulk activity budget at τ = 5</span></div>
+    <div class="fig s"><span class="v">0.0395830</span><span class="k">−log ρ∞, lattice gap in block units</span></div>
+    <div class="fig s"><span class="v">τ* = 4.974</span><span class="k">where ρ reaches 1 for the heat kernel</span></div>
+    <div class="fig s"><span class="v">x* ≈ 0.627</span><span class="k">same grammar with Wilson weights (diagnostic)</span></div>
+    <div class="fig"><span class="v">x &lt; 1/12</span><span class="k">Shen–Zhu–Zhu bound, in Theorem 0 units</span></div>
+    <div class="fig w"><span class="v">c₀ = 0.41–0.72</span><span class="k">one-loop drop in x per block step, L = 3 to 7</span></div>
+  </div>
+</section>
+
+<section id="ladder" aria-labelledby="ladder-h">
+  <div class="eyebrow">The shared axis</div>
+  <h2 id="ladder-h">Both programs live on one coupling ladder</h2>
+  <p>Both use the same coupling. Theorem 0 writes the Wilson weight as exp[−g<sup>−2</sup>&thinsp;Σ(1 − Re tr U)] with tr 1 = 1, so its running inverse coupling <span class="mono">x = g<sup>−2</sup></span> is exactly the β in our Bessel coefficients <span class="mono">c<sub>a</sub> = 2(a+1) I<sub>a+1</sub>(β)/β</span>. Numbers move between the two programs without conversion.</p>
+  <div class="figure">
+    <div class="scroll">
+      <svg viewBox="0 0 720 250" role="img" aria-labelledby="ladderTitle ladderDesc">
+        <title id="ladderTitle">Coupling ladder</title>
+        <desc id="ladderDesc">Log axis of the inverse coupling x from 0.01 to 1000. The Shen–Zhu–Zhu bound sits at x = 1/12. The strong-coupling fragment reaches about x = 0.627. Theorem 0 lives at large x above an unquantified threshold g to the minus 2. Between them is a crossover window that neither program controls.</desc>
+        <defs>
+          <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+            <rect width="7" height="7" fill="var(--sheet)"/>
+            <line x1="0" y1="0" x2="0" y2="7" stroke="var(--gap)" stroke-width="1.4"/>
+          </pattern>
+          <linearGradient id="fadeWeak" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0" stop-color="var(--weak)" stop-opacity="0"/>
+            <stop offset="1" stop-color="var(--weak)" stop-opacity="0.85"/>
+          </linearGradient>
+          <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="var(--muted)"/>
+          </marker>
+        </defs>
+
+        <!-- scale: pos(x) = 40 + 130*log10(x/0.01) -->
+        <text x="40" y="24" class="lab" style="fill:var(--strong)">strong coupling · our fragment</text>
+        <text x="690" y="24" class="lab" text-anchor="end" style="fill:var(--weak)">weak coupling · Theorem 0</text>
+
+        <rect x="40" y="62" width="233.7" height="40" fill="var(--strong)" fill-opacity="0.85"/>
+        <rect x="273.7" y="62" width="186.3" height="40" fill="url(#hatch)" stroke="var(--gap)" stroke-width="1"/>
+        <rect x="430" y="62" width="70" height="40" fill="url(#fadeWeak)"/>
+        <rect x="500" y="62" width="190" height="40" fill="var(--weak)" fill-opacity="0.85"/>
+
+        <!-- SZZ at x = 1/12 -->
+        <line x1="159.7" y1="52" x2="159.7" y2="112" stroke="var(--ink)" stroke-width="1.2" stroke-dasharray="3 3"/>
+        <text x="162" y="48" class="small">Shen–Zhu–Zhu: x &lt; 1/12</text>
+
+        <!-- our frontier -->
+        <line x1="273.7" y1="56" x2="273.7" y2="118" stroke="var(--ink)" stroke-width="1.6"/>
+        <text x="273.7" y="134" class="small" text-anchor="middle">our edge: x* ≈ 0.627 (τ = 5 ≈ 0.623)</text>
+
+        <text x="366.6" y="87" class="lab" text-anchor="middle" style="fill:var(--ink)">the middle</text>
+        <text x="595" y="87" class="lab" text-anchor="middle" style="fill:var(--sheet)">x ≳ g⁻²</text>
+        <text x="520" y="134" class="small" text-anchor="middle">g small, never evaluated; edge schematic</text>
+
+        <line x1="40" y1="170" x2="690" y2="170" stroke="var(--muted)" stroke-width="1"/>
+        <g class="mono">
+          <line x1="40" y1="166" x2="40" y2="174" stroke="var(--muted)"/><text x="40" y="190" text-anchor="middle">0.01</text>
+          <line x1="170" y1="166" x2="170" y2="174" stroke="var(--muted)"/><text x="170" y="190" text-anchor="middle">0.1</text>
+          <line x1="300" y1="166" x2="300" y2="174" stroke="var(--muted)"/><text x="300" y="190" text-anchor="middle">1</text>
+          <line x1="430" y1="166" x2="430" y2="174" stroke="var(--muted)"/><text x="430" y="190" text-anchor="middle">10</text>
+          <line x1="560" y1="166" x2="560" y2="174" stroke="var(--muted)"/><text x="560" y="190" text-anchor="middle">100</text>
+          <line x1="690" y1="166" x2="690" y2="174" stroke="var(--muted)"/><text x="690" y="190" text-anchor="middle">1000</text>
+        </g>
+        <text x="365" y="208" class="small" text-anchor="middle">running inverse coupling x = g⁻² (Wilson β with tr 1 = 1), log scale</text>
+
+        <line x1="680" y1="232" x2="300" y2="232" stroke="var(--muted)" stroke-width="1.2" marker-end="url(#arr)"/>
+        <text x="490" y="226" class="small" text-anchor="middle">blocking toward large distances lowers x by about c₀ per step (one loop)</text>
+      </svg>
+    </div>
+    <p class="caption">Positions are to scale except the left edge of the Theorem 0 band: the stopping coupling g is chosen small, below thresholds such as γ that are never given values. Shen–Zhu–Zhu write the action as Nβ Re Σ Tr Q<sub>p</sub> with the unnormalized trace, so for SU(2) their x is 4β and their bound β &lt; 1/48 is x &lt; 1/12. Our edge x* comes from the fallback grammar with Wilson weights (see <a href="#frontier">the frontier section</a>). One-loop step size c₀ = (11N²/12π²) log L is 0.41, 0.60 and 0.72 for L = 3, 5, 7 at N = 2. One loop says nothing reliable inside the middle, so it gives no honest count of the steps needed to cross it.</p>
+  </div>
+</section>
+
+<section id="ledger" aria-labelledby="ledger-h">
+  <div class="eyebrow">Side by side</div>
+  <h2 id="ledger-h">What each program proves and leaves open</h2>
+  <p>Read the two columns against each other. Almost every gap on one side is a result on the other.</p>
+  <div class="tablebox scroll">
+    <table class="ledger">
+      <thead><tr><th>Property</th><th>Theorem 0 (Bałaban RG)</th><th>Our fragment (τ = 5 heat kernel)</th></tr></thead>
+      <tbody>
+        <tr><td>Regime</td><td>Weak coupling, Wilson action, bare x₀ → ∞, flow stopped when x first drops to g⁻² + B♯ with g small</td><td>Strong coupling, heat-kernel action at τ = 5</td></tr>
+        <tr><td>Action</td><td>Wilson only; Theorem 0 is stated for SU(2)</td><td>Heat kernel. The same grammar with Wilson weights gives ρ &lt; 1 for x &lt; 0.627 (diagnostic, not yet a theorem)</td></tr>
+        <tr><td>Constants</td><td>Existential: L₀(N) "never evaluated", thresholds γ, γ<sub>H</sub>, γ<sub>J</sub> chosen last</td><td>Explicit decimals, recomputed by script</td></tr>
+        <tr><td>Continuum limit</td><td><span class="st cond">conditional</span>On tori and on R⁴ (R⁴ along subsequences), given declared inputs</td><td><span class="st no">not claimed</span>Fixed lattice; block units only</td></tr>
+        <tr><td>OS structure</td><td><span class="st cond">conditional</span>E0–E3, Hilbert space, H ≥ 0, hypercubic invariance</td><td><span class="st ok">closed</span>Lattice reflection and transfer positivity for the heat-kernel action</td></tr>
+        <tr><td>Running coupling</td><td><span class="st cond">conditional</span>Two-sided flow bounds; exact one-loop law, error o(s) over s steps</td><td><span class="st no">not addressed</span></td></tr>
+        <tr><td>Non-triviality</td><td><span class="st cond">conditional</span>Two-point law: (3/2)ζ′²g(d)⁴K within relative error ½</td><td><span class="st no">not addressed</span></td></tr>
+        <tr><td>Analyticity in the coupling</td><td><span class="st cond">conditional</span>Real-analytic one-parameter family on each torus (clause v); not uniform in the volume</td><td><span class="st cond">implicit</span>A convergent polymer expansion gives it uniformly in the volume; not stated as a result</td></tr>
+        <tr><td>Exponential clustering</td><td><span class="st no">not claimed</span>"constants do not decay" with separation</td><td><span class="st ok">closed</span>ρ∞ ≤ 0.96119 per block step, prefactor ≤ 25.77</td></tr>
+        <tr><td>Mass gap</td><td><span class="st no">not claimed</span>Only H ≥ 0 and HΩ = 0</td><td><span class="st ok">closed, lattice</span>ΔH ≥ −log ρ∞ ≈ 0.03958 in block units; density lemma (R06) still owed</td></tr>
+        <tr><td>Unique infinite-volume limit</td><td><span class="st no">not claimed</span>Says it "needs infrared input, such as a last-scale cluster expansion"</td><td><span class="st ok">closed in grammar</span>Boundary-defect Cauchy bound at fixed cutoff</td></tr>
+        <tr><td>Unique vacuum</td><td><span class="st no">not claimed</span></td><td><span class="st cond">available</span>Follows from clustering; currently listed as a bridge hypothesis</td></tr>
+        <tr><td>O(4) invariance</td><td><span class="st cond">conditional</span>Clause (vi), under the far-sphere flux hypothesis</td><td><span class="st no">not addressed</span></td></tr>
+        <tr><td>Observables</td><td>Smeared action density only; no Wilson loops, no block observables</td><td>Bounded local Wilson-loop and spin-network observables</td></tr>
+        <tr><td>Proof status</td><td>Raw LLM output by the authors' own account; see <a href="#risk">risk register</a></td><td>Modular bundles with checked constants and a referee ledger; not yet peer reviewed</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:.9rem;color:var(--muted)">The observables row matters for any joint statement: Theorem 0's results are about the action density tr F², while ours are about Wilson loops and spin networks. A combined theorem has to put both kinds of observable on one Hilbert space.</p>
+</section>
+
+<section id="chain" aria-labelledby="chain-h">
+  <div class="eyebrow">The composition</div>
+  <h2 id="chain-h">How the two would join into one argument</h2>
+  <p>This is the chain the bridges below aim at. Four links exist in at least conditional form. One does not.</p>
+  <div class="figure">
+    <div class="chain">
+      <div class="link"><span class="node n-weak">Theorem 0 (0), (i)</span><div><p>Wilson measure at spacing L<sup>−K</sup> flows to an effective theory on the reference lattice, with g<sub>K</sub> in the window [g₋(g), g) and Bałaban's ultraviolet stability bounds, uniformly in the cutoff.</p></div></div>
+      <div class="link"><span class="node n-gap">MIDDLE (open)</span><div><p>A further k* blockings carry every effective density in that window into a polymer basin with ρ &lt; 1. Nothing in either program does this yet.</p></div></div>
+      <div class="link"><span class="node n-strong">Our fragment</span><div><p>Polymer and cumulant expansion at the last scale: exponential clustering, unique infinite-volume limit, transfer gap −log ρ in block units.</p></div></div>
+      <div class="link"><span class="node n-weak">Theorem 0 (vi), §9.3</span><div><p>A gap uniform in the cutoff supplies their flux hypothesis, giving O(4) invariance. Clustering supplies the uniqueness they list as missing.</p></div></div>
+      <div class="link"><span class="node n-weak">Units</span><div><p>Physical gap m ≥ −log ρ / (L<sup>k*</sup> ℓ<sub>ref</sub>), with ℓ<sub>ref</sub> their reference length, fixed by the renormalised coupling.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="bridges" aria-labelledby="bridges-h">
+  <div class="eyebrow">Bridge results</div>
+  <h2 id="bridges-h">Six bridges</h2>
+  <p>B1 to B5 follow the chain in order. B6 runs alongside it.</p>
+
+  <article class="bridge">
+    <div class="head"><span class="bid">B1</span><h3>Bałaban's output is an RG certificate row</h3><span class="tag t-weak">exists, partial fit</span></div>
+    <p>Clause (i-a) of Theorem 0 states the form of the effective density at every level k: a sum over large-field histories of an effective action equal to the Wilson term at the running coupling plus localised terms. Each localised term lives on a domain X, is gauge invariant, is analytic on regular configurations, and is bounded by C e<sup>−κ d<sub>j</sub>(X)</sup>. That is most of our <span class="mono">RG_OUTPUT_CERTIFICATE</span> schema, already filled in.</p>
+    <div class="formula">effective_action_term_family  ← polymer (localised terms on D_j)
+gauge_invariance_status       ← preserved
+locality_decay_bound          ← C·exp(−κ d_j(X))
+normalization_control         ← (i-b), (i-c): e^(−E₋N)·χ ≤ ρ_k,  ∫ρ_k ≤ e^(E₊N)
+large_field_bound             ← R-operation bounds (rest on Pr1–Pr15)
+mass_gap_conversion_scale     ← reference length ℓ_ref
+effective_activity_bound_q    ← FAILS: at x ≈ g⁻² the character ratio is near 1
+reflection_positivity_status  ← open at block level (no clause on block laws)</div>
+    <p>One mismatch is structural. Clause (i-b) gives the upper stability bound only after integration ("the pointwise upper bound is not asserted"). Our activity screen needs pointwise bounds on local weights. So even the filled fields would need a pointwise version before they feed an activity estimate.</p>
+    <p class="verdict"><b>Use:</b> write this row out as a certificate (<span class="mono">BALABAN_ROW_0</span>). The failed and open fields are a precise description of what the middle has to fix.</p>
+  </article>
+
+  <article class="bridge">
+    <div class="head"><span class="bid">B2</span><h3>The middle, stated as one obligation</h3><span class="tag t-gap">open</span></div>
+    <p>Clause (0)(b) puts the final coupling in a compact window [g₋(g), g). So the middle can be posed as a statement about a compact family, uniform in the cutoff:</p>
+    <div class="formula">MIDDLE-1. There is k* such that, for every effective density
+produced at the reference lattice with g_K ∈ [g₋(g), g),
+k* further blockings yield an effective action in the
+generalized fallback basin with ρ ≤ ρ* &lt; 1.</div>
+    <ul>
+      <li>This is the confinement crossover. Two problems sit inside it: the coupling has to go from weak to strong, and the action has to move from Bałaban's multi-scale localised terms into a species grammar our entropy bounds can count (our <span class="mono">GENERALIZED_FALLBACK_BASIN_3</span>).</li>
+      <li>Large-field histories make the effective density a sum of measures, not one Gibbs weight. Any certificate has to cover every history, or bound their total mass. Their own large-field rarity statements (<a href="#risk">risk register</a>) are among the items still marked outstanding.</li>
+      <li>On the ladder the middle runs from x ≈ 0.63 up to g⁻². Its left end is now a computed number; its right end is not.</li>
+    </ul>
+    <p class="verdict"><b>Use:</b> keep this as the single named open link in both ledgers. Everything else on this page is support for it or a consequence of it.</p>
+  </article>
+
+  <article class="bridge">
+    <div class="head"><span class="bid">B3</span><h3>Their finite-size gap criterion turns the gap into one box</h3><span class="tag t-weak">claimed in companion account</span></div>
+    <p>Their Outlook (§9.4) describes a criterion proved in the companion account. On a torus the partition function is the trace of a power of a positive transfer operator. A finite-size excess of the free energy then obeys a quadratic inequality under doubling of the box. If the excess sits below a universal threshold in one box, uniformly in the cutoff, it decays doubly exponentially along the doubled boxes, and every larger box has a unique ground state with a gap. On R⁴ this is a dichotomy: either the excess stays above threshold at every scale, or there is a mass gap.</p>
+    <p>They note the condition fails in every small box and would have to be checked at large scales their construction does not reach. Large scales are where the coupling is strong, which is where our machinery works.</p>
+    <div class="formula">GAP-CRITERION-CHECK-1
+  1. Evaluate the free-energy excess on one box for the
+     τ = 5 fallback theory, using the polymer expansion
+     to control log Z with certified error.
+  2. Confirm the criterion fires there (sanity check:
+     a gap is already known in that regime).
+  3. Scan upward in x to find where a certifiable box
+     stops existing. That edge is a measured frontier
+     for the middle.</div>
+    <p class="verdict"><b>Use:</b> the best concrete joint project. It needs their exact statement first: I searched the three TeX parts in the repo and did not find it, so it is probably in a part of the companion account they have not posted.</p>
+  </article>
+
+  <article class="bridge">
+    <div class="head"><span class="bid">B4</span><h3>A gap gives them O(4) and uniqueness</h3><span class="tag t-weak">stated in their account</span></div>
+    <ul>
+      <li>Their companion account lists sufficient conditions for the far-sphere flux hypothesis of clause (vi). Two of them are "a mass gap uniform in K" and "inf spec(H restricted to Ω⊥) &gt; 0" together with ultraviolet boundedness of one stress-tensor insertion. They also state a proposition titled <i>Scalar reflected decay from clustering or a mass gap</i>.</li>
+      <li>The flux hypothesis needs stress-tensor correlations to decay faster than |x|<sup>−4</sup>; they note slower decay does not suffice, tree level gives |x|<sup>−8</sup>, and a gap gives exponential decay. Our ρ<sup>dist</sup> bound is far inside that requirement once it is in physical units.</li>
+      <li>Their §9.3 says uniqueness of the infinite-volume limit "needs infrared input, such as a last-scale cluster expansion in infinite volume or a gap uniform in the volume." Our BDE-CANCEL plus the boundary-defect Cauchy bound is that last-scale cluster expansion.</li>
+      <li>Their per-ball bounds in clause (iii)(b) hold with no decay. Composed with our expansion at the last scale they would pick up a factor ρ<sup>dist</sup>.</li>
+    </ul>
+    <p class="verdict"><b>Use:</b> this is the payoff side. Once MIDDLE-1 holds, these consequences follow from statements both groups already have in writing.</p>
+  </article>
+
+  <article class="bridge">
+    <div class="head"><span class="bid">B5</span><h3>Block units become physical units</h3><span class="tag t-strong">bookkeeping</span></div>
+    <p>Our gap is measured in blocks at the last scale. Their reference length is the physical unit, labelled by the renormalised coupling (clause v), and their one-loop law ties it to the cutoff through dimensional transmutation. So the field our schema calls <span class="mono">mass_gap_conversion_scale</span> is their ℓ<sub>ref</sub>:</p>
+    <div class="formula">m_phys ≥ −log ρ* / (L^k* · ℓ_ref)
+K ≈ (g₀⁻² − g⁻²) / c₀   steps from cutoff to ℓ_ref (one loop)</div>
+    <p class="verdict"><b>Use:</b> state every future gap number with its L<sup>k*</sup>ℓ<sub>ref</sub> denominator so results from the two programs compare directly.</p>
+  </article>
+
+  <article class="bridge">
+    <div class="head"><span class="bid">B6</span><h3>Zero-free regions, uniform in the volume</h3><span class="tag t-weak">their open question</span><span class="tag t-strong">our tool</span></div>
+    <p>Clause (v) labels the torus theories by a real-analytic parameter, but its constants degrade with the volume. They trace this to "the open question whether the partition functions are free of zeros near the real coupling axis uniformly in the volume." That is a Lee–Yang question.</p>
+    <ul>
+      <li>They already prove a zero-free statement in the source variables: the per-ball generating function has no zeros on a polydisc whose radius does not depend on the volume, obtained from reflection positivity through the chessboard estimate, with no decoupling.</li>
+      <li>On our side, a convergent polymer expansion gives log Z / |Λ| analytic in a complex neighbourhood of the coupling, uniformly in the volume. In our strong-coupling window, that answers their question there.</li>
+      <li>Our v0.44 work certified zero-freeness of a 2D SU(2) strip on |Im z| &lt; 0.5 by interval arithmetic with winding number zero. The same certificate style could map a zero-free region for small 4D boxes as x increases into the middle.</li>
+    </ul>
+    <p class="verdict"><b>Use:</b> a zero-free region that persists as x grows is a concrete, computable proxy for "no phase transition in the middle," which is what MIDDLE-1 needs to be true at all.</p>
+  </article>
+</section>
+
+<section id="frontier" aria-labelledby="frontier-h">
+  <div class="eyebrow">New computation</div>
+  <h2 id="frontier-h">Our frontier, and the Wilson action</h2>
+  <p>I re-ran the fallback grammar's exact uncut sums: Q₂ = Σx<sub>a</sub>², Q₃ over ordered SU(2)-admissible triples, Q₄ over ordered quadruples with a common recoupling channel, and ρ = 39e·Q₂ + 95e·(Q₃ + Q₄). At τ = 5 the script reproduces the paper's Q₂, Q₃, Q₄ and ρ∞ = 0.96119017435078 digit for digit. Then I moved the coupling, and swapped the heat-kernel weights for Wilson ones, c<sub>a</sub>/c₀ = (a+1) I<sub>a+1</sub>(x)/I₁(x).</p>
+  <div class="grid2">
+    <div class="tablebox scroll">
+      <table class="narrow">
+        <thead><tr><th>Heat kernel τ</th><th class="n">ρ</th></tr></thead>
+        <tbody>
+          <tr><td>3</td><td class="n">30.29</td></tr>
+          <tr><td>4</td><td class="n">4.705</td></tr>
+          <tr><td>4.5</td><td class="n">2.093</td></tr>
+          <tr><td>τ* = 4.974</td><td class="n">1</td></tr>
+          <tr class="hit"><td>5</td><td class="n">0.9612</td></tr>
+          <tr><td>6</td><td class="n">0.2104</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tablebox scroll">
+      <table class="narrow">
+        <thead><tr><th>Wilson x = β</th><th class="n">ρ</th></tr></thead>
+        <tbody>
+          <tr><td>0.3</td><td class="n">0.0530</td></tr>
+          <tr><td>0.5</td><td class="n">0.4039</td></tr>
+          <tr><td>0.6</td><td class="n">0.8364</td></tr>
+          <tr class="hit"><td>0.623</td><td class="n">0.9727</td></tr>
+          <tr><td>x* = 0.6273</td><td class="n">1</td></tr>
+          <tr><td>0.7</td><td class="n">1.558</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="plain">
+  <ul>
+    <li><b>The margin in τ is thin.</b> τ = 5 sits 0.5% above τ*. The margin in ρ (0.039) looks modest; the margin in the coupling is smaller still. Sharpening κ₂ = 39e (the queued surface-species connective-constant work) moves τ* down directly.</li>
+    <li><b>Wilson behaves almost the same at this level.</b> At matched first characters (x ≈ 0.623), x₁ agrees exactly by construction, and the higher characters are larger for Wilson (x₂ = 0.00225 against 0.00041 for the heat kernel; x₃ = 2.4×10⁻⁵ against 1.2×10⁻⁷). Those barely move ρ, because ρ is dominated by the two-face term in x₁.</li>
+    <li><b>Why this could become a theorem quickly.</b> The fallback proof uses four properties of the weights: non-negative character coefficients (true for Bessel I), x<sub>a</sub> decreasing (our v1.14 Bessel-ratio lemma gives x<sub>a+1</sub>/x<sub>a</sub> ≤ x²/(4(a+1)²)), entropy constants that depend only on lattice geometry, and summable tails (the same ratio lemma). Each has a Wilson version already in our bundles. That makes <span class="mono">WILSON_HEAT_KERNEL_COMPARISON_1</span> look close to mechanical, and it would put the fragment on Theorem 0's own action.</li>
+    <li><b>Placement against Shen–Zhu–Zhu.</b> Their bound is x &lt; 1/12 in these units; this diagnostic reaches x ≈ 0.627. The two results use different methods and prove different things (log-Sobolev and Poincaré inequalities versus polymer clustering), so this is a statement about reach, not about which is stronger.</li>
+  </ul>
+  </div>
+  <p class="caption">Sums truncated at doubled spin 14; the first omitted weight is at most 1.1×10⁻³⁸ in this range, and raising the cutoff to 20 leaves every ρ above unchanged. Script: frontier.py, mpmath at 40 digits.</p>
+</section>
+
+<section id="shared" aria-labelledby="shared-h">
+  <div class="eyebrow">Machinery both already use</div>
+  <h2 id="shared-h">Shared tools you can borrow today</h2>
+  <div class="grid2">
+    <div class="mini"><h3>One positivity engine</h3><p>Their Lemma 3.7 proves link reflection positivity by expanding e<sup>x Re tr W</sup> in characters with non-negative coefficients. Their Lemma 6.4 shows the source-free transfer operator factors as K₀ = CP = PCP ≥ 0 because the plaquette weight is a positive-definite class function. That is the same argument as our <span class="mono">ACTION-RP-HEAT-KERNEL-1</span> and the v0.97 gauge-projected character block. Their argument uses only that the weight is a positive-definite class function, so it carries over to the heat kernel unchanged.</p></div>
+    <div class="mini"><h3>Trace inequality</h3><p>Lemma 6.4: for mirror-periodic sources, 0 ≤ Z<sub>kn</sub>(W) ≤ Z<sub>n</sub>(W)<sup>k⁴</sup>. Remark 6.6 adds convexity: a bound on the pressure drop between two adjacent tori controls the drop to every larger torus. It needs only reflection positivity and a positive-definite plaquette weight, so it carries over to our heat-kernel lattice and gives an independent check on our volume-uniform endpoint constants.</p></div>
+    <div class="mini"><h3>Chessboard estimate</h3><p>Lemma 3.8 builds the group generated by face reflections of a cell grid; it acts simply transitively on cells. The chessboard estimate then gives |⟨F⟩| ≤ ⟨∏<sub>c′</sub> F<sup>[c′]</sup>⟩<sup>1/|C|</sup> for a cell observable F, with complex F allowed. That is a volume-free way to bound one local observable by a fully periodic copy of itself, and a second route to our endpoint constants.</p></div>
+    <div class="mini"><h3>A 4D benchmark for Track B</h3><p>Clause (0)(d) gives the slope any weak-coupling coarse-graining must reproduce: x<sub>i</sub> − x<sub>j</sub> = (j − i)c₀ + o(j − i). That is the 4D counterpart of our exact 2D benchmark. A tensor-RG activity flow that misses this slope at weak coupling should not be trusted inside the middle.</p></div>
+    <div class="mini"><h3>A non-triviality observable</h3><p>Clause (iv) gives a two-sided law for the action-density two-point function at separation d, proportional to g(d)⁴. Tracking the same correlator through a Track B flow is a second benchmark: it should fall like (log 1/d)⁻² at short distance and, if MIDDLE-1 holds, cross over to exponential decay at long distance.</p></div>
+    <div class="mini"><h3>Matching status ledgers</h3><p>Their book marks every statement as proved, cited, "proof incomplete at (∗)", "proof outstanding" with a route, or proved only in a model. That lines up with our locked-obligations ledger almost one to one. A shared vocabulary would let a reader trace a joint chain without guessing which side carries which risk.</p></div>
+  </div>
+</section>
+
+<section id="constants" aria-labelledby="constants-h">
+  <div class="eyebrow">Structure of their hypotheses</div>
+  <h2 id="constants-h">How Theorem 0 chooses its constants, and why it stops where it does</h2>
+  <p>Theorem 0 runs under hypotheses (H1)–(H7) with a strict order of quantifiers:</p>
+  <div class="formula">∃ exponents (d, N)  ∃ L₀(N)  ∀ L ≥ L₀ odd
+  ∃ Bałaban's parameters p (fixed order)  ∃ γ  ∃ γ_H
+  ∀ g ∈ (0, γ_H]  ∀ m ≥ m_T(g₋(g))  ∀ g₀ ∈ (0, g₋(g)]  :  K = K(g₀, g)</div>
+  <div class="plain">
+  <ul>
+    <li><b>Every smallness is chosen last.</b> Their text says no condition is a lower bound on g, g₀ or any running coupling. Every coupling condition is "small enough". That is the shape of a weak-coupling theorem, and it is the structural reason the method cannot enter the middle: crossing it needs statements that hold at couplings bounded below.</li>
+    <li><b>Nothing is evaluated.</b> L₀(N) is "one existential constant, never evaluated", and the thresholds γ<sub>J</sub>, γ<sub>W</sub>, γ<sub>vi</sub>, γ<sub>U</sub>, γ<sub>Λ</sub> are existential. A joint theorem eventually needs at least an explicit upper end for the middle. Asking which thresholds can be made explicit is a natural first request.</li>
+    <li><b>The windows are non-empty by construction.</b> Finitely many parameters sit in windows such as M₁ &lt; M₂ = L²M₁ &lt; M, made non-empty by earlier lower bounds; the companion account proves the order has no cycles.</li>
+    <li><b>One exponent they had to fix.</b> Bałaban leaves an exponent q free ("integers greater than 1"); they impose q ≥ 21p₀ + 1 for the second-order extraction under clause (iv).</li>
+    <li><b>Our side is the opposite.</b> τ is fixed, every constant is a computed decimal, and the open problem is the reach in coupling. The two constant styles are compatible: an explicit theorem at strong coupling can be the last step after an existential one at weak coupling.</li>
+  </ul>
+  </div>
+</section>
+
+<section id="qed3" aria-labelledby="qed3-h">
+  <div class="eyebrow">Precedent</div>
+  <h2 id="qed3-h">The QED3 precedent and the chamber trick</h2>
+  <p>The repo's QED3 manuscripts (130 and 263 pages) construct volume-first continuum laws of the field strength for noncompact lattice QED in three dimensions, with the Osterwalder–Schrader axioms, and clustering in almost every translation-ergodic component. The longer version claims non-Gaussian laws and an explicit growth bound of factorial type in n.</p>
+  <div class="plain">
+  <ul>
+    <li><b>How they get rotation invariance.</b> The fermions sit on the chambers of the cubic reflection group, one site per chamber. That choice makes the lattice measure reflection positive across diagonal planes as well as coordinate planes. Two reflection directions give the spectral bound H ≥ |P|. With Gaussian domination and dF = 0, that bound forces every moment to be invariant under continuous rotations (the 18-page note, Theorem A).</li>
+    <li><b>Why it is not yet in YM4.</b> Theorem A is written for laws of closed two-forms, an abelian field strength. Theorem 0 instead gets O(4) only under the flux hypothesis of clause (vi). Their README names "winning O(4)-invariance via an RP trick" as one of the arguments they want to show in simpler settings first.</li>
+    <li><b>Where our machinery fits.</b> Whether a chamber-type regularization of a non-abelian gauge field can be reflection positive across the diagonal plane t + x = 0 is a finite, checkable question on small lattices. Our character-block code computes exactly this kind of reflected Gram matrix and its smallest eigenvalue.</li>
+  </ul>
+  </div>
+</section>
+
+<section id="risk" aria-labelledby="risk-h">
+  <div class="eyebrow">What is carried, what is open</div>
+  <h2 id="risk-h">Risk register for Theorem 0</h2>
+  <p>The companion TeX in the repo (three parts, about 26.6 million characters) uses explicit status labels in its theorem headings. A count over all three parts:</p>
+  <div class="figs">
+    <div class="fig"><span class="v">1,647</span><span class="k">numbered theorems, propositions, lemmas and corollaries</span></div>
+    <div class="fig"><span class="v">26</span><span class="k">headed "Proof outstanding", with a described route</span></div>
+    <div class="fig"><span class="v">58</span><span class="k">"Stated; proof incomplete at the step marked (∗)"</span></div>
+    <div class="fig"><span class="v">48</span><span class="k">proved only in a model, not for Bałaban's step</span></div>
+  </div>
+  <div class="tablebox scroll">
+    <table>
+      <thead><tr><th>Item</th><th>Status</th><th>Why it matters for the bridges</th></tr></thead>
+      <tbody>
+        <tr><td>Positivity dichotomy of the large-field operations</td><td><span class="st no">proof outstanding</span>in the posted TeX</td><td>Placed inside the induction that carries clauses (0) and (i) and used for union bounds over histories. The 153-page draft says nothing beneath (0)–(iv) is deferred at N = 2, so the TeX and the draft may be different versions. Worth asking first.</td></tr>
+        <tr><td>Conditional rarity of simultaneous creations; volume-uniform rarity of never-healed old regions</td><td><span class="st no">proof outstanding</span></td><td>Large-field rarity is exactly what MIDDLE-1 would need to control the sum over histories.</td></tr>
+        <tr><td>U1 extension (corrected form)</td><td><span class="st cond">written, verification in progress</span></td><td>They found their first formulation false: a ring-shaped region carries a flat configuration with no admissible extension. A good sign for their self-checking.</td></tr>
+        <tr><td>U3, U5</td><td><span class="st cond">written, not claimed</span></td><td>Two-cutoff comparison inside healed regions; beneath clause (v) and so beneath (vi) and the torus limit without subsequences.</td></tr>
+        <tr><td>U4, U6</td><td><span class="st no">not written</span></td><td>Remainder terms and Gaussian factors of interrupted large-field operations.</td></tr>
+        <tr><td>Pr1–Pr15</td><td><span class="st cond">used as Bałaban printed them</span></td><td>Fifteen statements in Bałaban's papers without a proof in print covering this use, mostly in the large-field operation.</td></tr>
+        <tr><td>Two corrections to Bałaban</td><td><span class="st ok">made</span></td><td>A sign of boundary terms in [9, (3.15)], which affects no estimate, and the treatment of the field tA<sub>k</sub> on [9, p. 276].</td></tr>
+        <tr><td>Finite-size gap criterion; small-torus gap</td><td><span class="st cond">described only</span></td><td>Both appear in the Outlook as companion-account results but I did not find them in the posted TeX. B3 depends on the first.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="crosswalk" aria-labelledby="crosswalk-h">
+  <div class="eyebrow">Reading both at once</div>
+  <h2 id="crosswalk-h">Notation crosswalk, including three name collisions</h2>
+  <div class="tablebox scroll">
+    <table>
+      <thead><tr><th>Concept</th><th>Theorem 0</th><th>Ours</th></tr></thead>
+      <tbody>
+        <tr><td>Inverse coupling</td><td>x = g⁻², x<sub>k</sub> running</td><td>β (Wilson); τ for the heat kernel</td></tr>
+        <tr><td>Character ratio squared</td><td>not used</td><td>x<sub>a</sub> = (c<sub>a</sub>/c₀)², a = 2j <span class="st no">collides with their x<sub>k</sub></span></td></tr>
+        <tr><td>Effective density at level k</td><td>ρ<sub>k</sub></td><td>not used</td></tr>
+        <tr><td>Activity budget</td><td>not used</td><td>ρ, ρ∞ <span class="st no">collides with their ρ<sub>k</sub></span></td></tr>
+        <tr><td>Decay rate of localised terms</td><td>κ</td><td>locality_decay_bound</td></tr>
+        <tr><td>Entropy charge</td><td>not used</td><td>κ₂ = 39e, κ₃ = κ₄ = 95e <span class="st no">collides with their κ</span></td></tr>
+        <tr><td>Blocking factor; number of steps</td><td>L (odd); K</td><td>blocking_factor_L; num_rg_steps_k</td></tr>
+        <tr><td>Bare spacing; coarse spacing</td><td>ε = L<sup>−K</sup>; reference lattice, spacing 1</td><td>bare_lattice_spacing_a; coarse_lattice_spacing_A</td></tr>
+        <tr><td>Polymer support and size</td><td>X ∈ D<sub>j</sub>, d<sub>j</sub>(X)</td><td>species support, |γ|</td></tr>
+        <tr><td>Source radius</td><td>ϱ</td><td>not used</td></tr>
+        <tr><td>Trace</td><td>tr 1 = 1</td><td>same in the Bessel coefficients</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:.9rem;color:var(--muted)">In any joint document, rename ours: for example ξ<sub>a</sub> for the character ratios, ρ<sub>act</sub> for the activity budget and κ<sup>ent</sup> for entropy charges.</p>
+</section>
+
+<section id="smaller" aria-labelledby="smaller-h">
+  <div class="eyebrow">Smaller items</div>
+  <h2 id="smaller-h">Side ideas and housekeeping</h2>
+  <div class="plain">
+  <ul>
+    <li><b>Ground-state simplicity on a small torus.</b> Their Outlook describes a gap and finite-multiplicity ground level on R × T³ but no simplicity. At any fixed cutoff the gauge-projected transfer kernel is a Haar integral of strictly positive plaquette weights, so it is strictly positive and continuous, and Jentzsch's theorem gives a simple top eigenvalue. The open part is keeping that uniform as the cutoff is removed. Our character-block code computes this gap at fixed cutoff.</li>
+    <li><b>Three routes to their factorial growth bound.</b> They prove volume-free constants of type (n!)<sup>c</sup>C<sup>n</sup> with a grid independent of n, and say the Wightman growth condition then reduces to bookkeeping. A polymer expansion of our kind can give n-point bounds with explicit n dependence in the strong-coupling window (our paper currently states two-point bounds), which would cross-check that bookkeeping where both apply.</li>
+    <li><b>Observable bridge.</b> Their observable is O(f) = Σ<sub>p</sub> f(x(p))(1 − Re tr U(∂p)), a smeared single-plaquette Wilson loop. It is already in our observable class, since a plaquette is a bounded local Wilson loop. So our clustering bound applies to their observable directly at strong coupling.</li>
+    <li><b>Closing R06 in our paper.</b> At finite spatial volume, spin-network functions form an orthonormal basis of the gauge-invariant L² space (Peter–Weyl plus intertwiner bases), so local time-zero observables are dense. That turns the density hypothesis of <span class="mono">OS-TRANSFER-GAP-BRIDGE-1</span> into a short lemma. Their §4.4 reconstruction from smeared curvature observables is the continuum analogue.</li>
+    <li><b>One constant to reconcile.</b> The paper prints m<sub>block</sub> ≥ 0.039582864090969, while −log(0.961190174350780) = <span class="num">0.0395829974455</span>, the value in the OS-bridge bundle. Both are valid lower bounds; the paper should use one.</li>
+    <li><b>Stated scope for SU(N).</b> Theorem 0 is SU(2); clauses (0)(a)–(c) and (i) are written for every N ≥ 2 in the companion account, and they expect compact semisimple groups to work. Our fragment is SU(2) through its admissibility rules. Both programs would meet the same group-specific steps at SU(3).</li>
+  </ul>
+  </div>
+</section>
+
+<section id="questions" aria-labelledby="questions-h">
+  <div class="eyebrow">For Sussman and Alpöge</div>
+  <h2 id="questions-h">Questions to send the authors</h2>
+  <ol class="steps">
+    <li>Can you share the exact statement and proof of the finite-size gap criterion, including the universal threshold?</li>
+    <li>Is the positivity dichotomy of the large-field operations proved in the version behind the 153-page draft? The posted TeX marks it outstanding inside the induction for clauses (0) and (i).</li>
+    <li>Can any of the thresholds γ, γ<sub>H</sub>, γ<sub>J</sub> be made explicit, even crudely? An explicit upper end of the middle changes what can be computed.</li>
+    <li>Is there a pointwise version of the upper stability bound (i-b) at the reference lattice, or a reason it fails?</li>
+    <li>Would the construction run with the heat-kernel plaquette weight in place of Wilson's, or is Wilson's form used beyond its character positivity?</li>
+    <li>Is the small-torus gap on R × T³ written down, and does it give an explicit gap at fixed cutoff that we could compare with a transfer-matrix computation?</li>
+  </ol>
+</section>
+
+<section id="next" aria-labelledby="next-h">
+  <div class="eyebrow">Sequence</div>
+  <h2 id="next-h">Suggested order of work</h2>
+  <ol class="steps">
+    <li>Send the questions above, starting with the gap criterion (B3) and the positivity dichotomy.</li>
+    <li>Promote the Wilson diagnostic to <span class="mono">WILSON_HEAT_KERNEL_COMPARISON_1</span>: the fallback fragment for the Wilson action at x &lt; 0.627, reusing the v1.14 Bessel-ratio lemma for monotonicity and tails.</li>
+    <li>Run GAP-CRITERION-CHECK-1 once the criterion is in hand, then scan upward in x.</li>
+    <li>Write <span class="mono">BALABAN_ROW_0</span>: Theorem 0's level-K output as a certificate row, with failed and open fields marked (B1).</li>
+    <li>Start a small-box zero-free map in x (B6), reusing the v0.44 interval and winding machinery.</li>
+    <li>Add the one-loop slope c₀ and the clause (iv) correlator as required 4D calibrations for any Track B run.</li>
+    <li>In the fragment paper: close R06 with the spin-network basis lemma, reconcile the m<sub>block</sub> constant, and rename the three colliding symbols before anyone reads both documents side by side.</li>
+  </ol>
+</section>
+
+<section id="limits" aria-labelledby="limits-h">
+  <div class="eyebrow">Limits of this map</div>
+  <h2 id="limits-h">How much weight these links can bear</h2>
+  <div class="caveat">
+    <p>The repo's own README calls its contents "slop in progress" and raw LLM output, and says the authors cannot tell how reliable the reported progress is. Theorem 0 is conditional on inputs declared clause by clause in their §9; proofs attributed to the companion account were not all supplied; U1, U3 and U5 are withheld and U4 and U6 are not written; and fifteen of Bałaban's printed but unproved statements are used as given.</p>
+    <p>I read the 153-page YM4 draft, the rotation note, the openings of both QED3 manuscripts, and targeted sections of the companion TeX, plus a status count over all of it. I did not read the companion account end to end. Every bridge above inherits the conditional status of the clauses it touches. B3 depends on a statement I could only find described, not proved. The Wilson frontier is a diagnostic: same formulas, different weights, not yet a checked theorem.</p>
+  </div>
+</section>
+
+<footer class="sources">
+  <div class="eyebrow">Sources</div>
+  <ul>
+    <li><a href="https://github.com/ethanwsussman/Yang--Mills-LLM-experiment" target="_blank" rel="noopener">Yang–Mills LLM experiment repository</a> (README, README.pdf)</li>
+    <li><a href="https://github.com/ethanwsussman/Yang--Mills-LLM-experiment/blob/main/ym4_manuscript_zeroth_draft.pdf" target="_blank" rel="noopener">ym4_manuscript_zeroth_draft.pdf</a>: §§1.3–1.4, Lemmas 3.7–3.8, Lemma 6.4, Remark 6.6, §§4.5, 7.5, 8.2, 9.1–9.4</li>
+    <li><a href="https://github.com/ethanwsussman/Yang--Mills-LLM-experiment/blob/main/theorem_0_complete_account_raw_III.tex" target="_blank" rel="noopener">theorem_0_complete_account_raw_I–III.tex</a>: status count; positivity dichotomy; rarity statements; flux-hypothesis sufficient conditions; zero-free polydisc remark</li>
+    <li><a href="https://github.com/ethanwsussman/Yang--Mills-LLM-experiment/tree/main/QED3_slop" target="_blank" rel="noopener">QED3_slop</a>: qed3_manuscript.pdf, qed3.pdf, YM_Rotation_Invariance_simplified.pdf</li>
+    <li><a href="https://arxiv.org/abs/2204.12737" target="_blank" rel="noopener">Shen, Zhu, Zhu, A stochastic analysis approach to lattice Yang–Mills at strong coupling</a>: action Nβ Re Σ Tr Q<sub>p</sub>, SU(N) bound |β| &lt; 1/(16(d−1))</li>
+    <li>Our bundles: STRONG_COUPLING_FRAGMENT_PAPER_1, CUTOFF_REMOVAL_FALLBACK_1, OS_TRANSFER_GAP_BRIDGE_1, ACTION_RP_HEAT_KERNEL_1, FULL_FALLBACK_ASSEMBLY_2, v1.14 coefficient-ratio lemmas, v0.44 strip zero-freeness, CONTINUUM_RG_BRIDGE_0 v7</li>
+  </ul>
+</footer>
+
+</div>
+
+</body></html>
