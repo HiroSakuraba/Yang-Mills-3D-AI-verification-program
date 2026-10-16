@@ -26,6 +26,20 @@ checked **gate** at a time.
 | `docs/` | Conceptual pipeline DAG (`.mmd`, `.json`). |
 | `AGENTS.md` / `CLAUDE.md` | Operating contract for coding agents (Codex / Claude Code). |
 
+## Four-dimensional comparison research
+
+The [YM4 Wilson audit](docs/ym4-wilson-audit/README.md) collects a coherence map,
+exact coefficient calculations, an audit of recovered earlier proof notes, and a
+conservative application of the Dobrushin comparison theorem. It includes
+[the HTML map](docs/ym4-wilson-audit/YM4-Coherence-Map.html) and a
+[downloadable ZIP](docs/ym4-wilson-audit/YM4-Wilson-Audit.zip).
+
+This is a separate four-dimensional research record. Its scripts are consistency
+checks, not independent checkers for this repository's three-dimensional proof
+program. It does not close a gate in `program.yaml` or supply a proof dependency
+for the 3D lane. In particular, the coefficient frontier near `x = 0.6273` is not
+a physical clustering or mass-gap claim.
+
 ## Quick start
 
 ```bash

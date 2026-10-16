@@ -1,0 +1,50 @@
+{
+  "checked_utc_date": "2026-10-16",
+  "scope": "Targeted inspection and literal search, not full proof audit",
+  "snapshots": [
+    {
+      "filename": "theorem_0_complete_account_raw_I.tex",
+      "url": "https://github.com/ethanwsussman/Yang--Mills-LLM-experiment/blob/main/theorem_0_complete_account_raw_I.tex",
+      "sha256": "4cb5cb5e0af8dbddbee207926621300350e018c6cf1d6567a753167ce10e6e93",
+      "bytes": 10554720
+    },
+    {
+      "filename": "theorem_0_complete_account_raw_II.tex",
+      "url": "https://github.com/ethanwsussman/Yang--Mills-LLM-experiment/blob/main/theorem_0_complete_account_raw_II.tex",
+      "sha256": "6a1f74b05f74ba44a2186c11fb08e139178d86b15c1494a95c434212944b2b8f",
+      "bytes": 9092940
+    },
+    {
+      "filename": "theorem_0_complete_account_raw_III.tex",
+      "url": "https://github.com/ethanwsussman/Yang--Mills-LLM-experiment/blob/main/theorem_0_complete_account_raw_III.tex",
+      "sha256": "7e36523b85fb4f85aefdd45ab175420459f24e34fe56a4e83e53a6829c7a352d",
+      "bytes": 6963158
+    },
+    {
+      "filename": "ym4_manuscript_zeroth_draft.pdf",
+      "url": "https://github.com/ethanwsussman/Yang--Mills-LLM-experiment/blob/main/ym4_manuscript_zeroth_draft.pdf",
+      "sha256": "869ed86a1384dbc57277647e2bcd4096f545e533c74e45917c1caccb4868b24b",
+      "bytes": 2064505
+    }
+  ],
+  "literal_phrase_counts": {
+    "theorem_0_complete_account_raw_II.tex": {
+      "finite-size criterion": 0,
+      "finite size criterion": 0,
+      "quadratic inequality": 0,
+      "universal threshold": 0
+    },
+    "theorem_0_complete_account_raw_I.tex": {
+      "finite-size criterion": 0,
+      "finite size criterion": 0,
+      "quadratic inequality": 0,
+      "universal threshold": 0
+    },
+    "theorem_0_complete_account_raw_III.tex": {
+      "finite-size criterion": 0,
+      "finite size criterion": 0,
+      "quadratic inequality": 0,
+      "universal threshold": 0
+    }
+  }
+}

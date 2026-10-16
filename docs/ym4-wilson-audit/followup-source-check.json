@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-16",
+  "scope": "Targeted recovered-source audit; exact full-fragment proofs not located",
+  "snapshots": [
+    {
+      "filename": "ym_mass_gap_v1_15b_bundle.zip",
+      "sha256": "861f6e21f0cd86a03736244eb5fa147bd4df994d76c2e5ab965555c88841d916",
+      "bytes": 9900340
+    },
+    {
+      "filename": "ym_mass_gap_CONTINUUM_RG_BRIDGE_0_design_v7_bundle(1).zip",
+      "sha256": "2800599633451f9f945f61c3fb49e28e30e81024c8c5bdaf1117996b4342cefd",
+      "bytes": 151010
+    },
+    {
+      "filename": "CONTINUUM_RG_BRIDGE_0_v57_uv_to_fallback_ladder_bundle.zip",
+      "sha256": "39aa142c32c681c10b580c8baa7593e37d6a7cb0ede35ba10085c6141fe2bf99",
+      "bytes": 10957
+    },
+    {
+      "filename": "ym_mass_gap_v1_16_bundle.zip",
+      "sha256": "9d48e73054ef10f733326c25214c866544117a5d5f09f7501f3565391194efb8",
+      "bytes": 9930976
+    },
+    {
+      "filename": "CONTINUUM_RG_BRIDGE_0_v156_kstar_activity_generator_completeness_audit_bundle.zip",
+      "sha256": "33c49a037db02108586f1c6782fc8722d0f1f64b8706a833f7fb7d437014f619",
+      "bytes": 55279
+    },
+    {
+      "filename": "dobrushin130819.pdf",
+      "url": "https://web.math.princeton.edu/~rvan/dobrushin130819.pdf",
+      "sha256": "f8bf6158c6fb014af6f4993552baf4becd142490e84264dd7d8615c30655a89e",
+      "bytes": 517309
+    }
+  ]
+}
