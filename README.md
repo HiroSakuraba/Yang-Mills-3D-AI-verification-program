@@ -44,7 +44,7 @@ a physical clustering or mass-gap claim.
 
 ```bash
 make setup          # install pyyaml + jsonschema
-make status         # gate board (2 gates CLOSED today)
+make status         # gate board (3 implemented checks after make all)
 make next           # the single next gate to work on, as JSON
 make all            # run the whole DAG, fail-stop at the first gap
 make claims         # claim ratchet over the manuscript
@@ -57,8 +57,8 @@ Requires Python 3.11+. The only runtime dependencies are `pyyaml` and
 ## How a gate closes
 
 A gate is **CLOSED** only when its *independent* checker exits 0, writes a
-`decision.json` with `status: PASS`, and any declared schemas validate. Two
-gates ship closed today:
+`decision.json` with `status: PASS`, and any declared schemas validate. Three
+checks are implemented and reproduce through the harness:
 
 - `YM3D_SCHEMA_DISCRIMINATOR_NULL_TEST_1` — proves the stage-discriminated
   schemas reject ill-formed rows (combinatorial rows may not carry analytic
@@ -67,6 +67,14 @@ gates ship closed today:
   signed-permutation matrices. The checker **re-derives** the group from scratch
   and audits the generator's export as untrusted input — it does not import the
   generator.
+
+- `YM3D_GLUEBALL_OBSERVABLE_REFERENCE_1` — independently reconstructs five D4
+  scalar-loop definitions and exact rational spectral reference identities. This
+  comparison-lane result unlocks no analytic or physical mass-gap claim.
+
+The [scalar-glueball lane](lanes/glueball_spectroscopy/README.md) also includes a
+review-stage explicit plaquette-correlation derivation and a numerical spectrum
+analysis tool, with constructed reference inputs and CPU-only self-tests.
 
 Everything downstream is `BLOCKED` until its bundle is built. `make next` always
 names the one gate to work on.

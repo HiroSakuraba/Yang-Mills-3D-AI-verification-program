@@ -1,0 +1,120 @@
+{
+  "schema_version": "ym3d.glueball_spectrum_report.v1",
+  "status": "NUMERICAL_DIAGNOSTIC",
+  "data_kind": "synthetic_exact_reference",
+  "t0": 0,
+  "times": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "boundary": "periodic_time",
+  "temporal_spacing": 1.0,
+  "spatial_volume": 1,
+  "operator_normalization": "spatial_sum_div_sqrt_volume",
+  "mass_unit": "1/lattice_time",
+  "vacuum_subtraction": "subtracted_operator_mean_outer_product",
+  "metric_rank": 2,
+  "operator_count": 2,
+  "rank_cutoff": 1e-10,
+  "reference_condition_number": 5.857035743199966,
+  "input_asymmetry_max": 0.0,
+  "projected_eigen_residual_max": 1.9229626863835638e-16,
+  "principal_correlators": [
+    [
+      1.0,
+      0.9999999999999997
+    ],
+    [
+      0.500022887834353,
+      0.2500000008731151
+    ],
+    [
+      0.2500572195858827,
+      0.0625000037107384
+    ],
+    [
+      0.1251201611303539,
+      0.01562501489752326
+    ],
+    [
+      0.06274318324000172,
+      0.003906309603735234
+    ],
+    [
+      0.03173779696965082,
+      0.0009768009183517131
+    ],
+    [
+      0.016601309184124897,
+      0.00024509429925930436
+    ],
+    [
+      0.00976547599066186,
+      6.48498535005611e-05
+    ],
+    [
+      0.00781238079252931,
+      3.0517578117860095e-05
+    ]
+  ],
+  "effective_masses": {
+    "times": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "values": [
+      [
+        0.6931471805599455,
+        1.3862943611198897
+      ],
+      [
+        0.693147180559946,
+        1.3862943611198912
+      ],
+      [
+        0.6931471805599435,
+        1.3862943611198868
+      ],
+      [
+        0.6931471805599497,
+        1.3862943611199061
+      ],
+      [
+        0.6931471805599362,
+        1.3862943611198244
+      ],
+      [
+        0.6931471805599628,
+        1.3862943611201417
+      ],
+      [
+        0.6931471805599151,
+        1.386294361118985
+      ]
+    ]
+  },
+  "issues": [
+    {
+      "kind": "PERIODIC_COSH_ASSUMPTION",
+      "detail": "Vacuum-dominated forward/backward ansatz; finite-temperature transitions are not modeled."
+    }
+  ],
+  "non_claims": [
+    "No automatically accepted plateau or isolated-particle identification",
+    "No certified eigenvalue enclosure or physical gap proof",
+    "Modes are sorted independently at each time; near crossings need operator-overlap tracking",
+    "Finite volume, omitted states and discretization effects are not removed"
+  ]
+}

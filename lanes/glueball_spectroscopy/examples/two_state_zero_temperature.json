@@ -1,0 +1,145 @@
+{
+  "schema_version": "ym3d.glueball_correlators.v1",
+  "data_kind": "synthetic_exact_reference",
+  "gauge_group": "SU(2)",
+  "spacetime_dimensions": 3,
+  "boundary": "zero_temperature",
+  "time_extent": null,
+  "temporal_spacing": "1",
+  "operators": [
+    "ref_loop_a",
+    "ref_loop_b"
+  ],
+  "vacuum_subtracted": false,
+  "operator_means": [
+    "2",
+    "-1"
+  ],
+  "times": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "correlators": [
+    [
+      [
+        "21/4",
+        "-7/6"
+      ],
+      [
+        "-7/6",
+        "19/9"
+      ]
+    ],
+    [
+      [
+        "73/16",
+        "-41/24"
+      ],
+      [
+        "-41/24",
+        "47/36"
+      ]
+    ],
+    [
+      [
+        "273/64",
+        "-181/96"
+      ],
+      [
+        "-181/96",
+        "157/144"
+      ]
+    ],
+    [
+      [
+        "1057/256",
+        "-749/384"
+      ],
+      [
+        "-749/384",
+        "593/576"
+      ]
+    ],
+    [
+      [
+        "4161/1024",
+        "-3037/1536"
+      ],
+      [
+        "-3037/1536",
+        "2329/2304"
+      ]
+    ],
+    [
+      [
+        "16513/4096",
+        "-12221/6144"
+      ],
+      [
+        "-12221/6144",
+        "9257/9216"
+      ]
+    ],
+    [
+      [
+        "65793/16384",
+        "-49021/24576"
+      ],
+      [
+        "-49021/24576",
+        "36937/36864"
+      ]
+    ],
+    [
+      [
+        "262657/65536",
+        "-196349/98304"
+      ],
+      [
+        "-196349/98304",
+        "147593/147456"
+      ]
+    ],
+    [
+      [
+        "1049601/262144",
+        "-785917/393216"
+      ],
+      [
+        "-785917/393216",
+        "590089/589824"
+      ]
+    ]
+  ],
+  "operator_normalization": "spatial_sum_div_sqrt_volume",
+  "spatial_volume": 1,
+  "time_unit": "lattice_time",
+  "reference": {
+    "overlap_matrix": [
+      [
+        "1",
+        "1/2"
+      ],
+      [
+        "1/3",
+        "1"
+      ]
+    ],
+    "transfer_eigenvalues": [
+      "1/2",
+      "1/4"
+    ],
+    "mass_formulas": [
+      "log(2)",
+      "log(4)"
+    ],
+    "warning": "Constructed spectra, not measured Yang-Mills configurations."
+  }
+}

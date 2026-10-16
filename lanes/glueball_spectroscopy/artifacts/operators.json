@@ -1,0 +1,950 @@
+{
+  "schema_version": "ym3d.scalar_operators.v1",
+  "scope": "combinatorial definitions; no physical particle identification",
+  "spatial_group": [
+    [
+      [
+        -1,
+        0
+      ],
+      [
+        0,
+        -1
+      ]
+    ],
+    [
+      [
+        -1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        -1
+      ]
+    ],
+    [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    [
+      [
+        0,
+        -1
+      ],
+      [
+        -1,
+        0
+      ]
+    ],
+    [
+      [
+        0,
+        1
+      ],
+      [
+        -1,
+        0
+      ]
+    ],
+    [
+      [
+        0,
+        -1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ]
+  ],
+  "operators": [
+    {
+      "id": "plaquette",
+      "spacetime_dimensions": 3,
+      "spatial_dimensions": 2,
+      "gauge_group": "SU(2)",
+      "trace": "Tr(U)/2",
+      "spatial_irrep": "A1",
+      "parity": "+",
+      "charge_conjugation": "+",
+      "symmetry_projection_scope": "zero momentum; loops canonicalized modulo translation",
+      "continuum_spin": "scalar candidate; A1 also contains spins 4, 8, ...",
+      "local_definition": "P(x,t) = 1 - mean_orbit ReTr U_loop(x,t)/2",
+      "centered_definition": "P(x,t) - <P(x,t)>",
+      "zero_momentum_definition": "O(t) = sum_x [P(x,t)-<P(x,t)>]",
+      "correlator_normalization": "Cov(O(t),O(0))/spatial_volume",
+      "orbit_paths": [
+        [
+          -2,
+          -1,
+          2,
+          1
+        ]
+      ],
+      "orbit_weight": "1",
+      "link_oscillation_upper_bounds": [
+        {
+          "edge": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "bound": "2"
+        },
+        {
+          "edge": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "bound": "2"
+        },
+        {
+          "edge": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "bound": "2"
+        },
+        {
+          "edge": [
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "bound": "2"
+        }
+      ],
+      "oscillation_l1_upper_bound": "8"
+    },
+    {
+      "id": "rectangle_1x2",
+      "spacetime_dimensions": 3,
+      "spatial_dimensions": 2,
+      "gauge_group": "SU(2)",
+      "trace": "Tr(U)/2",
+      "spatial_irrep": "A1",
+      "parity": "+",
+      "charge_conjugation": "+",
+      "symmetry_projection_scope": "zero momentum; loops canonicalized modulo translation",
+      "continuum_spin": "scalar candidate; A1 also contains spins 4, 8, ...",
+      "local_definition": "P(x,t) = 1 - mean_orbit ReTr U_loop(x,t)/2",
+      "centered_definition": "P(x,t) - <P(x,t)>",
+      "zero_momentum_definition": "O(t) = sum_x [P(x,t)-<P(x,t)>]",
+      "correlator_normalization": "Cov(O(t),O(0))/spatial_volume",
+      "orbit_paths": [
+        [
+          -2,
+          -2,
+          -1,
+          2,
+          2,
+          1
+        ],
+        [
+          -2,
+          -1,
+          -1,
+          2,
+          1,
+          1
+        ]
+      ],
+      "orbit_weight": "1/2",
+      "link_oscillation_upper_bounds": [
+        {
+          "edge": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "bound": "2"
+        },
+        {
+          "edge": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "bound": "2"
+        },
+        {
+          "edge": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "bound": "1"
+        },
+        {
+          "edge": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "bound": "1"
+        },
+        {
+          "edge": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "bound": "1"
+        },
+        {
+          "edge": [
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "bound": "1"
+        },
+        {
+          "edge": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              0
+            ]
+          ],
+          "bound": "1"
+        },
+        {
+          "edge": [
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "bound": "1"
+        },
+        {
+          "edge": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              1
+            ]
+          ],
+          "bound": "1"
+        },
+        {
+          "edge": [
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ]
+          ],
+          "bound": "1"
+        }
+      ],
+      "oscillation_l1_upper_bound": "12"
+    },
+    {
+      "id": "square_2x2",
+      "spacetime_dimensions": 3,
+      "spatial_dimensions": 2,
+      "gauge_group": "SU(2)",
+      "trace": "Tr(U)/2",
+      "spatial_irrep": "A1",
+      "parity": "+",
+      "charge_conjugation": "+",
+      "symmetry_projection_scope": "zero momentum; loops canonicalized modulo translation",
+      "continuum_spin": "scalar candidate; A1 also contains spins 4, 8, ...",
+      "local_definition": "P(x,t) = 1 - mean_orbit ReTr U_loop(x,t)/2",
+      "centered_definition": "P(x,t) - <P(x,t)>",
+      "zero_momentum_definition": "O(t) = sum_x [P(x,t)-<P(x,t)>]",
+      "correlator_normalization": "Cov(O(t),O(0))/spatial_volume",
+      "orbit_paths": [
+        [
+          -2,
+          -2,
+          -1,
+          -1,
+          2,
+          2,
+          1,
+          1
+        ]
+      ],
+      "orbit_weight": "1",
+      "link_oscillation_upper_bounds": [
+        {
+          "edge": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "bound": "2"
+        },
+        {
+          "edge": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "bound": "2"
+        },
+        {
+          "edge": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "bound": "2"
+        },
+        {
+          "edge": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "bound": "2"
+        },
+        {
+          "edge": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              0
+            ]
+          ],
+          "bound": "2"
+        },
+        {
+          "edge": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              2
+            ]
+          ],
+          "bound": "2"
+        },
+        {
+          "edge": [
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ]
+          ],
+          "bound": "2"
+        },
+        {
+          "edge": [
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              2
+            ]
+          ],
+          "bound": "2"
+        }
+      ],
+      "oscillation_l1_upper_bound": "16"
+    },
+    {
+      "id": "rectangle_1x3",
+      "spacetime_dimensions": 3,
+      "spatial_dimensions": 2,
+      "gauge_group": "SU(2)",
+      "trace": "Tr(U)/2",
+      "spatial_irrep": "A1",
+      "parity": "+",
+      "charge_conjugation": "+",
+      "symmetry_projection_scope": "zero momentum; loops canonicalized modulo translation",
+      "continuum_spin": "scalar candidate; A1 also contains spins 4, 8, ...",
+      "local_definition": "P(x,t) = 1 - mean_orbit ReTr U_loop(x,t)/2",
+      "centered_definition": "P(x,t) - <P(x,t)>",
+      "zero_momentum_definition": "O(t) = sum_x [P(x,t)-<P(x,t)>]",
+      "correlator_normalization": "Cov(O(t),O(0))/spatial_volume",
+      "orbit_paths": [
+        [
+          -2,
+          -2,
+          -2,
+          -1,
+          2,
+          2,
+          2,
+          1
+        ],
+        [
+          -2,
+          -1,
+          -1,
+          -1,
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "orbit_weight": "1/2",
+      "link_oscillation_upper_bounds": [
+        {
+          "edge": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "bound": "2"
+        },
+        {
+          "edge": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "bound": "2"
+        },
+        {
+          "edge": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "bound": "1"
+        },
+        {
+          "edge": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "bound": "1"
+        },
+        {
+          "edge": [
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "bound": "1"
+        },
+        {
+          "edge": [
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              3
+            ]
+          ],
+          "bound": "1"
+        },
+        {
+          "edge": [
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "bound": "1"
+        },
+        {
+          "edge": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              0
+            ]
+          ],
+          "bound": "1"
+        },
+        {
+          "edge": [
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "bound": "1"
+        },
+        {
+          "edge": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              1
+            ]
+          ],
+          "bound": "1"
+        },
+        {
+          "edge": [
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ]
+          ],
+          "bound": "1"
+        },
+        {
+          "edge": [
+            [
+              2,
+              0
+            ],
+            [
+              3,
+              0
+            ]
+          ],
+          "bound": "1"
+        },
+        {
+          "edge": [
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          "bound": "1"
+        },
+        {
+          "edge": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          "bound": "1"
+        }
+      ],
+      "oscillation_l1_upper_bound": "16"
+    },
+    {
+      "id": "rectangle_2x3",
+      "spacetime_dimensions": 3,
+      "spatial_dimensions": 2,
+      "gauge_group": "SU(2)",
+      "trace": "Tr(U)/2",
+      "spatial_irrep": "A1",
+      "parity": "+",
+      "charge_conjugation": "+",
+      "symmetry_projection_scope": "zero momentum; loops canonicalized modulo translation",
+      "continuum_spin": "scalar candidate; A1 also contains spins 4, 8, ...",
+      "local_definition": "P(x,t) = 1 - mean_orbit ReTr U_loop(x,t)/2",
+      "centered_definition": "P(x,t) - <P(x,t)>",
+      "zero_momentum_definition": "O(t) = sum_x [P(x,t)-<P(x,t)>]",
+      "correlator_normalization": "Cov(O(t),O(0))/spatial_volume",
+      "orbit_paths": [
+        [
+          -2,
+          -2,
+          -2,
+          -1,
+          -1,
+          2,
+          2,
+          2,
+          1,
+          1
+        ],
+        [
+          -2,
+          -2,
+          -1,
+          -1,
+          -1,
+          2,
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "orbit_weight": "1/2",
+      "link_oscillation_upper_bounds": [
+        {
+          "edge": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "bound": "2"
+        },
+        {
+          "edge": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "bound": "2"
+        },
+        {
+          "edge": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "bound": "2"
+        },
+        {
+          "edge": [
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "bound": "1"
+        },
+        {
+          "edge": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "bound": "1"
+        },
+        {
+          "edge": [
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              3
+            ]
+          ],
+          "bound": "1"
+        },
+        {
+          "edge": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              0
+            ]
+          ],
+          "bound": "2"
+        },
+        {
+          "edge": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              2
+            ]
+          ],
+          "bound": "1"
+        },
+        {
+          "edge": [
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "bound": "1"
+        },
+        {
+          "edge": [
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ]
+          ],
+          "bound": "1"
+        },
+        {
+          "edge": [
+            [
+              2,
+              0
+            ],
+            [
+              3,
+              0
+            ]
+          ],
+          "bound": "1"
+        },
+        {
+          "edge": [
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              2
+            ]
+          ],
+          "bound": "1"
+        },
+        {
+          "edge": [
+            [
+              2,
+              2
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "bound": "1"
+        },
+        {
+          "edge": [
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "bound": "1"
+        },
+        {
+          "edge": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          "bound": "1"
+        },
+        {
+          "edge": [
+            [
+              3,
+              1
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "bound": "1"
+        }
+      ],
+      "oscillation_l1_upper_bound": "20"
+    }
+  ]
+}

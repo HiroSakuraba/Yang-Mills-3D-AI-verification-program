@@ -210,3 +210,21 @@ gates:
     status: blocked
     claims_unlocked: ["one certified RG contraction rung"]
     claim_strength: multi_scale_uv
+
+  # ---------- Scalar observable/reference lane (not an analytic 3D gate) ----
+  - id: YM3D_GLUEBALL_OBSERVABLE_REFERENCE_1
+    title: Spatial scalar-loop geometry and exact rational spectral references
+    milestone: observable_reference
+    schema_stage: combinatorial
+    workdir: lanes/glueball_spectroscopy
+    generator_cmd: "python tools/build.py"
+    checker_cmd: "python tools/check_glueball_reference.py"
+    decision_glob: "artifacts/decision.json"
+    decision_status_key: status
+    independence: strict
+    depends_on: [YM3D_OH_SIGNED_PERMUTATION_GROUP_1]
+    timeout_s: 120
+    claims_unlocked: ["D4 scalar-loop geometry and rational two-state reference identities audited"]
+    claim_strength: geometry_and_reference_only
+    # No analytic, numerical-spectrum or physical-gap claim is unlocked.
+    # This lane is not a dependency of the constructive-RG proof gates.

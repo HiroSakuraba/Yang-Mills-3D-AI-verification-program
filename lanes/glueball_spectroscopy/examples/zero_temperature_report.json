@@ -1,0 +1,120 @@
+{
+  "schema_version": "ym3d.glueball_spectrum_report.v1",
+  "status": "NUMERICAL_DIAGNOSTIC",
+  "data_kind": "synthetic_exact_reference",
+  "t0": 0,
+  "times": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "boundary": "zero_temperature",
+  "temporal_spacing": 1.0,
+  "spatial_volume": 1,
+  "operator_normalization": "spatial_sum_div_sqrt_volume",
+  "mass_unit": "1/lattice_time",
+  "vacuum_subtraction": "subtracted_operator_mean_outer_product",
+  "metric_rank": 2,
+  "operator_count": 2,
+  "rank_cutoff": 1e-10,
+  "reference_condition_number": 5.857043164437069,
+  "input_asymmetry_max": 0.0,
+  "projected_eigen_residual_max": 9.152604509318994e-17,
+  "principal_correlators": [
+    [
+      1.0,
+      0.9999999999999999
+    ],
+    [
+      0.4999999999999999,
+      0.24999999999999992
+    ],
+    [
+      0.2500000000000001,
+      0.06249999999999988
+    ],
+    [
+      0.12499999999999992,
+      0.015624999999999858
+    ],
+    [
+      0.0625000000000001,
+      0.003906250000000038
+    ],
+    [
+      0.03124999999999993,
+      0.0009765625000000711
+    ],
+    [
+      0.015625000000000125,
+      0.0002441406250001431
+    ],
+    [
+      0.007812499999999903,
+      6.1035156249964004e-05
+    ],
+    [
+      0.003906250000000071,
+      1.5258789062428768e-05
+    ]
+  ],
+  "effective_masses": {
+    "times": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "values": [
+      [
+        0.6931471805599455,
+        1.3862943611198908
+      ],
+      [
+        0.6931471805599446,
+        1.3862943611198921
+      ],
+      [
+        0.6931471805599464,
+        1.386294361119898
+      ],
+      [
+        0.6931471805599431,
+        1.3862943611198717
+      ],
+      [
+        0.6931471805599491,
+        1.3862943611198275
+      ],
+      [
+        0.6931471805599351,
+        1.3862943611193772
+      ],
+      [
+        0.6931471805599657,
+        1.3862943611210665
+      ],
+      [
+        0.6931471805599146,
+        1.386294361123969
+      ]
+    ]
+  },
+  "issues": [],
+  "non_claims": [
+    "No automatically accepted plateau or isolated-particle identification",
+    "No certified eigenvalue enclosure or physical gap proof",
+    "Modes are sorted independently at each time; near crossings need operator-overlap tracking",
+    "Finite volume, omitted states and discretization effects are not removed"
+  ]
+}
