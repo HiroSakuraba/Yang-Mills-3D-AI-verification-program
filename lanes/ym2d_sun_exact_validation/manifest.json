@@ -1,0 +1,47 @@
+{
+  "bundle": "ym2d_sun_exact_validation",
+  "determinism": "exact integer/rational arithmetic; sorted JSON; no floats in decisions",
+  "files": [
+    {
+      "bytes": 6609,
+      "path": "DERIVATION.md",
+      "sha256": "b57c710b9e59b8f13a151542281867327ad5dec2f1002a96d3092b7e40ad6b8b"
+    },
+    {
+      "bytes": 4191,
+      "path": "README.md",
+      "sha256": "aa5fc366dfbccb2bfae61208dcadd85d27dedb744b26712c633e37f7b8bb060b"
+    },
+    {
+      "bytes": 774,
+      "path": "artifacts/benchmark_report.json",
+      "sha256": "232397d504b8d0cd15f309a6ff6184937ef9851942f9ffdcc1a9370c7c4e5edd"
+    },
+    {
+      "bytes": 160629,
+      "path": "artifacts/reference.json",
+      "sha256": "d505103b3fa911a1650b2f8e814f20938345ca19151deb66987d073ee095a2c5"
+    },
+    {
+      "bytes": 3881,
+      "path": "src/ym2d_wilson/__init__.py",
+      "sha256": "55ebc04314316f1e190e094a61fe156604d3470d9da42dc03196ea9ec86a5a3c"
+    },
+    {
+      "bytes": 5057,
+      "path": "tests/test_reference.py",
+      "sha256": "66ae7ebfcf678b86632838ba8bcba091f756ac12b547439a966364a925f8c2f5"
+    },
+    {
+      "bytes": 642,
+      "path": "tools/build.py",
+      "sha256": "f0bd3623a4dba894d68596a0591ab4ed1aa83fdb6eddf8a35abc72b0a1f27e53"
+    },
+    {
+      "bytes": 13504,
+      "path": "tools/check_ym2d_exact.py",
+      "sha256": "bfa0edf28bb6d3e2672885576fb0c8cbaacf236e58fda98aa029aa93c47ab354"
+    }
+  ],
+  "version": "1"
+}

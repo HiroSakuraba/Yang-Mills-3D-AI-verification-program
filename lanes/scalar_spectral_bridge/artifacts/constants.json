@@ -1,0 +1,48 @@
+{
+  "analytic_gate_closed": false,
+  "cases": [
+    {
+      "channel_transfer_radius_upper": "3/10",
+      "covariance_prefactor": "160/7",
+      "dimensionless_energy_lower_endpoint_interval": [
+        "95388553003889834322464721753/79228162514264337593543950336",
+        "47694276501944917161232360877/39614081257132168796771975168"
+      ],
+      "influence_row_sum_upper": "3/10",
+      "spatial_polynomial_low_to_high": [
+        "849/49",
+        "108/7",
+        "4"
+      ],
+      "wilson_beta": "1/40"
+    },
+    {
+      "channel_transfer_radius_upper": "3/5",
+      "covariance_prefactor": "40",
+      "dimensionless_energy_lower_endpoint_interval": [
+        "40471775536182360971323250625/79228162514264337593543950336",
+        "20235887768091180485661625313/39614081257132168796771975168"
+      ],
+      "influence_row_sum_upper": "3/5",
+      "spatial_polynomial_low_to_high": [
+        "51",
+        "24",
+        "4"
+      ],
+      "wilson_beta": "1/20"
+    }
+  ],
+  "operator": "sum_z(P_z-mean_P)/L; P=1-Tr(U_xy)/2",
+  "physical_energy_units": "dimensionless energy divided by positive temporal_spacing",
+  "required_hypotheses": [
+    "compact finite-range Wilson specification with normalized Haar measure",
+    "Dobrushin comparison bound and support-distance estimate",
+    "positive self-adjoint physical transfer representation",
+    "infinite-time state equals the transfer ground-state state"
+  ],
+  "schema_version": "ym3d.scalar_spectral_bridge.v1",
+  "scope": "spectral measure and cyclic transfer subspace of this operator only",
+  "spatial_boundary": "periodic_square_L_at_least_3",
+  "status": "RESEARCH_DERIVATION_WITH_EXACT_CONSTANT_AUDIT",
+  "time_boundary": "infinite_time_ground_state"
+}

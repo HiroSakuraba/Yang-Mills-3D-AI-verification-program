@@ -1,0 +1,486 @@
+{
+  "Z_series": "sum_(k>=0) (s^2/4)^k/[k!(k+1)!]",
+  "analytic_gate_closed": false,
+  "cases": [
+    {
+      "beta_max": "1/4",
+      "log_Z_u_remainder_coefficient": "214159732006897/2326327031660544",
+      "norm": "supremum over fixed exterior SU(2) link fields; dimensionless log weight",
+      "normalization": "subtract log_weight at squared_staple_sum_norm=m",
+      "normalized_error_at_beta_max": "214159732006897/4764317760840794112",
+      "normalized_log_weight_coefficients": [
+        {
+          "beta_power": 2,
+          "coefficient": "1/4",
+          "pair_factors": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "beta_power": 4,
+          "coefficient": "-1/48",
+          "pair_factors": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "beta_power": 4,
+          "coefficient": "-1/96",
+          "pair_factors": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        }
+      ],
+      "normalized_log_weight_error_le_beta6_times": "214159732006897/1163163515830272",
+      "staple_count": 2,
+      "u_max": "1/16",
+      "unnormalized_log_weight_error_le_beta6_times": "214159732006897/2326327031660544"
+    },
+    {
+      "beta_max": "1/8",
+      "log_Z_u_remainder_coefficient": "214159732006897/2326327031660544",
+      "norm": "supremum over fixed exterior SU(2) link fields; dimensionless log weight",
+      "normalization": "subtract log_weight at squared_staple_sum_norm=m",
+      "normalized_error_at_beta_max": "214159732006897/4764317760840794112",
+      "normalized_log_weight_coefficients": [
+        {
+          "beta_power": 2,
+          "coefficient": "1/4",
+          "pair_factors": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "beta_power": 4,
+          "coefficient": "-1/24",
+          "pair_factors": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "beta_power": 4,
+          "coefficient": "-1/96",
+          "pair_factors": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "beta_power": 2,
+          "coefficient": "1/4",
+          "pair_factors": [
+            [
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "beta_power": 4,
+          "coefficient": "-1/24",
+          "pair_factors": [
+            [
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "beta_power": 4,
+          "coefficient": "-1/96",
+          "pair_factors": [
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "beta_power": 2,
+          "coefficient": "1/4",
+          "pair_factors": [
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        {
+          "beta_power": 4,
+          "coefficient": "-1/24",
+          "pair_factors": [
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        {
+          "beta_power": 4,
+          "coefficient": "-1/96",
+          "pair_factors": [
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        {
+          "beta_power": 2,
+          "coefficient": "1/4",
+          "pair_factors": [
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "beta_power": 4,
+          "coefficient": "-1/24",
+          "pair_factors": [
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "beta_power": 4,
+          "coefficient": "-1/96",
+          "pair_factors": [
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "beta_power": 2,
+          "coefficient": "1/4",
+          "pair_factors": [
+            [
+              1,
+              3
+            ]
+          ]
+        },
+        {
+          "beta_power": 4,
+          "coefficient": "-1/24",
+          "pair_factors": [
+            [
+              1,
+              3
+            ]
+          ]
+        },
+        {
+          "beta_power": 4,
+          "coefficient": "-1/96",
+          "pair_factors": [
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              3
+            ]
+          ]
+        },
+        {
+          "beta_power": 2,
+          "coefficient": "1/4",
+          "pair_factors": [
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "beta_power": 4,
+          "coefficient": "-1/24",
+          "pair_factors": [
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "beta_power": 4,
+          "coefficient": "-1/96",
+          "pair_factors": [
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "beta_power": 4,
+          "coefficient": "-1/48",
+          "pair_factors": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "beta_power": 4,
+          "coefficient": "-1/48",
+          "pair_factors": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        {
+          "beta_power": 4,
+          "coefficient": "-1/48",
+          "pair_factors": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "beta_power": 4,
+          "coefficient": "-1/48",
+          "pair_factors": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              3
+            ]
+          ]
+        },
+        {
+          "beta_power": 4,
+          "coefficient": "-1/48",
+          "pair_factors": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "beta_power": 4,
+          "coefficient": "-1/48",
+          "pair_factors": [
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        {
+          "beta_power": 4,
+          "coefficient": "-1/48",
+          "pair_factors": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "beta_power": 4,
+          "coefficient": "-1/48",
+          "pair_factors": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              3
+            ]
+          ]
+        },
+        {
+          "beta_power": 4,
+          "coefficient": "-1/48",
+          "pair_factors": [
+            [
+              0,
+              2
+            ],
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "beta_power": 4,
+          "coefficient": "-1/48",
+          "pair_factors": [
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "beta_power": 4,
+          "coefficient": "-1/48",
+          "pair_factors": [
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              3
+            ]
+          ]
+        },
+        {
+          "beta_power": 4,
+          "coefficient": "-1/48",
+          "pair_factors": [
+            [
+              0,
+              3
+            ],
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "beta_power": 4,
+          "coefficient": "-1/48",
+          "pair_factors": [
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ]
+          ]
+        },
+        {
+          "beta_power": 4,
+          "coefficient": "-1/48",
+          "pair_factors": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "beta_power": 4,
+          "coefficient": "-1/48",
+          "pair_factors": [
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              3
+            ]
+          ]
+        }
+      ],
+      "normalized_log_weight_error_le_beta6_times": "214159732006897/18174429934848",
+      "staple_count": 4,
+      "u_max": "1/16",
+      "unnormalized_log_weight_error_le_beta6_times": "214159732006897/36348859869696"
+    }
+  ],
+  "exact_weight": "Z(beta*sqrt(q)); q=|sum_i S_i|^2=m+2*sum_(i<j) c_ij",
+  "map": "integrate one link against normalized Haar while keeping its external staples fixed",
+  "pair_variable": "c_ij=Tr(S_i*S_j^dagger)/2",
+  "rg_contraction_established": false,
+  "schema_version": "ym3d.su2_link_decimation.v1",
+  "status": "LOCAL_ANALYTIC_DERIVATION_WITH_EXACT_ALGEBRA_AUDIT"
+}

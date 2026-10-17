@@ -1,0 +1,13 @@
+{
+  "analytic_gate_closed": false,
+  "non_claims": [
+    "Does not machine-certify the comparison or transfer construction",
+    "Does not identify a glueball pole or establish an all-sector/continuum gap"
+  ],
+  "report": {
+    "analytic_gate_closed": false,
+    "arithmetic": "integers and Fraction only",
+    "cases": 2
+  },
+  "status": "EXACT_CONSTANT_AUDIT_PASSED"
+}

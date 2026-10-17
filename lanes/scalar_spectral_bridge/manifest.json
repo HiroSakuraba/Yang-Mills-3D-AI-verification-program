@@ -1,0 +1,42 @@
+{
+  "bundle": "scalar_spectral_bridge",
+  "determinism": "exact integer/rational arithmetic; sorted JSON; no floats in decisions",
+  "files": [
+    {
+      "bytes": 9214,
+      "path": "README.md",
+      "sha256": "be2a3dc9662ea9094ddad38b4237306b872297884967e20cf91b6891eab8465c"
+    },
+    {
+      "bytes": 372,
+      "path": "artifacts/constant_audit.json",
+      "sha256": "d8dcd0b2003f921cba6e0ee7c1235ee64f65d6665c2a71e64335c5629d3332ca"
+    },
+    {
+      "bytes": 1727,
+      "path": "artifacts/constants.json",
+      "sha256": "80fde0c9bae4ffec9afb91e02b4bfc52c084731bad1bfd83565d9ecc9c57c87f"
+    },
+    {
+      "bytes": 1900,
+      "path": "src/scalar_bridge/__init__.py",
+      "sha256": "9e2fd5e2f904ab33d6f89bbeed5dc1fea29dcab197234a4cf269da1c310cb16b"
+    },
+    {
+      "bytes": 1858,
+      "path": "tests/test_bridge.py",
+      "sha256": "0e0d223009f0332eca26d8ac11cb4bf509c6bf394929e4314d55b3263110b048"
+    },
+    {
+      "bytes": 373,
+      "path": "tools/build.py",
+      "sha256": "59b040f71057fad70377a79ea6134df70631e438a739fd2c25b62257710a6ed1"
+    },
+    {
+      "bytes": 3403,
+      "path": "tools/check_constants.py",
+      "sha256": "953216df980f145df35dcd18d0b7a8008777b7d268354a55917683b9f7c1d87b"
+    }
+  ],
+  "version": "1"
+}

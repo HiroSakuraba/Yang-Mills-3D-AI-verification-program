@@ -8,6 +8,15 @@
   diagnostics and source/sample provenance retained through spectrum analysis.
   Add a synthetic samples-to-fits demonstration and eleven regression checks.
 
+- Implement an independently audited 2D SU(2) open-boundary Wilson reference:
+  normalized fundamental/adjoint characters, noncommutative rectangle words and
+  exact rational area-law enclosures with controlled infinite-series tails.
+  Keep the broader validation milestone blocked pending geometry integration.
+
+- Implement the exact directed-link action of the 48 cubic symmetries. Export
+  affine canonicalization rules and independently check endpoint identities,
+  group composition, inverses, faithfulness and periodic boundary cases.
+
 - Extend numerical glueball spectroscopy with overlap-based mode tracking,
   fixed-reference correlated mass fits, covariance diagnostics, bootstrap fit
   errors, paired window sensitivity, and JSON/CSV examples. Preserve the frozen

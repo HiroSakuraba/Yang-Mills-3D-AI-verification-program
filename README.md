@@ -84,6 +84,16 @@ Its [ensemble converter](lanes/glueball_spectrum_analysis/ENSEMBLES.md) prepares
 periodic correlators and chain-aware block-bootstrap replicas directly from
 per-configuration operator measurements, including vacuum means and provenance.
 
+The [directed-link action bundle](bundles/YM3D_ORIENTED_LINK_ACTION_1/README.md)
+independently audits the integer affine action of the cubic symmetries, including
+orientation reversals and periodic boundaries. Composite support lifting remains
+the next implementation step.
+
+The [exact 2D SU(2) reference](lanes/ym2d_sun_exact_validation/README.md) now has
+a standalone independent audit of open-boundary Wilson-loop expectations with
+rational tail bounds. It does not yet close the broader 2D pipeline-validation
+milestone or unlock analytic 3D results.
+
 Everything downstream is `BLOCKED` until its bundle is built. `make next` always
 names the one gate to work on.
 
