@@ -1,0 +1,3 @@
+state,start,stop,mass,mass_standard_error_bootstrap,mass_standard_error_linearized,chi_square,degrees_of_freedom,p_value_diagnostic,window_status,issues,reason
+0,1,4,0.43571531917642425,6.942096915386116e-06,1.5708429933472476e-05,566707.3231734751,2,0.0,FLAGGED,POOR_SINGLE_STATE_FIT,
+0,4,8,0.4016036173542484,3.2148649979671607e-06,4.618122509414873e-05,213.56227536981336,3,4.9461005647791635e-46,FLAGGED,POOR_SINGLE_STATE_FIT,

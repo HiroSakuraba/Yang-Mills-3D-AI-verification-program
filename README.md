@@ -76,6 +76,11 @@ The [scalar-glueball lane](lanes/glueball_spectroscopy/README.md) also includes 
 review-stage explicit plaquette-correlation derivation and a numerical spectrum
 analysis tool, with constructed reference inputs and CPU-only self-tests.
 
+The [spectrum-analysis extension](lanes/glueball_spectrum_analysis/README.md)
+adds overlap-based mode tracking, fixed-basis correlated mass fits, covariance
+regularization, bootstrap fit errors and fit-window comparisons. It is a
+numerical comparison tool and adds no proof gate or automatically selected plateau.
+
 Everything downstream is `BLOCKED` until its bundle is built. `make next` always
 names the one gate to work on.
 

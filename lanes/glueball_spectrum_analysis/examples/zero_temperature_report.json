@@ -1,0 +1,471 @@
+{
+  "schema_version": "ym3d.glueball_spectrum_analysis.v2",
+  "status": "NUMERICAL_DIAGNOSTIC",
+  "data_kind": "synthetic_correlated_reference",
+  "gauge_group": "SU(2)",
+  "spacetime_dimensions": 3,
+  "t0": 0,
+  "reference_time": 1,
+  "temporal_spacing": 1.0,
+  "time_unit": "lattice_time",
+  "mass_unit": "1/lattice_time",
+  "spatial_volume": 1,
+  "operator_normalization": "spatial_sum_div_sqrt_volume",
+  "metric_rank": 2,
+  "rank_cutoff": 1e-10,
+  "reference_condition_number": 5.857043164437069,
+  "tracking": {
+    "times": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "principal_correlators": [
+      [
+        1.0,
+        1.0
+      ],
+      [
+        0.4999999999999999,
+        0.24999999999999992
+      ],
+      [
+        0.2500000000000001,
+        0.06249999999999988
+      ],
+      [
+        0.12499999999999992,
+        0.015624999999999858
+      ],
+      [
+        0.0625000000000001,
+        0.003906250000000038
+      ],
+      [
+        0.03124999999999993,
+        0.0009765625000000711
+      ],
+      [
+        0.015625000000000125,
+        0.0002441406250001431
+      ],
+      [
+        0.007812499999999903,
+        6.1035156249964004e-05
+      ],
+      [
+        0.003906250000000071,
+        1.5258789062428768e-05
+      ]
+    ],
+    "squared_overlaps": [
+      [
+        1.0,
+        1.0
+      ],
+      [
+        1.0,
+        1.0
+      ],
+      [
+        1.0,
+        1.0000000000000004
+      ],
+      [
+        1.0,
+        1.0
+      ],
+      [
+        1.0,
+        1.0
+      ],
+      [
+        1.0000000000000004,
+        1.0000000000000004
+      ],
+      [
+        1.0,
+        1.0
+      ],
+      [
+        1.0,
+        1.0
+      ],
+      [
+        1.0,
+        1.0
+      ]
+    ],
+    "permutations": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "issues": []
+  },
+  "fixed_projection": {
+    "times": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "vectors": [
+      [
+        -1.2,
+        -0.4000000000000007
+      ],
+      [
+        0.5999999999999992,
+        1.2000000000000002
+      ]
+    ],
+    "correlators": [
+      [
+        1.0000000000000004,
+        0.9999999999999997
+      ],
+      [
+        0.5000000000000002,
+        0.2499999999999999
+      ],
+      [
+        0.25000000000000017,
+        0.0624999999999999
+      ],
+      [
+        0.12499999999999997,
+        0.01562499999999985
+      ],
+      [
+        0.06250000000000012,
+        0.003906250000000035
+      ],
+      [
+        0.03124999999999994,
+        0.0009765625000000703
+      ],
+      [
+        0.015625000000000132,
+        0.00024414062500014225
+      ],
+      [
+        0.007812499999999906,
+        6.1035156249964655e-05
+      ],
+      [
+        0.003906250000000073,
+        1.5258789062428985e-05
+      ]
+    ],
+    "label_qualification": "reference-time variational modes; not certified physical state identities"
+  },
+  "effective_masses": {
+    "times": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "values": [
+      [
+        0.6931471805599453,
+        1.3862943611198908
+      ],
+      [
+        0.6931471805599451,
+        1.3862943611198917
+      ],
+      [
+        0.6931471805599462,
+        1.3862943611198986
+      ],
+      [
+        0.6931471805599431,
+        1.3862943611198721
+      ],
+      [
+        0.6931471805599493,
+        1.3862943611198275
+      ],
+      [
+        0.693147180559935,
+        1.3862943611193799
+      ],
+      [
+        0.6931471805599657,
+        1.3862943611210523
+      ],
+      [
+        0.6931471805599146,
+        1.3862943611239655
+      ]
+    ],
+    "basis": "fixed_reference_time_variational_projection"
+  },
+  "fits": [
+    {
+      "state": 0,
+      "window": [
+        1,
+        5
+      ],
+      "times": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "covariance_source": "user_supplied_covariance_of_mean",
+      "mass": 0.6931471798994059,
+      "amplitude_at_window_start": 0.49999999933946065,
+      "mass_standard_error_linearized": 0.0006869571401183269,
+      "chi_square": 9.245677334908174e-13,
+      "unweighted_residual_sum_squares": null,
+      "degrees_of_freedom": 3,
+      "p_value_diagnostic": 1.0,
+      "covariance": {
+        "rank": 5,
+        "points": 5,
+        "condition_number": 337.7202310122129,
+        "relative_cutoff": 1e-10,
+        "shrinkage": 0.0
+      },
+      "optimizer_success": true,
+      "mass_bounds": [
+        1e-06,
+        5.0
+      ],
+      "model": "single_exponential",
+      "issues": [],
+      "window_status": "CANDIDATE_FOR_REVIEW",
+      "qualification": "Estimated or regularized covariance p-values and linearized errors are diagnostics; fit-window selection and omitted states are not included."
+    },
+    {
+      "state": 0,
+      "window": [
+        2,
+        6
+      ],
+      "times": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "covariance_source": "user_supplied_covariance_of_mean",
+      "mass": 0.6931471798994038,
+      "amplitude_at_window_start": 0.24999999966972986,
+      "mass_standard_error_linearized": 0.0006869571401183252,
+      "chi_square": 9.245677614433116e-13,
+      "unweighted_residual_sum_squares": null,
+      "degrees_of_freedom": 3,
+      "p_value_diagnostic": 1.0,
+      "covariance": {
+        "rank": 5,
+        "points": 5,
+        "condition_number": 337.7202310122129,
+        "relative_cutoff": 1e-10,
+        "shrinkage": 0.0
+      },
+      "optimizer_success": true,
+      "mass_bounds": [
+        1e-06,
+        5.0
+      ],
+      "model": "single_exponential",
+      "issues": [],
+      "window_status": "CANDIDATE_FOR_REVIEW",
+      "qualification": "Estimated or regularized covariance p-values and linearized errors are diagnostics; fit-window selection and omitted states are not included."
+    },
+    {
+      "state": 1,
+      "window": [
+        1,
+        5
+      ],
+      "times": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "covariance_source": "user_supplied_covariance_of_mean",
+      "mass": 1.3862943610121352,
+      "amplitude_at_window_start": 0.2499999999461269,
+      "mass_standard_error_linearized": 0.0006869571401183143,
+      "chi_square": 2.4597068719849168e-14,
+      "unweighted_residual_sum_squares": null,
+      "degrees_of_freedom": 3,
+      "p_value_diagnostic": 1.0,
+      "covariance": {
+        "rank": 5,
+        "points": 5,
+        "condition_number": 79691.30689861177,
+        "relative_cutoff": 1e-10,
+        "shrinkage": 0.0
+      },
+      "optimizer_success": true,
+      "mass_bounds": [
+        1e-06,
+        5.0
+      ],
+      "model": "single_exponential",
+      "issues": [],
+      "window_status": "CANDIDATE_FOR_REVIEW",
+      "qualification": "Estimated or regularized covariance p-values and linearized errors are diagnostics; fit-window selection and omitted states are not included."
+    },
+    {
+      "state": 1,
+      "window": [
+        2,
+        6
+      ],
+      "times": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "covariance_source": "user_supplied_covariance_of_mean",
+      "mass": 1.3862943610120166,
+      "amplitude_at_window_start": 0.06249999998652602,
+      "mass_standard_error_linearized": 0.0006869571401182141,
+      "chi_square": 2.4597077438715542e-14,
+      "unweighted_residual_sum_squares": null,
+      "degrees_of_freedom": 3,
+      "p_value_diagnostic": 1.0,
+      "covariance": {
+        "rank": 5,
+        "points": 5,
+        "condition_number": 79691.30689861177,
+        "relative_cutoff": 1e-10,
+        "shrinkage": 0.0
+      },
+      "optimizer_success": true,
+      "mass_bounds": [
+        1e-06,
+        5.0
+      ],
+      "model": "single_exponential",
+      "issues": [],
+      "window_status": "CANDIDATE_FOR_REVIEW",
+      "qualification": "Estimated or regularized covariance p-values and linearized errors are diagnostics; fit-window selection and omitted states are not included."
+    }
+  ],
+  "window_stability": [
+    {
+      "state": 0,
+      "usable_windows": 2,
+      "mass_span": 2.1094237467877974e-15,
+      "paired_comparisons": [
+        {
+          "windows": [
+            [
+              1,
+              5
+            ],
+            [
+              2,
+              6
+            ]
+          ],
+          "mass_difference": 2.1094237467877974e-15,
+          "paired_bootstrap_standard_error": null,
+          "diagnostic_z": null
+        }
+      ],
+      "issues": [],
+      "qualification": "Paired-bootstrap shift diagnostic only; overlapping windows and multiple comparisons do not establish a plateau."
+    },
+    {
+      "state": 1,
+      "usable_windows": 2,
+      "mass_span": 1.1857181902996672e-13,
+      "paired_comparisons": [
+        {
+          "windows": [
+            [
+              1,
+              5
+            ],
+            [
+              2,
+              6
+            ]
+          ],
+          "mass_difference": 1.1857181902996672e-13,
+          "paired_bootstrap_standard_error": null,
+          "diagnostic_z": null
+        }
+      ],
+      "issues": [],
+      "qualification": "Paired-bootstrap shift diagnostic only; overlapping windows and multiple comparisons do not establish a plateau."
+    }
+  ],
+  "selected_window": null,
+  "plateau_status": "NOT_AUTOMATICALLY_SELECTED",
+  "backend": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "non_claims": [
+    "No proof-gate decision, certified mass interval or isolated-particle identification",
+    "No removal of finite-volume, excited-state or discretization effects",
+    "Periodic cosh model assumes vacuum dominance; thermal transitions are omitted",
+    "Mode overlap tracks numerical vectors and cannot resolve genuinely degenerate physical states"
+  ],
+  "input_sha256": "196addc250eee7a3db3e7eb725a9bba9df6c1674c3f0877fd1330664ca6ff0a8"
+}

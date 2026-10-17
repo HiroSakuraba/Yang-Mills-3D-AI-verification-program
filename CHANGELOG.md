@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+- Extend numerical glueball spectroscopy with overlap-based mode tracking,
+  fixed-reference correlated mass fits, covariance diagnostics, bootstrap fit
+  errors, paired window sensitivity, and JSON/CSV examples. Preserve the frozen
+  exact reference lane and add no analytic/proof gate.
+
 - Add the scalar-glueball comparison lane: five exact D4/A1 loop definitions,
   independent rational reference checks, a review-stage volume-normalized
   plaquette correlation derivation, and numerical generalized-eigenvalue analysis.
