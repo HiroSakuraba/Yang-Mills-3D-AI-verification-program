@@ -1,0 +1,3 @@
+state,start,stop,mass,mass_standard_error_bootstrap,mass_standard_error_linearized,chi_square,degrees_of_freedom,p_value_diagnostic,window_status,issues,reason
+0,1,3,,,,,,,REJECTED,,Fits require at least three finite positive projected correlators.
+0,1,4,,,,,,,REJECTED,,Fits require at least three finite positive projected correlators.
