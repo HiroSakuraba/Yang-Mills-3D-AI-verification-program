@@ -1,0 +1,375 @@
+{
+  "schema_version": "ym3d.glueball_spectrum_analysis.v2",
+  "status": "NUMERICAL_DIAGNOSTIC",
+  "data_kind": "synthetic_excited_state_control",
+  "gauge_group": "SU(2)",
+  "spacetime_dimensions": 3,
+  "t0": 0,
+  "reference_time": 1,
+  "temporal_spacing": 1.0,
+  "time_unit": "lattice_time",
+  "mass_unit": "1/lattice_time",
+  "spatial_volume": 1,
+  "operator_normalization": "spatial_sum_div_sqrt_volume",
+  "metric_rank": 1,
+  "rank_cutoff": 1e-10,
+  "reference_condition_number": 1.0,
+  "tracking": {
+    "times": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "principal_correlators": [
+      [
+        1.0
+      ],
+      [
+        0.5855754296168328
+      ],
+      [
+        0.37162518381882087
+      ],
+      [
+        0.24395448489385718
+      ],
+      [
+        0.1622567871390209
+      ],
+      [
+        0.10845060298240107
+      ],
+      [
+        0.07261933609636576
+      ],
+      [
+        0.048659140420060795
+      ],
+      [
+        0.0326124980219061
+      ]
+    ],
+    "squared_overlaps": [
+      [
+        1.0
+      ],
+      [
+        1.0
+      ],
+      [
+        1.0
+      ],
+      [
+        1.0
+      ],
+      [
+        1.0
+      ],
+      [
+        1.0
+      ],
+      [
+        1.0
+      ],
+      [
+        1.0
+      ],
+      [
+        1.0
+      ]
+    ],
+    "permutations": [
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        0
+      ]
+    ],
+    "issues": []
+  },
+  "fixed_projection": {
+    "times": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "vectors": [
+      [
+        1.0
+      ]
+    ],
+    "correlators": [
+      [
+        1.0
+      ],
+      [
+        0.5855754296168328
+      ],
+      [
+        0.37162518381882087
+      ],
+      [
+        0.24395448489385718
+      ],
+      [
+        0.1622567871390209
+      ],
+      [
+        0.10845060298240107
+      ],
+      [
+        0.07261933609636576
+      ],
+      [
+        0.048659140420060795
+      ],
+      [
+        0.0326124980219061
+      ]
+    ],
+    "label_qualification": "reference-time variational modes; not certified physical state identities"
+  },
+  "effective_masses": {
+    "times": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "values": [
+      [
+        0.5351602748368095
+      ],
+      [
+        0.45470922819194864
+      ],
+      [
+        0.42090410538068423
+      ],
+      [
+        0.40780148449809644
+      ],
+      [
+        0.4028853888134734
+      ],
+      [
+        0.4010635734763812
+      ],
+      [
+        0.4003915516067517
+      ],
+      [
+        0.40014408236961674
+      ]
+    ],
+    "basis": "fixed_reference_time_variational_projection"
+  },
+  "fits": [
+    {
+      "state": 0,
+      "window": [
+        1,
+        4
+      ],
+      "times": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "covariance_source": "user_supplied_covariance_of_mean",
+      "mass": 0.43571531917642425,
+      "amplitude_at_window_start": 0.5831709532554825,
+      "mass_standard_error_linearized": 1.5708429933472476e-05,
+      "chi_square": 566707.3231734751,
+      "unweighted_residual_sum_squares": null,
+      "degrees_of_freedom": 2,
+      "p_value_diagnostic": 0.0,
+      "covariance": {
+        "rank": 4,
+        "points": 4,
+        "condition_number": 1.0,
+        "relative_cutoff": 1e-10,
+        "shrinkage": 0.0
+      },
+      "optimizer_success": true,
+      "mass_bounds": [
+        1e-06,
+        5.0
+      ],
+      "model": "single_exponential",
+      "issues": [
+        "POOR_SINGLE_STATE_FIT"
+      ],
+      "window_status": "FLAGGED",
+      "qualification": "Estimated or regularized covariance p-values and linearized errors are diagnostics; fit-window selection and omitted states are not included.",
+      "bootstrap_mass_samples": [
+        0.4357103174596772,
+        0.43571901356042536,
+        0.43571953540004854,
+        0.43571599856501936,
+        0.43572227329884977,
+        0.4357151703615582,
+        0.43572207731638013,
+        0.43570598522211795,
+        0.43570645510306694,
+        0.43570907325881314,
+        0.435727514404967,
+        0.4357102462629423
+      ],
+      "bootstrap_fit_failures": [],
+      "mass_standard_error_bootstrap": 6.942096915386116e-06,
+      "mass_percentile_16_84": [
+        0.43570844490143407,
+        0.43572212435217283
+      ]
+    },
+    {
+      "state": 0,
+      "window": [
+        4,
+        8
+      ],
+      "times": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "covariance_source": "user_supplied_covariance_of_mean",
+      "mass": 0.4016036173542484,
+      "amplitude_at_window_start": 0.1622018262618765,
+      "mass_standard_error_linearized": 4.618122509414873e-05,
+      "chi_square": 213.56227536981336,
+      "unweighted_residual_sum_squares": null,
+      "degrees_of_freedom": 3,
+      "p_value_diagnostic": 4.9461005647791635e-46,
+      "covariance": {
+        "rank": 5,
+        "points": 5,
+        "condition_number": 1.0,
+        "relative_cutoff": 1e-10,
+        "shrinkage": 0.0
+      },
+      "optimizer_success": true,
+      "mass_bounds": [
+        1e-06,
+        5.0
+      ],
+      "model": "single_exponential",
+      "issues": [
+        "POOR_SINGLE_STATE_FIT"
+      ],
+      "window_status": "FLAGGED",
+      "qualification": "Estimated or regularized covariance p-values and linearized errors are diagnostics; fit-window selection and omitted states are not included.",
+      "bootstrap_mass_samples": [
+        0.4016065252933164,
+        0.40160039748165555,
+        0.4016025252459204,
+        0.40160069158518796,
+        0.40159892104697037,
+        0.40159886481610074,
+        0.40160196448494706,
+        0.40160825932138344,
+        0.4016050209038231,
+        0.40160639744845633,
+        0.40159950460087684,
+        0.4016024895270592
+      ],
+      "bootstrap_fit_failures": [],
+      "mass_standard_error_bootstrap": 3.2148649979671607e-06,
+      "mass_percentile_16_84": [
+        0.40159936454793926,
+        0.40160642813122277
+      ]
+    }
+  ],
+  "window_stability": [
+    {
+      "state": 0,
+      "usable_windows": 2,
+      "mass_span": 0.03411170182217588,
+      "paired_comparisons": [
+        {
+          "windows": [
+            [
+              1,
+              4
+            ],
+            [
+              4,
+              8
+            ]
+          ],
+          "mass_difference": 0.03411170182217588,
+          "paired_bootstrap_standard_error": 9.684047032567979e-06,
+          "diagnostic_z": 3522.463460519797,
+          "flagged": true
+        }
+      ],
+      "issues": [
+        "WINDOW_DEPENDENCE"
+      ],
+      "qualification": "Paired-bootstrap shift diagnostic only; overlapping windows and multiple comparisons do not establish a plateau."
+    }
+  ],
+  "selected_window": null,
+  "plateau_status": "NOT_AUTOMATICALLY_SELECTED",
+  "backend": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "non_claims": [
+    "No proof-gate decision, certified mass interval or isolated-particle identification",
+    "No removal of finite-volume, excited-state or discretization effects",
+    "Periodic cosh model assumes vacuum dominance; thermal transitions are omitted",
+    "Mode overlap tracks numerical vectors and cannot resolve genuinely degenerate physical states"
+  ],
+  "bootstrap": {
+    "replica_count": 12,
+    "block_size": 1,
+    "resampling_unit": "constructed perturbations, not gauge configurations",
+    "basis_strategy": "refit at reference_time in each replica, align in central C(t0) metric, then freeze over time",
+    "qualification": "Sampling/autocorrelation adequacy is user supplied. Weights stay fixed across replica fits; failed or boundary-censored fits withhold the uncertainty summary."
+  },
+  "input_sha256": "4309f1bc1de8a6a017729b59671dbff6eee58ddf6b485a588dbbdab58ba251a7"
+}
