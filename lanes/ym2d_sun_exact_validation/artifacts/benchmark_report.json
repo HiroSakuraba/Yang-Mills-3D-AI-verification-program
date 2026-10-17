@@ -1,0 +1,20 @@
+{
+  "non_claims": [
+    "No general SU(N), periodic-surface or 3D result",
+    "No completed integration with support/orbit/collision exports",
+    "No analytic 3D permission or mass-gap statement"
+  ],
+  "program_gate_closed": false,
+  "report": {
+    "absolute_interval_width_limit": "1/1208925819614629174706176",
+    "area_law_cases": 64,
+    "geometry_method": "comb-tree spanning audit, ordered boundary words and exact free-word cancellation",
+    "grid_plaquettes": 12,
+    "one_plaquette_cases": 12,
+    "oriented_rectangles": 120,
+    "rational_intervals": 88,
+    "reference_method": "independent Catalan Haar moments, normalized character polynomials and geometric tails"
+  },
+  "scope": "standalone 2D SU(2) open-boundary reference audit",
+  "status": "PASS"
+}

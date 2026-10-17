@@ -86,6 +86,11 @@ independently audits the integer affine action of the cubic symmetries, includin
 orientation reversals and periodic boundaries. Composite support lifting remains
 the next implementation step.
 
+The [exact 2D SU(2) reference](lanes/ym2d_sun_exact_validation/README.md) now has
+a standalone independent audit of open-boundary Wilson-loop expectations with
+rational tail bounds. It does not yet close the broader 2D pipeline-validation
+milestone or unlock analytic 3D results.
+
 Everything downstream is `BLOCKED` until its bundle is built. `make next` always
 names the one gate to work on.
 
