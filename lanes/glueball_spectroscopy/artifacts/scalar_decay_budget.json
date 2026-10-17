@@ -1,0 +1,21 @@
+{
+  "schema_version": "ym3d.scalar_decay_budget.v1",
+  "wilson_x": "1/20",
+  "alpha_upper": "3/5",
+  "pure_exponential_base": "4/5",
+  "pure_exponential_prefactor": "33120",
+  "polynomial_coefficients": [
+    "51",
+    "24",
+    "4"
+  ],
+  "local_covariance_prefactor": "40",
+  "rate_formula": "m_review = -log(q)/a_t",
+  "status": "EXACT_FORMULA_EVALUATION_ANALYTIC_DERIVATION_FOR_REVIEW",
+  "non_claims": [
+    "No analytic 3D gate closed",
+    "No transfer-space identification certified",
+    "No isolated glueball pole established",
+    "No continuum limit"
+  ]
+}

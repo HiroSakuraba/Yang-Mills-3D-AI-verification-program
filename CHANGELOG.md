@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased
+
+- Add the scalar-glueball comparison lane: five exact D4/A1 loop definitions,
+  independent rational reference checks, a review-stage volume-normalized
+  plaquette correlation derivation, and numerical generalized-eigenvalue analysis.
+- Add one combinatorial/reference-only harness result; preserve the analytic
+  validation prerequisites and keep numerical spectroscopy outside proof claims.
+
+
 ## 1.8.0 — Open-source / harness revision
 - Added `program.yaml`: single authoritative gate-dependency graph.
 - Added orchestrator (`run.py`), claim ratchet (`claim_lint.py`), gate

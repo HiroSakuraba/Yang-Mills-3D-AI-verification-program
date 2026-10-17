@@ -1,0 +1,97 @@
+{
+  "bundle": "glueball_spectroscopy",
+  "determinism": "exact integer/rational arithmetic; sorted JSON; no floats in decisions",
+  "files": [
+    {
+      "bytes": 6492,
+      "path": "README.md",
+      "sha256": "7d87583ac7e27b203b4f64df64411df075bc887d3d618e3660525c91c37a984a"
+    },
+    {
+      "bytes": 6935,
+      "path": "SCALAR_CORRELATION_DERIVATION.md",
+      "sha256": "fd15f7d98f1223e36a4cbbefda1b14b9933d23398c0fc270617b3973abc9ac79"
+    },
+    {
+      "bytes": 726,
+      "path": "artifacts/decision.json",
+      "sha256": "83c169b13c51aa349471256b8bde4f5ccfd8fcc78a49c8f254798e288e499139"
+    },
+    {
+      "bytes": 16354,
+      "path": "artifacts/operators.json",
+      "sha256": "4ad558d360c8d1725a5878b1e76dfd8e810afc75f3bb020af053374d3063e2a3"
+    },
+    {
+      "bytes": 569,
+      "path": "artifacts/scalar_decay_budget.json",
+      "sha256": "c9d71a6108fa8996833d68234a1cfc148406c80635e06a7735989e7a5165a065"
+    },
+    {
+      "bytes": 2447,
+      "path": "examples/periodic_report.json",
+      "sha256": "1430604f357ad30a719f15f14f78ab7605e0ee399ab5eba7d3bd453aea4355b8"
+    },
+    {
+      "bytes": 2427,
+      "path": "examples/two_state_periodic.json",
+      "sha256": "6617face1df28400174d00c64d9d1f512675d23c1fef072a6ae518839978a3cc"
+    },
+    {
+      "bytes": 2082,
+      "path": "examples/two_state_zero_temperature.json",
+      "sha256": "bd080a15b6942989032996fbedd8851ab9d2565b2e444d4c439ed6268f299c19"
+    },
+    {
+      "bytes": 2372,
+      "path": "examples/zero_temperature_report.json",
+      "sha256": "d7b3d699e033aeaa19e022d478aadee3aa1bb8f70fb2534e4e83698a12e44db2"
+    },
+    {
+      "bytes": 15,
+      "path": "requirements.txt",
+      "sha256": "99f43573522565d7c480efd1f954892948033915df6a4e685327e995d3396eb6"
+    },
+    {
+      "bytes": 83,
+      "path": "src/glueball_spectroscopy/__init__.py",
+      "sha256": "5e04ad5ffe59652e281c658b53acaabe8169e95e91b2950d6423d125899c9cb1"
+    },
+    {
+      "bytes": 1545,
+      "path": "src/glueball_spectroscopy/bounds.py",
+      "sha256": "ff26cacdf11737b9ac0729ec508717fce74c4ed2baf2df421b6591cb2d666129"
+    },
+    {
+      "bytes": 3445,
+      "path": "src/glueball_spectroscopy/operators.py",
+      "sha256": "c6a1c2017f444a35365368f609fc9156145af13fec08c51719da37b2c3ba03f7"
+    },
+    {
+      "bytes": 10769,
+      "path": "src/glueball_spectroscopy/spectrum.py",
+      "sha256": "2d699f3a86b14f5155b18a349454c79ef833eddd59881e877a73e5015d30249e"
+    },
+    {
+      "bytes": 5724,
+      "path": "tests/test_spectrum.py",
+      "sha256": "bc59090b05ecacabcd43b4b419ec6d10f6199a33707b130c235c485d668c8acd"
+    },
+    {
+      "bytes": 1096,
+      "path": "tools/analyze.py",
+      "sha256": "acb7af5d8f950a179b3097e775c279064de5cfa2ce6cb321e7c2d66e760f02c5"
+    },
+    {
+      "bytes": 2298,
+      "path": "tools/build.py",
+      "sha256": "da95ea04d552e1a17dbd18819cf6c45ba11b2c3b94bdd5804170dc87d002aa92"
+    },
+    {
+      "bytes": 8322,
+      "path": "tools/check_glueball_reference.py",
+      "sha256": "6a70016a2e752dbca2255537d9c388bf3aaf5aab67200299fae7bbe844d4f85e"
+    }
+  ],
+  "version": "1"
+}

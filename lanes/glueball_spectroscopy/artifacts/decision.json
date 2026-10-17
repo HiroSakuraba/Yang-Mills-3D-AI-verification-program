@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "closed_obligations": [
+    "D4 spatial scalar-loop orbits and link-oscillation envelope coefficients reconstructed",
+    "Two-state rational GEVP reference pencils and vacuum subtraction reconstructed",
+    "Rational spatial-sum formula constants reconstructed; analytic hypotheses not certified"
+  ],
+  "non_claims": [
+    "No analytic or physical mass-gap gate closed",
+    "No isolated glueball pole",
+    "No continuum result",
+    "Floating-point spectroscopy not certified by this checker"
+  ],
+  "next_obligation": "Review analytic correlation derivation and establish physical transfer identification",
+  "negative_controls_rejected": 4,
+  "operator_count": 5,
+  "reference_time_slices": 18
+}
