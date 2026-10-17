@@ -1,0 +1,4955 @@
+{
+  "elements": [
+    {
+      "element_id": "oh_00",
+      "matrix": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": -1,
+          "input_axis": 0,
+          "linear": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ]
+          ],
+          "offset": [
+            -1,
+            0,
+            0
+          ],
+          "output_axis": 0
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 1,
+          "linear": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ]
+          ],
+          "offset": [
+            0,
+            -1,
+            0
+          ],
+          "output_axis": 1
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 2,
+          "linear": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            -1
+          ],
+          "output_axis": 2
+        }
+      ]
+    },
+    {
+      "element_id": "oh_01",
+      "matrix": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": -1,
+          "input_axis": 0,
+          "linear": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "offset": [
+            -1,
+            0,
+            0
+          ],
+          "output_axis": 0
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 1,
+          "linear": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "offset": [
+            0,
+            -1,
+            0
+          ],
+          "output_axis": 1
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 2,
+          "linear": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 2
+        }
+      ]
+    },
+    {
+      "element_id": "oh_02",
+      "matrix": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          -1,
+          0
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": -1,
+          "input_axis": 0,
+          "linear": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            -1,
+            0,
+            0
+          ],
+          "output_axis": 0
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 1,
+          "linear": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            -1
+          ],
+          "output_axis": 2
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 2,
+          "linear": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            -1,
+            0
+          ],
+          "output_axis": 1
+        }
+      ]
+    },
+    {
+      "element_id": "oh_03",
+      "matrix": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": -1,
+          "input_axis": 0,
+          "linear": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "offset": [
+            -1,
+            0,
+            0
+          ],
+          "output_axis": 0
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 1,
+          "linear": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 2
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 2,
+          "linear": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            -1,
+            0
+          ],
+          "output_axis": 1
+        }
+      ]
+    },
+    {
+      "element_id": "oh_04",
+      "matrix": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          -1,
+          0
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": -1,
+          "input_axis": 0,
+          "linear": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            -1,
+            0,
+            0
+          ],
+          "output_axis": 0
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 1,
+          "linear": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            -1
+          ],
+          "output_axis": 2
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 2,
+          "linear": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 1
+        }
+      ]
+    },
+    {
+      "element_id": "oh_05",
+      "matrix": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": -1,
+          "input_axis": 0,
+          "linear": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "offset": [
+            -1,
+            0,
+            0
+          ],
+          "output_axis": 0
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 1,
+          "linear": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 2
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 2,
+          "linear": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 1
+        }
+      ]
+    },
+    {
+      "element_id": "oh_06",
+      "matrix": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": -1,
+          "input_axis": 0,
+          "linear": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ]
+          ],
+          "offset": [
+            -1,
+            0,
+            0
+          ],
+          "output_axis": 0
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 1,
+          "linear": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 1
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 2,
+          "linear": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            -1
+          ],
+          "output_axis": 2
+        }
+      ]
+    },
+    {
+      "element_id": "oh_07",
+      "matrix": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": -1,
+          "input_axis": 0,
+          "linear": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "offset": [
+            -1,
+            0,
+            0
+          ],
+          "output_axis": 0
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 1,
+          "linear": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 1
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 2,
+          "linear": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 2
+        }
+      ]
+    },
+    {
+      "element_id": "oh_08",
+      "matrix": [
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": -1,
+          "input_axis": 0,
+          "linear": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ]
+          ],
+          "offset": [
+            0,
+            -1,
+            0
+          ],
+          "output_axis": 1
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 1,
+          "linear": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ]
+          ],
+          "offset": [
+            -1,
+            0,
+            0
+          ],
+          "output_axis": 0
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 2,
+          "linear": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            -1
+          ],
+          "output_axis": 2
+        }
+      ]
+    },
+    {
+      "element_id": "oh_09",
+      "matrix": [
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": -1,
+          "input_axis": 0,
+          "linear": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "offset": [
+            0,
+            -1,
+            0
+          ],
+          "output_axis": 1
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 1,
+          "linear": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "offset": [
+            -1,
+            0,
+            0
+          ],
+          "output_axis": 0
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 2,
+          "linear": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 2
+        }
+      ]
+    },
+    {
+      "element_id": "oh_10",
+      "matrix": [
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          -1,
+          0,
+          0
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": -1,
+          "input_axis": 0,
+          "linear": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              -1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            -1
+          ],
+          "output_axis": 2
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 1,
+          "linear": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              -1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            -1,
+            0,
+            0
+          ],
+          "output_axis": 0
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 2,
+          "linear": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              -1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            -1,
+            0
+          ],
+          "output_axis": 1
+        }
+      ]
+    },
+    {
+      "element_id": "oh_11",
+      "matrix": [
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": 1,
+          "input_axis": 0,
+          "linear": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 2
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 1,
+          "linear": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            -1,
+            0,
+            0
+          ],
+          "output_axis": 0
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 2,
+          "linear": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            -1,
+            0
+          ],
+          "output_axis": 1
+        }
+      ]
+    },
+    {
+      "element_id": "oh_12",
+      "matrix": [
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          0
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": -1,
+          "input_axis": 0,
+          "linear": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              -1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            -1
+          ],
+          "output_axis": 2
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 1,
+          "linear": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              -1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            -1,
+            0,
+            0
+          ],
+          "output_axis": 0
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 2,
+          "linear": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              -1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 1
+        }
+      ]
+    },
+    {
+      "element_id": "oh_13",
+      "matrix": [
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": 1,
+          "input_axis": 0,
+          "linear": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 2
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 1,
+          "linear": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            -1,
+            0,
+            0
+          ],
+          "output_axis": 0
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 2,
+          "linear": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 1
+        }
+      ]
+    },
+    {
+      "element_id": "oh_14",
+      "matrix": [
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": 1,
+          "input_axis": 0,
+          "linear": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 1
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 1,
+          "linear": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ]
+          ],
+          "offset": [
+            -1,
+            0,
+            0
+          ],
+          "output_axis": 0
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 2,
+          "linear": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            -1
+          ],
+          "output_axis": 2
+        }
+      ]
+    },
+    {
+      "element_id": "oh_15",
+      "matrix": [
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": 1,
+          "input_axis": 0,
+          "linear": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 1
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 1,
+          "linear": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "offset": [
+            -1,
+            0,
+            0
+          ],
+          "output_axis": 0
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 2,
+          "linear": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 2
+        }
+      ]
+    },
+    {
+      "element_id": "oh_16",
+      "matrix": [
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": -1,
+          "input_axis": 0,
+          "linear": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            -1,
+            0
+          ],
+          "output_axis": 1
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 1,
+          "linear": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            -1
+          ],
+          "output_axis": 2
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 2,
+          "linear": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            -1,
+            0,
+            0
+          ],
+          "output_axis": 0
+        }
+      ]
+    },
+    {
+      "element_id": "oh_17",
+      "matrix": [
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": -1,
+          "input_axis": 0,
+          "linear": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            -1,
+            0
+          ],
+          "output_axis": 1
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 1,
+          "linear": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 2
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 2,
+          "linear": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "offset": [
+            -1,
+            0,
+            0
+          ],
+          "output_axis": 0
+        }
+      ]
+    },
+    {
+      "element_id": "oh_18",
+      "matrix": [
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          -1,
+          0,
+          0
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": -1,
+          "input_axis": 0,
+          "linear": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              -1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            -1
+          ],
+          "output_axis": 2
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 1,
+          "linear": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              -1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            -1,
+            0
+          ],
+          "output_axis": 1
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 2,
+          "linear": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              -1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            -1,
+            0,
+            0
+          ],
+          "output_axis": 0
+        }
+      ]
+    },
+    {
+      "element_id": "oh_19",
+      "matrix": [
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": 1,
+          "input_axis": 0,
+          "linear": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 2
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 1,
+          "linear": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            -1,
+            0
+          ],
+          "output_axis": 1
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 2,
+          "linear": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            -1,
+            0,
+            0
+          ],
+          "output_axis": 0
+        }
+      ]
+    },
+    {
+      "element_id": "oh_20",
+      "matrix": [
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          0
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": -1,
+          "input_axis": 0,
+          "linear": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            -1
+          ],
+          "output_axis": 2
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 1,
+          "linear": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 1
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 2,
+          "linear": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            -1,
+            0,
+            0
+          ],
+          "output_axis": 0
+        }
+      ]
+    },
+    {
+      "element_id": "oh_21",
+      "matrix": [
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": 1,
+          "input_axis": 0,
+          "linear": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 2
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 1,
+          "linear": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 1
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 2,
+          "linear": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            -1,
+            0,
+            0
+          ],
+          "output_axis": 0
+        }
+      ]
+    },
+    {
+      "element_id": "oh_22",
+      "matrix": [
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": 1,
+          "input_axis": 0,
+          "linear": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 1
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 1,
+          "linear": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            -1
+          ],
+          "output_axis": 2
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 2,
+          "linear": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            -1,
+            0,
+            0
+          ],
+          "output_axis": 0
+        }
+      ]
+    },
+    {
+      "element_id": "oh_23",
+      "matrix": [
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": 1,
+          "input_axis": 0,
+          "linear": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 1
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 1,
+          "linear": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 2
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 2,
+          "linear": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "offset": [
+            -1,
+            0,
+            0
+          ],
+          "output_axis": 0
+        }
+      ]
+    },
+    {
+      "element_id": "oh_24",
+      "matrix": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": -1,
+          "input_axis": 0,
+          "linear": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            -1,
+            0
+          ],
+          "output_axis": 1
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 1,
+          "linear": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            -1
+          ],
+          "output_axis": 2
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 2,
+          "linear": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 0
+        }
+      ]
+    },
+    {
+      "element_id": "oh_25",
+      "matrix": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": -1,
+          "input_axis": 0,
+          "linear": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            -1,
+            0
+          ],
+          "output_axis": 1
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 1,
+          "linear": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 2
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 2,
+          "linear": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 0
+        }
+      ]
+    },
+    {
+      "element_id": "oh_26",
+      "matrix": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          -1,
+          0,
+          0
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": -1,
+          "input_axis": 0,
+          "linear": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              -1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            -1
+          ],
+          "output_axis": 2
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 1,
+          "linear": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              -1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            -1,
+            0
+          ],
+          "output_axis": 1
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 2,
+          "linear": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              -1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 0
+        }
+      ]
+    },
+    {
+      "element_id": "oh_27",
+      "matrix": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": 1,
+          "input_axis": 0,
+          "linear": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 2
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 1,
+          "linear": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            -1,
+            0
+          ],
+          "output_axis": 1
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 2,
+          "linear": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 0
+        }
+      ]
+    },
+    {
+      "element_id": "oh_28",
+      "matrix": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          0
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": -1,
+          "input_axis": 0,
+          "linear": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            -1
+          ],
+          "output_axis": 2
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 1,
+          "linear": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 1
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 2,
+          "linear": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 0
+        }
+      ]
+    },
+    {
+      "element_id": "oh_29",
+      "matrix": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": 1,
+          "input_axis": 0,
+          "linear": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 2
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 1,
+          "linear": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 1
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 2,
+          "linear": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 0
+        }
+      ]
+    },
+    {
+      "element_id": "oh_30",
+      "matrix": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": 1,
+          "input_axis": 0,
+          "linear": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 1
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 1,
+          "linear": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            -1
+          ],
+          "output_axis": 2
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 2,
+          "linear": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 0
+        }
+      ]
+    },
+    {
+      "element_id": "oh_31",
+      "matrix": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": 1,
+          "input_axis": 0,
+          "linear": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 1
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 1,
+          "linear": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 2
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 2,
+          "linear": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 0
+        }
+      ]
+    },
+    {
+      "element_id": "oh_32",
+      "matrix": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": -1,
+          "input_axis": 0,
+          "linear": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ]
+          ],
+          "offset": [
+            0,
+            -1,
+            0
+          ],
+          "output_axis": 1
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 1,
+          "linear": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 0
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 2,
+          "linear": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            -1
+          ],
+          "output_axis": 2
+        }
+      ]
+    },
+    {
+      "element_id": "oh_33",
+      "matrix": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": -1,
+          "input_axis": 0,
+          "linear": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "offset": [
+            0,
+            -1,
+            0
+          ],
+          "output_axis": 1
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 1,
+          "linear": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 0
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 2,
+          "linear": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 2
+        }
+      ]
+    },
+    {
+      "element_id": "oh_34",
+      "matrix": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          -1,
+          0,
+          0
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": -1,
+          "input_axis": 0,
+          "linear": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              -1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            -1
+          ],
+          "output_axis": 2
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 1,
+          "linear": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              -1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 0
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 2,
+          "linear": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              -1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            -1,
+            0
+          ],
+          "output_axis": 1
+        }
+      ]
+    },
+    {
+      "element_id": "oh_35",
+      "matrix": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": 1,
+          "input_axis": 0,
+          "linear": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 2
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 1,
+          "linear": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 0
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 2,
+          "linear": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            -1,
+            0
+          ],
+          "output_axis": 1
+        }
+      ]
+    },
+    {
+      "element_id": "oh_36",
+      "matrix": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          0
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": -1,
+          "input_axis": 0,
+          "linear": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              -1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            -1
+          ],
+          "output_axis": 2
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 1,
+          "linear": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              -1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 0
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 2,
+          "linear": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              -1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 1
+        }
+      ]
+    },
+    {
+      "element_id": "oh_37",
+      "matrix": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": 1,
+          "input_axis": 0,
+          "linear": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 2
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 1,
+          "linear": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 0
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 2,
+          "linear": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 1
+        }
+      ]
+    },
+    {
+      "element_id": "oh_38",
+      "matrix": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": 1,
+          "input_axis": 0,
+          "linear": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 1
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 1,
+          "linear": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 0
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 2,
+          "linear": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            -1
+          ],
+          "output_axis": 2
+        }
+      ]
+    },
+    {
+      "element_id": "oh_39",
+      "matrix": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": 1,
+          "input_axis": 0,
+          "linear": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 1
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 1,
+          "linear": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 0
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 2,
+          "linear": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 2
+        }
+      ]
+    },
+    {
+      "element_id": "oh_40",
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": 1,
+          "input_axis": 0,
+          "linear": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 0
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 1,
+          "linear": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ]
+          ],
+          "offset": [
+            0,
+            -1,
+            0
+          ],
+          "output_axis": 1
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 2,
+          "linear": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            -1
+          ],
+          "output_axis": 2
+        }
+      ]
+    },
+    {
+      "element_id": "oh_41",
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": 1,
+          "input_axis": 0,
+          "linear": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 0
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 1,
+          "linear": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "offset": [
+            0,
+            -1,
+            0
+          ],
+          "output_axis": 1
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 2,
+          "linear": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 2
+        }
+      ]
+    },
+    {
+      "element_id": "oh_42",
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          -1,
+          0
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": 1,
+          "input_axis": 0,
+          "linear": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 0
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 1,
+          "linear": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            -1
+          ],
+          "output_axis": 2
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 2,
+          "linear": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            -1,
+            0
+          ],
+          "output_axis": 1
+        }
+      ]
+    },
+    {
+      "element_id": "oh_43",
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": 1,
+          "input_axis": 0,
+          "linear": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 0
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 1,
+          "linear": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 2
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 2,
+          "linear": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            -1,
+            0
+          ],
+          "output_axis": 1
+        }
+      ]
+    },
+    {
+      "element_id": "oh_44",
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          -1,
+          0
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": 1,
+          "input_axis": 0,
+          "linear": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 0
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 1,
+          "linear": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            -1
+          ],
+          "output_axis": 2
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 2,
+          "linear": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 1
+        }
+      ]
+    },
+    {
+      "element_id": "oh_45",
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": 1,
+          "input_axis": 0,
+          "linear": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 0
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 1,
+          "linear": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 2
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 2,
+          "linear": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 1
+        }
+      ]
+    },
+    {
+      "element_id": "oh_46",
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": 1,
+          "input_axis": 0,
+          "linear": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 0
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 1,
+          "linear": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 1
+        },
+        {
+          "direction_multiplier": -1,
+          "input_axis": 2,
+          "linear": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            -1
+          ],
+          "output_axis": 2
+        }
+      ]
+    },
+    {
+      "element_id": "oh_47",
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "rules": [
+        {
+          "direction_multiplier": 1,
+          "input_axis": 0,
+          "linear": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 0
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 1,
+          "linear": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 1
+        },
+        {
+          "direction_multiplier": 1,
+          "input_axis": 2,
+          "linear": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "output_axis": 2
+        }
+      ]
+    }
+  ],
+  "periodic_audit_extents": [
+    2,
+    3,
+    4
+  ],
+  "representation": "positive_axis_base_with_traversal_sign",
+  "schema_version": "ym3d.oriented_link_action.v1"
+}

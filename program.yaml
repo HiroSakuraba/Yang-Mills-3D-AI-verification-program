@@ -87,6 +87,7 @@ gates:
     milestone: 1A
     schema_stage: combinatorial
     workdir: bundles/YM3D_ORIENTED_LINK_ACTION_1
+    generator_cmd: "python tools/build.py"
     checker_cmd: "python tools/check_link_action.py"
     decision_glob: "artifacts/decision.json"
     decision_status_key: status

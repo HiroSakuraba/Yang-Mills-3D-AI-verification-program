@@ -1,0 +1,42 @@
+{
+  "bundle": "YM3D_ORIENTED_LINK_ACTION_1",
+  "determinism": "exact integer/rational arithmetic; sorted JSON; no floats in decisions",
+  "files": [
+    {
+      "bytes": 2346,
+      "path": "README.md",
+      "sha256": "905421b746d4e174292a5de42b50f83667151e2cb0406e7a4490c5dfd628506e"
+    },
+    {
+      "bytes": 937,
+      "path": "artifacts/decision.json",
+      "sha256": "98ca5373ca079e79f378f86c49cb23b0b14517f54a77f4fe0bc1675171ef8f10"
+    },
+    {
+      "bytes": 80064,
+      "path": "artifacts/rows.json",
+      "sha256": "bb090486e7d9ce255302a8f9667a7742df42073358e15052648bbe6133443c39"
+    },
+    {
+      "bytes": 1923,
+      "path": "src/ym3d_link_action/__init__.py",
+      "sha256": "83b15024f4edf3cff42a263cdf437f9b01cd94447ae456ceedefb58710e0a0b1"
+    },
+    {
+      "bytes": 2392,
+      "path": "tests/test_action.py",
+      "sha256": "0d6401415e2fda6ed4d123a5a392a1f76bcbe68b1b8c6f5cd0cbb4c614cb197d"
+    },
+    {
+      "bytes": 651,
+      "path": "tools/build.py",
+      "sha256": "fa2d35cac8e4d802b3d89a067fc5d6dfbe1a7f88baf9ce90f8511b0b556834cd"
+    },
+    {
+      "bytes": 8957,
+      "path": "tools/check_link_action.py",
+      "sha256": "ffa725faf0d8c4ace1892a1521f9d1d4676986e00773a7735564ee95ffa178c4"
+    }
+  ],
+  "version": "1"
+}

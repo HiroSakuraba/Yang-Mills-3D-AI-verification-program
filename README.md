@@ -81,6 +81,11 @@ adds overlap-based mode tracking, fixed-basis correlated mass fits, covariance
 regularization, bootstrap fit errors and fit-window comparisons. It is a
 numerical comparison tool and adds no proof gate or automatically selected plateau.
 
+The [directed-link action bundle](bundles/YM3D_ORIENTED_LINK_ACTION_1/README.md)
+independently audits the integer affine action of the cubic symmetries, including
+orientation reversals and periodic boundaries. Composite support lifting remains
+the next implementation step.
+
 Everything downstream is `BLOCKED` until its bundle is built. `make next` always
 names the one gate to work on.
 

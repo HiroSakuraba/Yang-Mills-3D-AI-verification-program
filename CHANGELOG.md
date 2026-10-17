@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- Implement the exact directed-link action of the 48 cubic symmetries. Export
+  affine canonicalization rules and independently check endpoint identities,
+  group composition, inverses, faithfulness and periodic boundary cases.
+
 - Extend numerical glueball spectroscopy with overlap-based mode tracking,
   fixed-reference correlated mass fits, covariance diagnostics, bootstrap fit
   errors, paired window sensitivity, and JSON/CSV examples. Preserve the frozen
