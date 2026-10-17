@@ -168,6 +168,7 @@ gates:
     milestone: 0
     schema_stage: analytic_validation
     workdir: lanes/ym2d_sun_exact_validation
+    generator_cmd: "python tools/build.py"
     checker_cmd: "python tools/check_ym2d_exact.py"
     decision_glob: "artifacts/decision.json"
     decision_status_key: status
