@@ -173,4 +173,6 @@ def analyze(data,t0=0,reference_time=1,windows=None,scan_min_points=None,mass_bo
                              'basis_strategy':'refit at reference_time in each replica, align in central C(t0) metric, then freeze over time',
                              'qualification':'Sampling/autocorrelation adequacy is user supplied. Weights stay fixed across replica fits; failed or boundary-censored fits withhold the uncertainty summary.'}
     if not any('mass' in f for f in fits):report['analysis_issue']='NO_USABLE_FITS'
+    if 'ensemble_preparation' in data:
+        report['ensemble_preparation']=data['ensemble_preparation']
     return report

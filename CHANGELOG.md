@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+- Prepare numerical glueball correlators from periodic per-configuration operator
+  samples with time-origin averaging, per-replica vacuum means, chain-aware
+  nonoverlapping block bootstrap, explicit thermalization discard, dependence
+  diagnostics and source/sample provenance retained through spectrum analysis.
+  Add a synthetic samples-to-fits demonstration and eleven regression checks.
+
 - Implement an independently audited 2D SU(2) open-boundary Wilson reference:
   normalized fundamental/adjoint characters, noncommutative rectangle words and
   exact rational area-law enclosures with controlled infinite-series tails.
