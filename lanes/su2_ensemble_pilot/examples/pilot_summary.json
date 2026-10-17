@@ -1,0 +1,178 @@
+{
+  "accepted_glueball_mass": null,
+  "qualification": "Reports summarize an exploratory fixed-budget run. No adequacy, accepted mass, finite-volume correction or analytic theorem follows.",
+  "schema_version": "ym3d.su2_pilot_summary.v1",
+  "status": "EXPLORATORY_MEASURED_GAUGE_DATA",
+  "volumes": [
+    {
+      "analysis": [
+        {
+          "block_size": 4,
+          "fit_candidates": 0,
+          "nonpositive_projected_times": [
+            2,
+            3,
+            4
+          ],
+          "plateau_status": "NOT_AUTOMATICALLY_SELECTED",
+          "rejected_windows": [
+            {
+              "reason": "Fits require at least three finite positive projected correlators.",
+              "window": [
+                1,
+                3
+              ]
+            },
+            {
+              "reason": "Fits require at least three finite positive projected correlators.",
+              "window": [
+                1,
+                4
+              ]
+            }
+          ],
+          "report_file": "pilot_L3_block4_report.json",
+          "report_sha256": "67c1407d19160de23323a59d46284e95993fb5ea79837d0e0b0deab7a158a292"
+        },
+        {
+          "block_size": 8,
+          "fit_candidates": 0,
+          "nonpositive_projected_times": [
+            2,
+            3,
+            4
+          ],
+          "plateau_status": "NOT_AUTOMATICALLY_SELECTED",
+          "rejected_windows": [
+            {
+              "reason": "Fits require at least three finite positive projected correlators.",
+              "window": [
+                1,
+                3
+              ]
+            },
+            {
+              "reason": "Fits require at least three finite positive projected correlators.",
+              "window": [
+                1,
+                4
+              ]
+            }
+          ],
+          "report_file": "pilot_L3_block8_report.json",
+          "report_sha256": "87a5d0cd066ae81be9afff3ffa9d8ff8cbb4d6f2f45339c8ea69013c7801ebc8"
+        }
+      ],
+      "chains": [
+        {
+          "chain_id": "seed_101",
+          "first_half_plaquette_mean": 0.4404262812097725,
+          "maximum_final_unit_norm_error": 4.440892098500626e-16,
+          "measurement_acceptance": 0.5355721932870371,
+          "second_half_plaquette_mean": 0.447789660455555,
+          "seed": 101,
+          "start": "hot"
+        },
+        {
+          "chain_id": "seed_202",
+          "first_half_plaquette_mean": 0.44744551931785864,
+          "maximum_final_unit_norm_error": 4.440892098500626e-16,
+          "measurement_acceptance": 0.5343967013888888,
+          "second_half_plaquette_mean": 0.46283267723515703,
+          "seed": 202,
+          "start": "cold"
+        }
+      ],
+      "configuration_count": 128,
+      "sample_file": "pilot_L3_operator_samples.json",
+      "sample_sha256": "c9dceeb15f8364ec0573f485c514360294415f8dedd57b3726b127ad5de5f903",
+      "spatial_extent": 3,
+      "time_extent": 8
+    },
+    {
+      "analysis": [
+        {
+          "block_size": 4,
+          "fit_candidates": 0,
+          "nonpositive_projected_times": [
+            2,
+            3,
+            4
+          ],
+          "plateau_status": "NOT_AUTOMATICALLY_SELECTED",
+          "rejected_windows": [
+            {
+              "reason": "Fits require at least three finite positive projected correlators.",
+              "window": [
+                1,
+                3
+              ]
+            },
+            {
+              "reason": "Fits require at least three finite positive projected correlators.",
+              "window": [
+                1,
+                4
+              ]
+            }
+          ],
+          "report_file": "pilot_L4_block4_report.json",
+          "report_sha256": "c686e21f4eb6c4f980021fc31e0281db5b0dcf8916de03112edb35f540e1e1fa"
+        },
+        {
+          "block_size": 8,
+          "fit_candidates": 0,
+          "nonpositive_projected_times": [
+            2,
+            3,
+            4
+          ],
+          "plateau_status": "NOT_AUTOMATICALLY_SELECTED",
+          "rejected_windows": [
+            {
+              "reason": "Fits require at least three finite positive projected correlators.",
+              "window": [
+                1,
+                3
+              ]
+            },
+            {
+              "reason": "Fits require at least three finite positive projected correlators.",
+              "window": [
+                1,
+                4
+              ]
+            }
+          ],
+          "report_file": "pilot_L4_block8_report.json",
+          "report_sha256": "2730ac8389cf2ca300f4743401682cc7496ae285648ef37f6ee786df8c471ef3"
+        }
+      ],
+      "chains": [
+        {
+          "chain_id": "seed_101",
+          "first_half_plaquette_mean": 0.4604607682360633,
+          "maximum_final_unit_norm_error": 4.440892098500626e-16,
+          "measurement_acceptance": 0.5323486328125,
+          "second_half_plaquette_mean": 0.45479741638474636,
+          "seed": 101,
+          "start": "hot"
+        },
+        {
+          "chain_id": "seed_202",
+          "first_half_plaquette_mean": 0.4469709674923129,
+          "maximum_final_unit_norm_error": 4.440892098500626e-16,
+          "measurement_acceptance": 0.5348307291666666,
+          "second_half_plaquette_mean": 0.45147471788166427,
+          "seed": 202,
+          "start": "cold"
+        }
+      ],
+      "configuration_count": 128,
+      "sample_file": "pilot_L4_operator_samples.json",
+      "sample_sha256": "c7eea00020d134a3438ac68d39c9306f6c285a851f919a7481a5e5d4749f9745",
+      "spatial_extent": 4,
+      "time_extent": 8
+    }
+  ]
+}
