@@ -80,6 +80,9 @@ The [spectrum-analysis extension](lanes/glueball_spectrum_analysis/README.md)
 adds overlap-based mode tracking, fixed-basis correlated mass fits, covariance
 regularization, bootstrap fit errors and fit-window comparisons. It is a
 numerical comparison tool and adds no proof gate or automatically selected plateau.
+Its [ensemble converter](lanes/glueball_spectrum_analysis/ENSEMBLES.md) prepares
+periodic correlators and chain-aware block-bootstrap replicas directly from
+per-configuration operator measurements, including vacuum means and provenance.
 
 Everything downstream is `BLOCKED` until its bundle is built. `make next` always
 names the one gate to work on.

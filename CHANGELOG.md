@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+- Prepare numerical glueball correlators from periodic per-configuration operator
+  samples with time-origin averaging, per-replica vacuum means, chain-aware
+  nonoverlapping block bootstrap, explicit thermalization discard, dependence
+  diagnostics and source/sample provenance retained through spectrum analysis.
+  Add a synthetic samples-to-fits demonstration and eleven regression checks.
+
 - Extend numerical glueball spectroscopy with overlap-based mode tracking,
   fixed-reference correlated mass fits, covariance diagnostics, bootstrap fit
   errors, paired window sensitivity, and JSON/CSV examples. Preserve the frozen

@@ -5,6 +5,11 @@ fixed-basis correlated mass fits, and fit-window diagnostics**. It consumes the
 same `ym3d.glueball_correlators.v1` real-matrix format. Input definitions and
 normalization are documented in the [original lane](../glueball_spectroscopy/README.md).
 
+For per-configuration operator measurements, use the new
+[ensemble preparation workflow](ENSEMBLES.md). It constructs periodic
+correlators and chain-aware block-bootstrap replicas, retaining sample IDs,
+vacuum means, dependence diagnostics and provenance through the final report.
+
 This is a separate numerical comparison module. The code and artifacts belonging
 to the CLOSED `YM3D_GLUEBALL_OBSERVABLE_REFERENCE_1` result remain unchanged.
 There is no new proof gate, analytic waiver, measured Yang–Mills mass or continuum
@@ -147,7 +152,7 @@ nonfinite numbers, and output paths may not overwrite the input data.
 
 Input remains restricted to the current lane's **2+1-dimensional SU(2), real
 symmetric matrices** and its declared spatial-volume/time-unit conventions.
-General complex channels, multi-state fits, ensemble generation and continuum
+General complex channels, multi-state fits, gauge-ensemble generation and continuum
 extrapolation are future work.
 
 ## Validation
@@ -157,11 +162,15 @@ python -m unittest discover -s lanes/glueball_spectrum_analysis/tests -v
 python lanes/glueball_spectrum_analysis/tools/build_examples.py
 ```
 
-Sixteen numerical regression tests cover sign/permutation matching, eigenvalue
+Twenty-seven numerical regression tests cover sign/permutation matching, eigenvalue
 crossings, degeneracy flags, fixed-basis invariance, log/cosh references, off-diagonal
 covariance, covariance rank and shrinkage, missing uncertainty information,
 bound-censored fits, raw replica means, bootstrap covariance normalization,
 bootstrap rank changes and paired-window sensitivity to excited-state contamination.
+The eleven ensemble-preparation checks additionally cover direct estimator sums,
+chain weighting, replica replay, vacuum-offset cancellation, time-translation
+symmetry, sample discards, input validation, seed replay, monitor diagnostics,
+the samples-to-spectrum pipeline and CLI provenance/input protection.
 They are numerical self-tests, not independent exact proof checkers.
 
 ## Primary references
