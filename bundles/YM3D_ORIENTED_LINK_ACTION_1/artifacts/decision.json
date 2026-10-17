@@ -1,0 +1,23 @@
+{
+  "closed_obligations": [
+    "faithful cubic action on integer-lattice directed links",
+    "positive-axis canonicalization with correct base shift and traversal sign",
+    "all group-pair affine composition identities and inverses",
+    "periodic quotient endpoint and lift-independence audits at extents 2, 3, 4"
+  ],
+  "gate_id": "YM3D_ORIENTED_LINK_ACTION_1",
+  "method": "independent integer endpoint and affine-coefficient reconstruction",
+  "next_obligation": "YM3D_SUPPORT_LIFT_1",
+  "non_claims": [
+    "No composite-support lift, orbit partition or collision-graph identity",
+    "No gauge-field dynamics, analytic bound or mass-gap statement"
+  ],
+  "report": {
+    "affine_rules": 144,
+    "composition_identities": 6912,
+    "faithful_group_actions": 48,
+    "periodic_directed_link_cases": 28512,
+    "unbounded_coordinate_method": "equality of affine linear coefficients and constant offsets"
+  },
+  "status": "PASS"
+}
