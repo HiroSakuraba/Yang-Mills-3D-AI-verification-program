@@ -1,0 +1,42 @@
+{
+  "bundle": "su2_link_decimation",
+  "determinism": "exact integer/rational arithmetic; sorted JSON; no floats in decisions",
+  "files": [
+    {
+      "bytes": 7176,
+      "path": "README.md",
+      "sha256": "32e3256e0206f45f34f714555a0a2ed1dc74142b8eb3e9d3e9e9adb96575ce6f"
+    },
+    {
+      "bytes": 594,
+      "path": "artifacts/local_audit.json",
+      "sha256": "c497113784ddef048eb689a995ea56e361eeb2b2ecbf048d017076974e3b2c3e"
+    },
+    {
+      "bytes": 9677,
+      "path": "artifacts/local_step.json",
+      "sha256": "18cbd4a25f0b81bca4b370014e89db1bb4c581b03e649b63b70f0c75d841021c"
+    },
+    {
+      "bytes": 1968,
+      "path": "src/link_decimation/__init__.py",
+      "sha256": "5ffbbaa60f759621f6e6ff6d30a5934cb31e7645a654ad1d74f64aee7e77313a"
+    },
+    {
+      "bytes": 3036,
+      "path": "tests/test_step.py",
+      "sha256": "8d61bd72764ddae9668ed7917d9476cc2616e999085dcca3cb2e06001867244e"
+    },
+    {
+      "bytes": 390,
+      "path": "tools/build.py",
+      "sha256": "05b01dd54effbb3d2d4e54934db25d2ee62378e1cb08230940df9fb0802e0b62"
+    },
+    {
+      "bytes": 5607,
+      "path": "tools/check_local_step.py",
+      "sha256": "dfd8e00f7fb18964e32ff69e9db2d6aa64db2017d8b2495f82e4fa3d1a6f0c33"
+    }
+  ],
+  "version": "1"
+}

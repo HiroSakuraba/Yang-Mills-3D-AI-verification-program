@@ -1,0 +1,17 @@
+{
+  "analytic_gate_closed": false,
+  "non_claims": [
+    "No complete spatial blocking transformation or contraction",
+    "No norm conversion to polymer activities or continuum uniformity",
+    "Haar reduction and analytic remainder proof remain a written derivation for review"
+  ],
+  "report": {
+    "analytic_gate_closed": false,
+    "checked_interaction_monomials": 36,
+    "endpoint_normalized_log_weight_error_less_than": "1/10000",
+    "local_maps": 2,
+    "rg_contraction_established": false
+  },
+  "rg_contraction_established": false,
+  "status": "EXACT_LOCAL_ALGEBRA_AUDIT_PASSED"
+}
