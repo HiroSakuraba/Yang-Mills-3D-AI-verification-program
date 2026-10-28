@@ -80,7 +80,7 @@ python lanes/plaquette_clustering/fixed_loop_sources/tools/certificate.py
 python -m unittest discover -s lanes/plaquette_clustering/fixed_loop_sources/tools -p 'test_*.py' -v
 ```
 
-Expected canonical outputs: `alpha = 18/19`, covariance prefactor `76`, exactly 20 tests in the initial version. Regression tests reject the equality endpoint β=1/8 for the rational sufficient criterion, an extra link neighbor, incorrect Haar moment/number of staples, and a negative coupling. A different analytic variance estimate could extend the threshold, but is not claimed.
+Expected canonical outputs: `alpha = 18/19`, covariance prefactor `76`, 27 tests including a finite Z2 marked-bridge algebra regression. Regression tests reject the equality endpoint β=1/8 for the rational sufficient criterion, an extra link neighbor, incorrect Haar moment/number of staples, and a negative coupling. A different analytic variance estimate could extend the threshold, but is not claimed.
 
 **External theorem sources:** H. Föllmer, *A Covariance Estimate for Gibbs Measures*, J. Funct. Anal. 46 (1982), 387–395, DOI `10.1016/0022-1236(82)90053-2`; H. Künsch, *Decay of Correlations under Dobrushin's Uniqueness Condition and Its Applications*, Comm. Math. Phys. 84 (1982), 207–222.
 

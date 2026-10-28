@@ -66,3 +66,32 @@ class RGConditionalCovariance(unittest.TestCase):
         with self.assertRaises(ValueError):coarsen_joint_law([((1,1),Q(-1)),((1,-1),Q(3))],lambda xy:0)
 
 if __name__=='__main__':unittest.main()
+
+# Additional algebraic tests for the exact *formal* marked gas, using finite Z2
+# Haar integrals. These do not claim SU(2) KP convergence.
+from toy_marked_gas import bridge_case,bridge_result,direct_partition,component_partition,selected_components,z2_haar_component_weight
+
+class MarkedGasAlgebra(unittest.TestCase):
+    def test_bridge_polynomial(self):
+        self.assertEqual(bridge_result(),{(0,0,0):Q(1),(2,1,1):Q(1)})
+    def test_mark_supports_are_disjoint(self):
+        supports,_,_=bridge_case()
+        self.assertFalse(supports['C'] & supports['D'])
+    def test_all_four_are_link_connected(self):
+        supports,_,_=bridge_case()
+        self.assertEqual(len(selected_components(list(supports),supports)),1)
+    def test_disconnected_sources_have_two_components(self):
+        supports,_,_=bridge_case()
+        self.assertEqual(len(selected_components(['C','D'],supports)),2)
+    def test_single_open_edge_vanishes(self):
+        supports,_,_=bridge_case()
+        self.assertEqual(z2_haar_component_weight(['P'],supports),0)
+    def test_two_insertion_bridge_survives(self):
+        supports,_,_=bridge_case()
+        self.assertEqual(z2_haar_component_weight(list(supports),supports),1)
+    def test_remove_bridge_face_kills_connected_source_coefficient(self):
+        supports,faces,marks=bridge_case()
+        faces={'P'}
+        supports={k:v for k,v in supports.items() if k!='Q'}
+        polynomial=direct_partition(supports,faces,marks)
+        self.assertFalse(any(s==1 and t==1 for b,s,t in polynomial))
