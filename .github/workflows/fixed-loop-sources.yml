@@ -1,0 +1,23 @@
+name: YM3D Fixed Loop Sources
+on:
+  push:
+    paths:
+      - 'lanes/plaquette_clustering/fixed_loop_sources/**'
+      - '.github/workflows/fixed-loop-sources.yml'
+  pull_request:
+    paths:
+      - 'lanes/plaquette_clustering/fixed_loop_sources/**'
+      - '.github/workflows/fixed-loop-sources.yml'
+  workflow_dispatch:
+jobs:
+  fixed-loop-sources:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Exact rational certificate
+        run: python lanes/plaquette_clustering/fixed_loop_sources/tools/certificate.py --output /tmp/fixed-loop-certificate.json
+      - name: Geometry and conditional-normalization regressions
+        run: python -m unittest discover -s lanes/plaquette_clustering/fixed_loop_sources/tools -p 'test_*.py' -v

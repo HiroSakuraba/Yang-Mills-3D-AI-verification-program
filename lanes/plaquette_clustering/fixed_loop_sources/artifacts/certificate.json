@@ -1,0 +1,20 @@
+{
+  "beta_max": "3/25",
+  "covariance_formula": "|Cov(W_C,W_D)| <= [4/(1-alpha)]*|support C|*|support D|*alpha**distance_link(C,D)",
+  "decay_base": "18/19",
+  "dobrushin_row_sum_cap": "18/19",
+  "haar_s3_variance_per_coordinate": "1/4",
+  "hypotheses": "nondegenerate finite periodic cubic SU(2) Wilson theory; normalized fundamental Wilson characters; arbitrary closed finite contours",
+  "incident_faces_per_link": 4,
+  "max_neighbor_links": 12,
+  "not_claimed": [
+    "convergent source-marked polymer gas at beta 0.12",
+    "RG localization after blocking",
+    "continuum mass gap"
+  ],
+  "pass": true,
+  "scope": "finite-volume, volume-uniform at fixed lattice spacing; independent of all-support KP enumeration",
+  "single_link_TV_influence_cap": "3/38",
+  "source_comparison": "Cov(W_C,W_D) = d_s d_t log Z(s,t)|_{s=t=0}",
+  "wilson_covariance_prefactor_per_support_pair": "76/1"
+}
