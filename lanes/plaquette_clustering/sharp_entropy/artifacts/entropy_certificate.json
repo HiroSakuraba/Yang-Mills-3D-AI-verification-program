@@ -1,0 +1,47 @@
+{
+  "M_over_z": "9142743911737059/14384974000000000",
+  "M_weighted_face": "66861/753140",
+  "R_root_upper": "14386304040079386324697946419068502807628901761573876502157305092821777941635078925501/322486871466820538369875938213046400000000000000000000000000000000000000000000000000000",
+  "beta_max": "9/100",
+  "claim_strength": "arithmetically_certified_analytic_argument_for_review",
+  "covariance_formula": "|Cov(phi_p,phi_q)| <= (R/eta^2)*exp[-decay*d_plaq(p,q)]",
+  "decay": "1/10",
+  "exp_taylor_cap": "9989/7400",
+  "exp_upper": "27/20",
+  "face_normalization_error": "529/113500",
+  "four_R_upper": "14386304040079386324697946419068502807628901761573876502157305092821777941635078925501/80621717866705134592468984553261600000000000000000000000000000000000000000000000000000",
+  "haarl4_upper": "3/5",
+  "kp_a": "1/5",
+  "kp_margin_lower": "1738039533261640593795850491583817192371098238426123497842694907178222058364921074499/80621717866705134592468984553261600000000000000000000000000000000000000000000000000000",
+  "max_complex_face_coupling": "23/250",
+  "normalized_face_L4": "7429/112971",
+  "not_proved_by_script": [
+    "Haar integration and Finner inequality",
+    "potential counting lemma for link-connected supports",
+    "KP rooted-cluster theorem and Cauchy derivative step"
+  ],
+  "pass": true,
+  "plaquette_covariance_prefactor": "14386304040079386324697946419068502807628901761573876502157305092821777941635078925501/1289947485867282153479503752852185600000000000000000000000000000000000000000000000",
+  "scope": "distinct plaquettes; periodic cubic side >=4; fixed lattice spacing",
+  "source_radius": "1/500",
+  "verified_without": "historical enumerated supports or branched Haar checker",
+  "witness": {
+    "H": "13247/10000",
+    "admissible_growth_z": "324700000000/2324623420223",
+    "branching_g": {
+      "1": "1324623420223/1000000000000",
+      "2": "175483009/100000000",
+      "3": "13247/10000",
+      "4": "1/1"
+    },
+    "branching_slack": {
+      "1": "76579777/1000000000000",
+      "2": "0/1",
+      "3": "999923420223/1000000000000",
+      "4": "20794286447694081/10000000000000000"
+    },
+    "pass": true,
+    "prefactor_H_to_fourth": "30794286447694081/10000000000000000",
+    "w": "3247/10000"
+  }
+}
