@@ -1,0 +1,27 @@
+name: YM3D plaquette clustering research checks
+
+on:
+  pull_request:
+    paths:
+      - 'lanes/plaquette_clustering/**'
+      - '.github/workflows/plaquette-clustering.yml'
+  push:
+    paths:
+      - 'lanes/plaquette_clustering/**'
+      - '.github/workflows/plaquette-clustering.yml'
+  workflow_dispatch:
+
+jobs:
+  arithmetic-and-geometry:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Audit exact rational thresholds
+        run: |
+          python lanes/plaquette_clustering/tools/certificate.py
+          python lanes/plaquette_clustering/tools/dobrushin.py
+      - name: Execute independent geometry and negative controls
+        run: python -m unittest discover -s lanes/plaquette_clustering/tools -p 'test_*.py' -v
