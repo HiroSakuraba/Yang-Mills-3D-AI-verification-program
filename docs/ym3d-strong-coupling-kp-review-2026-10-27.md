@@ -38,14 +38,19 @@ python -m unittest discover -s tests -p test_kp_bundle_preflight.py
 
 ## Gate policy
 
-The external full-source research bundle is **not imported by this PR**.
-Do not register an executable `program.yaml` gate until the actual generator,
-checker, and analysis sources plus correct reproduction artifacts have been
-added and the repository's independent-checker harness has been exercised.
-When it is registered, use `schema_stage: analytic`,
-`claim_strength: fallback_domain_only`, no dependents, and retain the
-`ym2d_validation_passed` meta-guard. Do not unlock a continuum or mass-gap
-claim.
+This PR **does import** the complete generator/checker/analysis source lane at
+`lanes/strong_coupling_kp_domain/`, including a reproducible generator command,
+checker command, decision script and integrity negative controls. The
+`program.yaml` gate is registered with `schema_stage: analytic`,
+`claim_strength: fallback_domain_only`, no dependents, and the unchanged
+`ym2d_validation_passed` meta-guard. The historical JSON data and original
+checker reports are distributed in the supplied companion archive; they are
+not treated as fresh checks or as authority to close this gate.
+
+After the meta-guard is satisfied, reproducing the lane requires the optional
+Python dependencies declared in the lane, running `python tools/build.py`,
+`python tools/check.py`, and `python tools/test_integrity.py` from its directory.
+No continuum or mass-gap claim is unlocked here.
 
 Next: reproduce and audit the source bundle; test observable insertions; then
 bound the overlap of a multi-loop RG effective action with the KP domain.
