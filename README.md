@@ -28,7 +28,7 @@ checked **gate** at a time.
 
 ## Strong-coupling KP research handoff
 
-The [October 27 strong-coupling KP evidence handoff](docs/ym3d-strong-coupling-kp-review-2026-10-27.md) records a candidate 3D SU(2) polymer convergence domain and its certificate-integrity import requirements. This is not a closed analytic or mass-gap gate. The standalone `tools/verify_kp_bundle.py` rejects unbound or inconsistent archived checker reports.
+The [3D strong-coupling KP source lane](lanes/strong_coupling_kp_domain/README.md) and [October 27 evidence handoff](docs/ym3d-strong-coupling-kp-review-2026-10-27.md) provide generator, independent checker, interval-bound and integrity-regression code. It is registered with no dependents under the 2D validation meta-guard; it is **not** a closed analytic/fallback or mass-gap gate. The standalone `tools/verify_kp_bundle.py` rejects unbound or inconsistent archived checker reports.
 
 ## Four-dimensional comparison research
 
