@@ -26,6 +26,10 @@ checked **gate** at a time.
 | `docs/` | Conceptual pipeline DAG (`.mmd`, `.json`). |
 | `AGENTS.md` / `CLAUDE.md` | Operating contract for coding agents (Codex / Claude Code). |
 
+## Strong-coupling KP research handoff
+
+The [October 27 strong-coupling KP evidence handoff](docs/ym3d-strong-coupling-kp-review-2026-10-27.md) records a candidate 3D SU(2) polymer convergence domain and its certificate-integrity import requirements. This is not a closed analytic or mass-gap gate. The standalone `tools/verify_kp_bundle.py` rejects unbound or inconsistent archived checker reports.
+
 ## Four-dimensional comparison research
 
 The [YM4 Wilson audit](docs/ym4-wilson-audit/README.md) collects a coherence map,
