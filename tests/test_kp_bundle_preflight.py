@@ -22,6 +22,9 @@ class BundlePreflightTests(unittest.TestCase):
             input_bytes = json.dumps(inp).encode()
             rep = {"id": label, "status": "PASS", "checker_fmax": horizon, "problems": [],
                    "per_F": {"6": row}, "generator_sha256": hashlib.sha256(input_bytes).hexdigest()}
+            if horizon == 18:
+                rep.update({"n2_cap": 6, "labellings_recomputed": 3433,
+                            "single_link_splits_checked": 784})
             self.data["artifacts/" + name] = input_bytes
             self.data["artifacts/" + report] = json.dumps(rep).encode()
 
@@ -56,6 +59,12 @@ class BundlePreflightTests(unittest.TestCase):
         report = json.loads(self.data[ck]); report["checker_fmax"] = 12
         self.data[ck] = json.dumps(report).encode()
         self.assertTrue(self.check())
+
+    def test_reduced_exact_coverage(self):
+        ck = "artifacts/check_branched_f18.json"
+        report = json.loads(self.data[ck]); report["n2_cap"] = 0
+        self.data[ck] = json.dumps(report).encode()
+        self.assertTrue(any("insufficient exact-labelling" in s for s in self.check()))
 
     def test_missing_report(self):
         del self.data["artifacts/check_two_face_f22.json"]
