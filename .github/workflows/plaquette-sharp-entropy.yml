@@ -1,0 +1,23 @@
+name: YM3D sharp plaquette entropy research checks
+on:
+  push:
+    paths:
+      - 'lanes/plaquette_clustering/sharp_entropy/**'
+      - '.github/workflows/plaquette-sharp-entropy.yml'
+  pull_request:
+    paths:
+      - 'lanes/plaquette_clustering/sharp_entropy/**'
+      - '.github/workflows/plaquette-sharp-entropy.yml'
+  workflow_dispatch:
+jobs:
+  rational-certificate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Recompute all-support entropy and KP margin
+        run: python lanes/plaquette_clustering/sharp_entropy/tools/entropy_certificate.py --output /tmp/ym3d_sharp_entropy_certificate.json
+      - name: Positive and negative arithmetic controls
+        run: python -m unittest discover -s lanes/plaquette_clustering/sharp_entropy/tools -p 'test_*.py' -v
