@@ -1,0 +1,34 @@
+{
+  "animal_growth_cap": 48,
+  "animal_ratio_upper": "496536/655237",
+  "beta_max": "3/200",
+  "connected_covariance_prefactor": "157199976903935644609724928000000/29253195681683908513772047261",
+  "covariance_formula": "abs(Cov(phi_p, phi_q)) <= (R/eta^2)*exp(-distance(p,q)/10)",
+  "distance_decay": "1/10",
+  "exp_upper": "3/2",
+  "f_L4_upper": "20689/1965711",
+  "kp_cost_a": "3/10",
+  "kp_margin_lower": "62607590740422022403760153303/292531956816839085137720472610",
+  "max_complex_coupling_abs": "17/1000",
+  "minimal_nonzero_support_faces_used": 5,
+  "norm4_upper": "3/5",
+  "normalization_error_upper": "289/1966000",
+  "not_claimed": [
+    "RG passage",
+    "lattice-spacing uniform physical mass",
+    "continuum mass gap",
+    "large Wilson loops"
+  ],
+  "pass": true,
+  "prerequisites": [
+    "compact SU(2) Haar moment int phi=0, int phi^4=1/8",
+    "3D link-sharing graph degree at most 12",
+    "spanning-tree plane-tree enumeration",
+    "Finner hypergraph Holder and KP rooted-cluster theorem",
+    "periodic cubic boxes with no degenerate plaquettes"
+  ],
+  "root_sum_upper": "628799907615742578438899712/29253195681683908513772047261",
+  "scope": "distinct elementary plaquettes; finite volume; 0<=beta<=3/200",
+  "source_radius": "1/500",
+  "weighted_face_activity_upper": "20689/1310474"
+}

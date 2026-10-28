@@ -1,0 +1,20 @@
+{
+  "beta_max": "3/200",
+  "dobrushin_alpha_upper": "36/47",
+  "individual_tv_influence_upper": "3/47",
+  "link_degree": 12,
+  "not_claimed": [
+    "four-dimensional theorem",
+    "continuum mass gap",
+    "uniform physical-distance rate as a->0"
+  ],
+  "one_over_one_minus_alpha": "47/11",
+  "pass": true,
+  "references": [
+    "Follmer, A Covariance Estimate for Gibbs Measures, JFA 46 (1982) 387-395",
+    "Kunsch, Decay of Correlations under Dobrushin Uniqueness, CMP 84 (1982) 207-222"
+  ],
+  "scope": "SU(2); distinct closed contours; any finite nondegenerate 3D cubic torus; 0<=beta<=3/200",
+  "wilson_covariance_bound": "|Cov(W_C,W_D)| <= 4*len(C)*len(D)*alpha**dist_link(C,D)/(1-alpha)",
+  "wilson_prefactor_per_link_pair": "188/11"
+}
