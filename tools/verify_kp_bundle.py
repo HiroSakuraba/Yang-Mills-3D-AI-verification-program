@@ -45,6 +45,11 @@ def assess(read_bytes):
                         issues.append(report_name + ": Haar-sum mismatch at F=" + key)
                 elif gen.get("profiles") != check.get("profiles"):
                     issues.append(report_name + ": valence-profile mismatch at F=" + key)
+            if expected_id == "BRANCHED_SUPPORTS_EXACT_1":
+                if (report.get("n2_cap", -1) < 6 or
+                        report.get("labellings_recomputed", -1) < 3433 or
+                        report.get("single_link_splits_checked", -1) < 784):
+                    issues.append(report_name + ": insufficient exact-labelling/split coverage")
         except (KeyError, OSError, ValueError, TypeError, AttributeError) as exc:
             issues.append(input_name + ": missing or malformed evidence: " + str(exc))
     return issues
