@@ -10,10 +10,10 @@ Start with `YM3D_STRONG_COUPLING_KP_DOMAIN_1.md`.
 
 ## Status
 
-Research lane, not a `program.yaml` gate. It is an analytic-stage result, so a
-program gate would be held by the meta-guard until
-`YM2D_SUN_EXACT_VALIDATION_LANE_0` closes or a waiver is recorded. The note
-gives a proposed registration.
+Registered as a research-only analytic gate in `program.yaml`, with no
+dependents and with `ym2d_validation_passed` as a required meta-guard. It is
+**BLOCKED** until that independent 2D validation lane closes or a documented
+waiver exists; this code import does not close any physical or continuum claim.
 
 ## Layout (suggested place in the repo: `lanes/strong_coupling_kp_domain/`)
 
@@ -34,10 +34,16 @@ The checkers were copied from the 4D bundles with the dimension set to 3, so the
 `id` field inside their reports still reads `TWO_FACE_EXACT_SURFACES_1` /
 `BRANCHED_SUPPORTS_EXACT_1`; the report files are named for this lane.
 
-Requirements: Python 3.10+, numpy, opt_einsum, mpmath. Gate acceptance uses interval endpoint comparisons; rounded floating-point
+Requirements: Python 3.10+, `pip install -r requirements.txt` (numpy, opt_einsum, mpmath). Gate acceptance uses interval endpoint comparisons; rounded floating-point
 values in decision.json are diagnostics only.
 
 ## Reproduce
+
+    python3 tools/build.py         # full generator runs, may be expensive
+    python3 tools/check.py         # independently rerun checkers and decision
+    python3 tools/test_integrity.py
+
+Alternatively, run each stage separately:
 
     python3 generator/two_face_surfaces.py --fmax 22 --output artifacts/two_face_f22.json      # ~1 min
     python3 checker/check_two_face.py --fmax 22 --generator-json artifacts/two_face_f22.json --output artifacts/check_two_face_f22.json
