@@ -1,0 +1,33 @@
+name: KP evidence preflight
+on:
+  pull_request:
+    paths:
+      - "tools/verify_kp_bundle.py"
+      - "tests/test_kp_bundle_preflight.py"
+      - "lanes/strong_coupling_kp_domain/**"
+      - "program.yaml"
+      - ".github/workflows/kp-evidence-preflight.yml"
+  push:
+    branches: [main]
+    paths:
+      - "tools/verify_kp_bundle.py"
+      - "tests/test_kp_bundle_preflight.py"
+      - "lanes/strong_coupling_kp_domain/**"
+      - "program.yaml"
+      - ".github/workflows/kp-evidence-preflight.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  stdlib-preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run negative controls
+        run: |
+          python -m unittest discover -s tests -p "test_kp_bundle_preflight.py" -v
+          python -m compileall -q lanes/strong_coupling_kp_domain

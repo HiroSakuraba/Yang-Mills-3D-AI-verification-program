@@ -51,6 +51,25 @@ kill_criteria:
 
 gates:
 
+  # Research-only strong-coupling domain: no dependents, NOT fallback certification.
+  # Analytic closure is barred until the 2D validation meta-rule is satisfied.
+  - id: YM3D_STRONG_COUPLING_KP_DOMAIN_1
+    title: KP domain for 3D SU(2) single-plaquette polymer gas
+    milestone: fallback_domain
+    schema_stage: analytic
+    workdir: lanes/strong_coupling_kp_domain
+    generator_cmd: "python tools/build.py"
+    checker_cmd: "python tools/check.py"
+    decision_glob: "artifacts/decision.json"
+    decision_status_key: status
+    independence: strict
+    meta_requires: [ym2d_validation_passed]
+    depends_on: []
+    timeout_s: 3600
+    status: blocked
+    claims_unlocked: ["Wilson single-plaquette polymer gas KP domain beta <= 37/200"]
+    claim_strength: fallback_domain_only
+
   # ---------- Milestone 1A: combinatorial spine (executable today) ----------
   - id: YM3D_SCHEMA_DISCRIMINATOR_NULL_TEST_1
     title: Schema discriminator null test
