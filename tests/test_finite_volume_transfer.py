@@ -46,16 +46,16 @@ class FiniteVolumeTransferTests(unittest.TestCase):
     def test_other_spatial_volumes_preserve_incidence(self):
         for L in (3, 4, 5):
             links, faces, incidence, adjacency, multiplicity = mod.cubic_time_slab(L, 2)
-            self.assertEqual(len(links), 11*L*L)
-            self.assertEqual(len(faces), 10*L*L)
+            self.assertEqual(len(links), 8*L*L)
+            self.assertEqual(len(faces), 7*L*L)
             self.assertEqual(max(incidence.values()), 4)
             self.assertEqual(max(map(len, adjacency.values())), 12)
             self.assertEqual(max(multiplicity.values()), 1)
 
     def test_one_time_slab(self):
         links, faces, incidence, adjacency, multiplicity = mod.cubic_time_slab(4, 1)
-        self.assertEqual(len(links), 7*16)
-        self.assertEqual(len(faces), 6*16)
+        self.assertEqual(len(links), 5*16)
+        self.assertEqual(len(faces), 4*16)
         self.assertEqual(max(multiplicity.values()), 1)
 
     def test_short_periods_rejected(self):
