@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "audit_kind": "3d_su2_continuum_mass_gap_boundary_not_a_proof",
+  "source": {
+    "upstream_repository": "yang-mills-group/OpenAI-YM-20261028",
+    "upstream_commit": "3456e5e75cf8d4cd558955a5c7638fba2d68f464",
+    "three_d_lane": "lanes/scalar_spectral_bridge/README.md"
+  },
+  "convention": {
+    "dimension": 3,
+    "gauge_group": "SU(2)",
+    "g3_squared": "1/1",
+    "beta_formula": "4/(g3_squared*a)",
+    "dobrushin_alpha_upper_formula": "12*beta",
+    "sufficient_regime": "alpha_upper<1"
+  },
+  "coupling_examples": [
+    {"a": "96/1", "beta": "1/24", "alpha_upper": "1/2", "in_sufficient_regime": true},
+    {"a": "48/1", "beta": "1/12", "alpha_upper": "1/1", "in_sufficient_regime": false},
+    {"a": "24/1", "beta": "1/6", "alpha_upper": "2/1", "in_sufficient_regime": false},
+    {"a": "1/1", "beta": "4/1", "alpha_upper": "48/1", "in_sufficient_regime": false},
+    {"a": "1/4", "beta": "16/1", "alpha_upper": "192/1", "in_sufficient_regime": false}
+  ],
+  "collapsing_rate_toy": {
+    "definition": "rho(a)=1-a*a",
+    "physical_mass_upper_bound": "a/(1-a*a)",
+    "examples": [
+      {"a": "1/2", "rho": "3/4", "mass_upper": "2/3"},
+      {"a": "1/4", "rho": "15/16", "mass_upper": "4/15"},
+      {"a": "1/8", "rho": "63/64", "mass_upper": "8/63"}
+    ],
+    "physical_mass_lower_bound_proved": false
+  },
+  "obligations": [
+    {"id": "wilson_observable_identification", "status": "open"},
+    {"id": "physical_reflection_positivity", "status": "open"},
+    {"id": "uniform_physical_distance_decay", "status": "open"},
+    {"id": "compatible_uv_ir_extraction", "status": "open"},
+    {"id": "dense_gauge_invariant_field_family", "status": "open"},
+    {"id": "continuum_spectral_support", "status": "open"}
+  ],
+  "claim_strength": "research_arithmetic_and_conditional_spectral_lemma_only",
+  "proves_continuum_mass_gap": false,
+  "closes_gates": []
+}
