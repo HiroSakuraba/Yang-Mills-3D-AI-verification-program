@@ -9,6 +9,8 @@ on:
       - "tools/check_finite_gas_transfer.py"
       - "tests/test_upstream_ym4_audit.py"
       - "tests/test_finite_gas_transfer.py"
+      - "tools/check_mass_gap_obligations.py"
+      - "tests/test_mass_gap_obligations.py"
       - "program.yaml"
       - ".github/workflows/upstream-ym4-audit.yml"
   push:
@@ -20,6 +22,8 @@ on:
       - "tools/check_finite_gas_transfer.py"
       - "tests/test_upstream_ym4_audit.py"
       - "tests/test_finite_gas_transfer.py"
+      - "tools/check_mass_gap_obligations.py"
+      - "tests/test_mass_gap_obligations.py"
       - "program.yaml"
       - ".github/workflows/upstream-ym4-audit.yml"
   workflow_dispatch:
@@ -49,6 +53,10 @@ jobs:
         run: python tools/check_finite_gas_transfer.py docs/upstream-4d-lean-audit/finite_gas_seed.json
       - name: Finite gas regression and negative controls
         run: python -m unittest discover -s tests -p 'test_finite_gas_transfer.py' -v
+      - name: Continuum gap boundary ledger (research-only)
+        run: python tools/check_mass_gap_obligations.py docs/upstream-4d-lean-audit/mass_gap_obligations.json
+      - name: Continuum gap claim and arithmetic negative controls
+        run: python -m unittest discover -s tests -p 'test_mass_gap_obligations.py' -v
       - name: Python syntax validation
         run: >
           python -m compileall -q tools/audit_upstream_ym4.py
@@ -56,3 +64,5 @@ jobs:
           tools/check_finite_gas_transfer.py
           tests/test_upstream_ym4_audit.py
           tests/test_finite_gas_transfer.py
+          tools/check_mass_gap_obligations.py
+          tests/test_mass_gap_obligations.py
