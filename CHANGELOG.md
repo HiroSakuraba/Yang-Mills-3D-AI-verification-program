@@ -2,6 +2,19 @@
 
 ## Unreleased
 
+- Trace the October 4D Lean funded-run selection through formal RG budget
+  suppliers, identifying an actual dimension-independent finite-activity
+  perturbation lemma and crucial fixed-census/volume-uniformity conditions.
+  Add a six-plaquette exact rational example, independent recomputation,
+  12 regression/stress tests, and source-pinned non-transfer documentation.
+  This is research-only and closes no 3D proof gate.
+
+- Start source-pinned audit of the October 2026 4D Lean construction and the
+  November 2026 working-group assessment: map 15 concrete interfaces to 3D
+  proof obligations, explicitly block dimensionally invalid transfers, and add
+  independent crosswalk metadata tests and optional pinned-source anchor checks.
+  This is a research-only lane, not a new proof gate.
+
 - Prepare numerical glueball correlators from periodic per-configuration operator
   samples with time-origin averaging, per-replica vacuum means, chain-aware
   nonoverlapping block bootstrap, explicit thermalization discard, dependence

@@ -1,0 +1,263 @@
+{
+  "schema_version": "1.0",
+  "audit_id": "YM3D_UPSTREAM_4D_CONSTRUCTION_AUDIT_0",
+  "audit_status": "research_only_not_a_closed_gate",
+  "generated_for": "HiroSakuraba/Yang-Mills-3D-AI-verification-program",
+  "upstreams": [
+    {
+      "id": "october",
+      "repo": "yang-mills-group/OpenAI-YM-20261028",
+      "commit": "3456e5e75cf8d4cd558955a5c7638fba2d68f464",
+      "role": "original_4d_formalization"
+    },
+    {
+      "id": "assessment",
+      "repo": "yang-mills-group/YM",
+      "commit": "55ba9fc36293b3f4d52c6b1f813169a0be76ee98",
+      "role": "independent_review_and_assessment"
+    }
+  ],
+  "allowed_claim_strengths": [
+    "candidate_only",
+    "engineering_reuse_only",
+    "no_direct_transfer"
+  ],
+  "transfer_certificates": [],
+  "records": [
+    {
+      "id": "wilson-lattice-definition",
+      "upstream": "october",
+      "path": "PublicWilson.lean",
+      "anchor": "def wilsonLaw",
+      "category": "interface_pattern",
+      "target_gate": "YM3D_SUPPORT_LIFT_1",
+      "finding": "The public Wilson law uses plaquette energy and product Haar measure on four-dimensional periodic lattices.",
+      "obligation": "Define the 3D finite lattice law with its own link and plaquette geometry; verify normalization and a one-plaquette SU(2) test.",
+      "claim_strength": "candidate_only",
+      "source_url": "https://github.com/yang-mills-group/OpenAI-YM-20261028/blob/3456e5e75cf8d4cd558955a5c7638fba2d68f464/PublicWilson.lean"
+    },
+    {
+      "id": "four-dimensional-axes",
+      "upstream": "october",
+      "path": "PublicTheory.lean",
+      "anchor": "abbrev Axis := Fin 4",
+      "category": "dimension_obstruction",
+      "target_gate": "YM3D_SUPPORT_LIFT_1",
+      "finding": "The upstream spacetime and lattice axis type is explicitly four-dimensional.",
+      "obligation": "Provide a new Fin 3 Euclidean lattice geometry and show all lifted link/plaquette identities there.",
+      "claim_strength": "no_direct_transfer",
+      "source_url": "https://github.com/yang-mills-group/OpenAI-YM-20261028/blob/3456e5e75cf8d4cd558955a5c7638fba2d68f464/PublicTheory.lean"
+    },
+    {
+      "id": "logarithmic-running",
+      "upstream": "october",
+      "path": "ChallengeSpec.lean",
+      "anchor": "structure WilsonRegularity",
+      "category": "dimension_obstruction",
+      "target_gate": "YM3D_ONE_STEP_RG_RUNG_SCALE_INDEXED_1",
+      "finding": "The public regularity requirement fixes beta/log(1/a) to a positive limiting slope, appropriate to the 4D claim.",
+      "obligation": "Replace rather than import this condition: use dimensionful 3D coupling, beta=4/(a*g3^2) for the stated SU(2) convention, and prove certified RG correction bounds.",
+      "claim_strength": "no_direct_transfer",
+      "source_url": "https://github.com/yang-mills-group/OpenAI-YM-20261028/blob/3456e5e75cf8d4cd558955a5c7638fba2d68f464/ChallengeSpec.lean"
+    },
+    {
+      "id": "wilson-limit-bridge",
+      "upstream": "october",
+      "path": "WilsonBridge.lean",
+      "anchor": "theorem fromWilson",
+      "category": "interface_pattern",
+      "target_gate": "YM3D_TERMINAL_KP_ACTIVITY_MAP_SCALE_INDEXED_1",
+      "finding": "A bridge connects finite Wilson moments to ordered limit readouts through an already-supplied extraction hypothesis.",
+      "obligation": "Separate pure algebraic readout identities from convergence hypotheses and reprove the latter in 3D.",
+      "claim_strength": "candidate_only",
+      "source_url": "https://github.com/yang-mills-group/OpenAI-YM-20261028/blob/3456e5e75cf8d4cd558955a5c7638fba2d68f464/WilsonBridge.lean"
+    },
+    {
+      "id": "headline-construction",
+      "upstream": "october",
+      "path": "Construction.lean",
+      "anchor": "theorem constructed",
+      "category": "scope_reference",
+      "target_gate": "YM3D_ONE_STEP_RG_RUNG_SCALE_INDEXED_1",
+      "finding": "The advertised construction is assembled from nonperturbative existence and multiple bridge hypotheses, all scoped to its source definitions.",
+      "obligation": "Trace the actual analytic dependencies and determine whether any 3D estimate follows from dimension-independent hypotheses; do not treat the final 4D theorem as an RG rung.",
+      "claim_strength": "no_direct_transfer",
+      "source_url": "https://github.com/yang-mills-group/OpenAI-YM-20261028/blob/3456e5e75cf8d4cd558955a5c7638fba2d68f464/Construction.lean"
+    },
+    {
+      "id": "continuum-aggregation",
+      "upstream": "october",
+      "path": "YM/Nonperturbative/Continuum.lean",
+      "anchor": "theorem continuum_with_position_tests",
+      "category": "scope_reference",
+      "target_gate": "YM3D_ONE_STEP_RG_RUNG_SCALE_INDEXED_1",
+      "finding": "The continuum endpoint packages source extraction, OPE, contacts and reconstruction via a previously constructed funded run.",
+      "obligation": "Audit source hypotheses of the funded run and each intermediate estimate; identify explicit 3D analogues before importing any bound.",
+      "claim_strength": "no_direct_transfer",
+      "source_url": "https://github.com/yang-mills-group/OpenAI-YM-20261028/blob/3456e5e75cf8d4cd558955a5c7638fba2d68f464/YM/Nonperturbative/Continuum.lean"
+    },
+    {
+      "id": "funded-run-selection",
+      "upstream": "october",
+      "path": "YM/Independent/ConstructionRun.lean",
+      "anchor": "theorem constructionRun",
+      "category": "analytic_candidate",
+      "target_gate": "YM3D_ONE_STEP_RG_RUNG_SCALE_INDEXED_1",
+      "finding": "The source selects a run using a campaign theorem and named resource/precision suppliers.",
+      "obligation": "Trace the selection theorem through its quantitative inequalities; check scale, volume, gauge and cutoff dependence, and derive an independent 3D estimate.",
+      "claim_strength": "candidate_only",
+      "source_url": "https://github.com/yang-mills-group/OpenAI-YM-20261028/blob/3456e5e75cf8d4cd558955a5c7638fba2d68f464/YM/Independent/ConstructionRun.lean"
+    },
+    {
+      "id": "campaign-conditions",
+      "upstream": "october",
+      "path": "YM/R2I/Campaign/Accepted.lean",
+      "anchor": "structure Funded",
+      "category": "analytic_candidate",
+      "target_gate": "YM3D_TERMINAL_KP_ACTIVITY_MAP_SCALE_INDEXED_1",
+      "finding": "The Funded structure packages log budget, halo and polymer conditions; the label alone does not imply a 3D KP certificate.",
+      "obligation": "Extract exact norms, polymer classes, large-field assumptions and their numerical margins; map these to typed 3D activities.",
+      "claim_strength": "candidate_only",
+      "source_url": "https://github.com/yang-mills-group/OpenAI-YM-20261028/blob/3456e5e75cf8d4cd558955a5c7638fba2d68f464/YM/R2I/Campaign/Accepted.lean"
+    },
+    {
+      "id": "block-resource-recipe",
+      "upstream": "october",
+      "path": "YM/Integration/NativeComponentRecipe.lean",
+      "anchor": "structure Realized",
+      "category": "analytic_candidate",
+      "target_gate": "YM3D_ONE_STEP_RG_RUNG_SCALE_INDEXED_1",
+      "finding": "A block/scale supplier combines floor conditions, delays and budget-like receipt fields in the upstream formal development.",
+      "obligation": "Show each condition corresponds to a physical 3D Wilson measure estimate, not only to an abstract resource predicate.",
+      "claim_strength": "candidate_only",
+      "source_url": "https://github.com/yang-mills-group/OpenAI-YM-20261028/blob/3456e5e75cf8d4cd558955a5c7638fba2d68f464/YM/Integration/NativeComponentRecipe.lean"
+    },
+    {
+      "id": "os-structure",
+      "upstream": "october",
+      "path": "HierarchyBridge.lean",
+      "anchor": "theorem publicReconstruction",
+      "category": "interface_pattern",
+      "target_gate": "YM3D_TERMINAL_KP_ACTIVITY_MAP_SCALE_INDEXED_1",
+      "finding": "A public bridge constructs Wightman/reconstruction properties from an upstream phase and hierarchy witness.",
+      "obligation": "Verify reflection-positive 3D Schwinger functions of the original lattice measure and the continuous observable sector independently.",
+      "claim_strength": "candidate_only",
+      "source_url": "https://github.com/yang-mills-group/OpenAI-YM-20261028/blob/3456e5e75cf8d4cd558955a5c7638fba2d68f464/HierarchyBridge.lean"
+    },
+    {
+      "id": "kernel-replay",
+      "upstream": "october",
+      "path": "VerifyJoint.lean",
+      "anchor": "def replayProofs",
+      "category": "verification_pattern",
+      "target_gate": "YM3D_ORBIT_REDUCTION_EXPANDED_GRAPH_AUDIT_1",
+      "finding": "The implementation audits theorem declarations, permitted axioms and kernel replay against a separate reference environment.",
+      "obligation": "Reuse the proof-audit methodology only; pin dependencies and keep independently checked theorem statements distinct from physical interpretations.",
+      "claim_strength": "engineering_reuse_only",
+      "source_url": "https://github.com/yang-mills-group/OpenAI-YM-20261028/blob/3456e5e75cf8d4cd558955a5c7638fba2d68f464/VerifyJoint.lean"
+    },
+    {
+      "id": "working-group-lattice-review",
+      "upstream": "assessment",
+      "path": "submissions/openai-20261028/checks/AcceptanceSpec.lean",
+      "anchor": "structure LatticeAndScale",
+      "category": "review_scope",
+      "target_gate": "YM3D_SUPPORT_LIFT_1",
+      "finding": "The independent review ties finite Wilson laws, moments, volume extraction and coupling calibration to one common source witness.",
+      "obligation": "Recreate this common-witness acceptance contract on the 3D law rather than importing its 4D result.",
+      "claim_strength": "candidate_only",
+      "source_url": "https://github.com/yang-mills-group/YM/blob/55ba9fc36293b3f4d52c6b1f813169a0be76ee98/submissions/openai-20261028/checks/AcceptanceSpec.lean"
+    },
+    {
+      "id": "working-group-scalar-os",
+      "upstream": "assessment",
+      "path": "submissions/openai-20261028/docs/checks.md",
+      "anchor": "scalar family, not a separately specified all-field OS interface",
+      "category": "review_scope",
+      "target_gate": "YM3D_TERMINAL_KP_ACTIVITY_MAP_SCALE_INDEXED_1",
+      "finding": "The working-group OS bridge concerns a selected centered scalar family, not a separately specified all-field OS interface.",
+      "obligation": "Prove positivity and compatibility for the desired 3D gauge-invariant observable algebra, not only a distinguished scalar.",
+      "claim_strength": "no_direct_transfer",
+      "source_url": "https://github.com/yang-mills-group/YM/blob/55ba9fc36293b3f4d52c6b1f813169a0be76ee98/submissions/openai-20261028/docs/checks.md"
+    },
+    {
+      "id": "probe-not-mass-gap",
+      "upstream": "assessment",
+      "path": "submissions/openai-20261028/checks/AcceptanceSpec.lean",
+      "anchor": "positive_lattice_probe",
+      "category": "mass_gap_boundary",
+      "target_gate": "YM3D_GLUEBALL_OBSERVABLE_REFERENCE_1",
+      "finding": "The acceptance target includes a positive lattice probe but explicitly does not assert a physical intrinsic mass gap.",
+      "obligation": "Establish nonzero spectral lower bound in physical units after the thermodynamic and continuum limits; a positive probe is insufficient.",
+      "claim_strength": "no_direct_transfer",
+      "source_url": "https://github.com/yang-mills-group/YM/blob/55ba9fc36293b3f4d52c6b1f813169a0be76ee98/submissions/openai-20261028/checks/AcceptanceSpec.lean"
+    },
+    {
+      "id": "review-reproduction",
+      "upstream": "assessment",
+      "path": "submissions/openai-20261028/docs/rerun.md",
+      "anchor": "python3 scripts/verify.py all",
+      "category": "verification_pattern",
+      "target_gate": "YM3D_ORBIT_REDUCTION_EXPANDED_GRAPH_AUDIT_1",
+      "finding": "The review project specifies pinned Lean builds, Comparator checks and limits of its recorded environment.",
+      "obligation": "Adopt reproducibility logs, toolchain pins and an explicit list of unverified review modes; do not mistake reported builds for local reproduction.",
+      "claim_strength": "engineering_reuse_only",
+      "source_url": "https://github.com/yang-mills-group/YM/blob/55ba9fc36293b3f4d52c6b1f813169a0be76ee98/submissions/openai-20261028/docs/rerun.md"
+    },
+    {
+      "id": "fixed-census-product-difference",
+      "upstream": "october",
+      "path": "YM/Push/BETA_TRANSPORT/Activity.lean",
+      "anchor": "lemma gas_diff",
+      "category": "analytic_candidate",
+      "target_gate": "YM3D_TERMINAL_KP_ACTIVITY_MAP_SCALE_INDEXED_1",
+      "finding": "The gas_diff theorem bounds a difference of forced-activity gases assuming the forced-address census agrees; its module denies volume-independent bounds.",
+      "obligation": "Reprove the finite algebraic part on the 3D support inventory, then separately certify configuration- and volume-uniform genuine SU(2) activity norms.",
+      "claim_strength": "candidate_only",
+      "source_url": "https://github.com/yang-mills-group/OpenAI-YM-20261028/blob/3456e5e75cf8d4cd558955a5c7638fba2d68f464/YM/Push/BETA_TRANSPORT/Activity.lean"
+    },
+    {
+      "id": "forced-inventory-admissibility",
+      "upstream": "october",
+      "path": "YM/RG/Activities.lean",
+      "anchor": "def admissible",
+      "category": "interface_pattern",
+      "target_gate": "YM3D_SUPPORT_LIFT_1",
+      "finding": "Admissible forced subsets require disjoint supports and exactly cover cutoff flags with their inventories; this predicate is not an automatic consequence of link symmetry.",
+      "obligation": "Establish a matching 3D support/inventory model and a separate budget for eligibility changes under gauge and cutoff transformations.",
+      "claim_strength": "candidate_only",
+      "source_url": "https://github.com/yang-mills-group/OpenAI-YM-20261028/blob/3456e5e75cf8d4cd558955a5c7638fba2d68f464/YM/RG/Activities.lean"
+    },
+    {
+      "id": "abstract-cluster-identity-warning",
+      "upstream": "october",
+      "path": "YM/Push/ABSOLUTE_SUMS/Clusters.lean",
+      "anchor": "No positivity of the gas",
+      "category": "scope_reference",
+      "target_gate": "YM3D_TERMINAL_KP_ACTIVITY_MAP_SCALE_INDEXED_1",
+      "finding": "The clusters source warns its absolute graph-series estimates do not independently supply physical gas positivity or the exponential/logarithm identity.",
+      "obligation": "Prove the identification between K-star collision graph activities and Wilson-derived polymers before claiming a 3D cluster or RG result.",
+      "claim_strength": "no_direct_transfer",
+      "source_url": "https://github.com/yang-mills-group/OpenAI-YM-20261028/blob/3456e5e75cf8d4cd558955a5c7638fba2d68f464/YM/Push/ABSOLUTE_SUMS/Clusters.lean"
+    },
+    {
+      "id": "postnumeric-run-selection",
+      "upstream": "october",
+      "path": "YM/Integration/NativePreselectedPostnumericPeriodRun.lean",
+      "anchor": "def PostnumericPreselection",
+      "category": "analytic_candidate",
+      "target_gate": "YM3D_ONE_STEP_RG_RUNG_SCALE_INDEXED_1",
+      "finding": "The source run selector packages a preselected sheet, quote and numeric payments, then constructs a single Run with Funded and period/treasury receipts.",
+      "obligation": "Trace every preselection receipt into a concrete finite-dimensional Wilson integral and a scale-uniform 3D norm estimate; the formal resource predicate alone cannot close an RG gate.",
+      "claim_strength": "candidate_only",
+      "source_url": "https://github.com/yang-mills-group/OpenAI-YM-20261028/blob/3456e5e75cf8d4cd558955a5c7638fba2d68f464/YM/Integration/NativePreselectedPostnumericPeriodRun.lean"
+    }
+  ],
+  "global_nonclaims": [
+    "No checked 3D analytic RG estimate is imported.",
+    "The cited 4D theorem is not a 3D theorem.",
+    "A positive lattice probe is not a physical mass gap.",
+    "The working-group assessment is a stated opinion; this crosswalk does not rerun Lean or Comparator.",
+    "No new program.yaml gate is closed by this audit."
+  ]
+}

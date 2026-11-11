@@ -1,0 +1,323 @@
+{
+  "schema_version": "1.0",
+  "audit_kind": "finite_3d_support_example_not_analytic_rg",
+  "source": {
+    "repository": "yang-mills-group/OpenAI-YM-20261028",
+    "commit": "3456e5e75cf8d4cd558955a5c7638fba2d68f464",
+    "path": "YM/Push/BETA_TRANSPORT/Activity.lean",
+    "lemmas": [
+      "product_diff",
+      "gas_diff"
+    ]
+  },
+  "geometry": "unwrapped_integer_cubic_lattice",
+  "same_admissibility_for_p_and_q": true,
+  "flags": [
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      3,
+      0,
+      0
+    ]
+  ],
+  "entries": [
+    {
+      "id": "xy_left",
+      "anchor": [
+        0,
+        0,
+        0
+      ],
+      "axes": [
+        0,
+        1
+      ],
+      "support": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0
+        ]
+      ],
+      "inventory": [
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "activity_p": "1/8",
+      "activity_q": "3/20",
+      "majorant": "1/5"
+    },
+    {
+      "id": "xz_left",
+      "anchor": [
+        0,
+        0,
+        0
+      ],
+      "axes": [
+        0,
+        2
+      ],
+      "support": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ]
+      ],
+      "inventory": [
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "activity_p": "1/10",
+      "activity_q": "2/25",
+      "majorant": "1/8"
+    },
+    {
+      "id": "xy_right",
+      "anchor": [
+        3,
+        0,
+        0
+      ],
+      "axes": [
+        0,
+        1
+      ],
+      "support": [
+        [
+          3,
+          0,
+          0
+        ],
+        [
+          3,
+          1,
+          0
+        ],
+        [
+          4,
+          0,
+          0
+        ],
+        [
+          4,
+          1,
+          0
+        ]
+      ],
+      "inventory": [
+        [
+          3,
+          0,
+          0
+        ]
+      ],
+      "activity_p": "-1/9",
+      "activity_q": "-1/10",
+      "majorant": "1/8"
+    },
+    {
+      "id": "xz_right",
+      "anchor": [
+        3,
+        0,
+        0
+      ],
+      "axes": [
+        0,
+        2
+      ],
+      "support": [
+        [
+          3,
+          0,
+          0
+        ],
+        [
+          3,
+          0,
+          1
+        ],
+        [
+          4,
+          0,
+          0
+        ],
+        [
+          4,
+          0,
+          1
+        ]
+      ],
+      "inventory": [
+        [
+          3,
+          0,
+          0
+        ]
+      ],
+      "activity_p": "1/12",
+      "activity_q": "1/14",
+      "majorant": "1/9"
+    },
+    {
+      "id": "yz_far_left",
+      "anchor": [
+        0,
+        0,
+        3
+      ],
+      "axes": [
+        1,
+        2
+      ],
+      "support": [
+        [
+          0,
+          0,
+          3
+        ],
+        [
+          0,
+          0,
+          4
+        ],
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          1,
+          4
+        ]
+      ],
+      "inventory": [
+        [
+          0,
+          0,
+          3
+        ]
+      ],
+      "activity_p": "1/5",
+      "activity_q": "1/6",
+      "majorant": "1/4"
+    },
+    {
+      "id": "yz_far_right",
+      "anchor": [
+        3,
+        0,
+        3
+      ],
+      "axes": [
+        1,
+        2
+      ],
+      "support": [
+        [
+          3,
+          0,
+          3
+        ],
+        [
+          3,
+          0,
+          4
+        ],
+        [
+          3,
+          1,
+          3
+        ],
+        [
+          3,
+          1,
+          4
+        ]
+      ],
+      "inventory": [
+        [
+          3,
+          0,
+          3
+        ]
+      ],
+      "activity_p": "-1/7",
+      "activity_q": "-1/8",
+      "majorant": "1/6"
+    }
+  ],
+  "admissible_subsets": [
+    [
+      "xy_left",
+      "xy_right"
+    ],
+    [
+      "xy_left",
+      "xz_right"
+    ],
+    [
+      "xz_left",
+      "xy_right"
+    ],
+    [
+      "xz_left",
+      "xz_right"
+    ]
+  ],
+  "gas_p": "-1/160",
+  "gas_q": "-23/3500",
+  "absolute_difference": "9/28000",
+  "local_telescoping_bound": "73/4032",
+  "global_product_bound": "32125/129024",
+  "relative_delta": "4/25",
+  "delta_product_bound": "313/450",
+  "nonclaims": [
+    "No 3D Wilson polymer activities or RG coefficients were computed.",
+    "No volume-uniform or lattice-spacing-uniform bound is shown.",
+    "No result is imported as a closed 3D proof gate."
+  ]
+}
