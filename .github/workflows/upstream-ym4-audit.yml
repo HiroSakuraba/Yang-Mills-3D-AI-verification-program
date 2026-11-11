@@ -5,7 +5,10 @@ on:
     paths:
       - "docs/upstream-4d-lean-audit/**"
       - "tools/audit_upstream_ym4.py"
+      - "tools/build_finite_gas_transfer.py"
+      - "tools/check_finite_gas_transfer.py"
       - "tests/test_upstream_ym4_audit.py"
+      - "tests/test_finite_gas_transfer.py"
       - "program.yaml"
       - ".github/workflows/upstream-ym4-audit.yml"
   push:
@@ -13,7 +16,10 @@ on:
     paths:
       - "docs/upstream-4d-lean-audit/**"
       - "tools/audit_upstream_ym4.py"
+      - "tools/build_finite_gas_transfer.py"
+      - "tools/check_finite_gas_transfer.py"
       - "tests/test_upstream_ym4_audit.py"
+      - "tests/test_finite_gas_transfer.py"
       - "program.yaml"
       - ".github/workflows/upstream-ym4-audit.yml"
   workflow_dispatch:
@@ -22,7 +28,7 @@ permissions:
   contents: read
 
 jobs:
-  source-pin-and-negative-controls:
+  source-pin-and-finite-gas-controls:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -35,5 +41,18 @@ jobs:
         run: python tools/audit_upstream_ym4.py
       - name: Adversarial crosswalk regression tests
         run: python -m unittest discover -s tests -p 'test_upstream_ym4_audit.py' -v
+      - name: Regenerate exact finite 3D support seed
+        run: |
+          python tools/build_finite_gas_transfer.py --output /tmp/finite_gas_seed.json
+          diff -u docs/upstream-4d-lean-audit/finite_gas_seed.json /tmp/finite_gas_seed.json
+      - name: Independent exact-rational finite gas audit
+        run: python tools/check_finite_gas_transfer.py docs/upstream-4d-lean-audit/finite_gas_seed.json
+      - name: Finite gas regression and negative controls
+        run: python -m unittest discover -s tests -p 'test_finite_gas_transfer.py' -v
       - name: Python syntax validation
-        run: python -m compileall -q tools/audit_upstream_ym4.py tests/test_upstream_ym4_audit.py
+        run: >
+          python -m compileall -q tools/audit_upstream_ym4.py
+          tools/build_finite_gas_transfer.py
+          tools/check_finite_gas_transfer.py
+          tests/test_upstream_ym4_audit.py
+          tests/test_finite_gas_transfer.py

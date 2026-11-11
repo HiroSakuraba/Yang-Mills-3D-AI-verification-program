@@ -42,6 +42,26 @@ python tools/audit_upstream_ym4.py \
 
 The source audit checks `git rev-parse HEAD` against both frozen commits and verifies literal anchors. It does **not** run Lean or validate physical semantics. Full Lean/Comparator replay is a separate, substantially more expensive task, documented upstream.
 
+## Second tranche: finite gas stability and dependency tracing
+
+The [source dependency trace](DEPENDENCY_TRACE_2.md) follows the upstream
+funded-run selection through named budget/resource suppliers and identifies a
+portable **finite** signed-activity inequality in the beta-transport source.
+The [finite transfer proof and exact example](FINITE_GAS_TRANSFER.md) include
+a hand-constructed 3D plaquette-support inventory, an independently audited
+[rational artifact](finite_gas_seed.json), 10 input/negative controls, an
+exhaustive two-label coefficient-grid test, and a mask-change counterexample.
+
+```sh
+python tools/build_finite_gas_transfer.py --output docs/upstream-4d-lean-audit/finite_gas_seed.json
+python tools/check_finite_gas_transfer.py docs/upstream-4d-lean-audit/finite_gas_seed.json
+python -m unittest discover -s tests -p 'test_finite_gas_transfer.py' -v
+```
+
+Neither the source trace nor the finite algebra establishes bounds for actual
+SU(2) Wilson activities, uniform polymer norms, RG contraction or a mass gap.
+The next mathematical obligation is to derive and certify such coefficients.
+
 ## Next analytic research tranche
 
 A. Trace `constructionRun` → campaign selection → actual numeric source estimates, recording theorem hypotheses and dependence on dimension, volume, scale and gauge.

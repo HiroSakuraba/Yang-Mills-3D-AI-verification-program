@@ -203,6 +203,54 @@
       "obligation": "Adopt reproducibility logs, toolchain pins and an explicit list of unverified review modes; do not mistake reported builds for local reproduction.",
       "claim_strength": "engineering_reuse_only",
       "source_url": "https://github.com/yang-mills-group/YM/blob/55ba9fc36293b3f4d52c6b1f813169a0be76ee98/submissions/openai-20261028/docs/rerun.md"
+    },
+    {
+      "id": "fixed-census-product-difference",
+      "upstream": "october",
+      "path": "YM/Push/BETA_TRANSPORT/Activity.lean",
+      "anchor": "lemma gas_diff",
+      "category": "analytic_candidate",
+      "target_gate": "YM3D_TERMINAL_KP_ACTIVITY_MAP_SCALE_INDEXED_1",
+      "finding": "The gas_diff theorem bounds a difference of forced-activity gases assuming the forced-address census agrees; its module denies volume-independent bounds.",
+      "obligation": "Reprove the finite algebraic part on the 3D support inventory, then separately certify configuration- and volume-uniform genuine SU(2) activity norms.",
+      "claim_strength": "candidate_only",
+      "source_url": "https://github.com/yang-mills-group/OpenAI-YM-20261028/blob/3456e5e75cf8d4cd558955a5c7638fba2d68f464/YM/Push/BETA_TRANSPORT/Activity.lean"
+    },
+    {
+      "id": "forced-inventory-admissibility",
+      "upstream": "october",
+      "path": "YM/RG/Activities.lean",
+      "anchor": "def admissible",
+      "category": "interface_pattern",
+      "target_gate": "YM3D_SUPPORT_LIFT_1",
+      "finding": "Admissible forced subsets require disjoint supports and exactly cover cutoff flags with their inventories; this predicate is not an automatic consequence of link symmetry.",
+      "obligation": "Establish a matching 3D support/inventory model and a separate budget for eligibility changes under gauge and cutoff transformations.",
+      "claim_strength": "candidate_only",
+      "source_url": "https://github.com/yang-mills-group/OpenAI-YM-20261028/blob/3456e5e75cf8d4cd558955a5c7638fba2d68f464/YM/RG/Activities.lean"
+    },
+    {
+      "id": "abstract-cluster-identity-warning",
+      "upstream": "october",
+      "path": "YM/Push/ABSOLUTE_SUMS/Clusters.lean",
+      "anchor": "No positivity of the gas",
+      "category": "scope_reference",
+      "target_gate": "YM3D_TERMINAL_KP_ACTIVITY_MAP_SCALE_INDEXED_1",
+      "finding": "The clusters source warns its absolute graph-series estimates do not independently supply physical gas positivity or the exponential/logarithm identity.",
+      "obligation": "Prove the identification between K-star collision graph activities and Wilson-derived polymers before claiming a 3D cluster or RG result.",
+      "claim_strength": "no_direct_transfer",
+      "source_url": "https://github.com/yang-mills-group/OpenAI-YM-20261028/blob/3456e5e75cf8d4cd558955a5c7638fba2d68f464/YM/Push/ABSOLUTE_SUMS/Clusters.lean"
+    },
+    {
+      "id": "postnumeric-run-selection",
+      "upstream": "october",
+      "path": "YM/Integration/NativePreselectedPostnumericPeriodRun.lean",
+      "anchor": "def PostnumericPreselection",
+      "category": "analytic_candidate",
+      "target_gate": "YM3D_ONE_STEP_RG_RUNG_SCALE_INDEXED_1",
+      "finding": "The source run selector packages a preselected sheet, quote and numeric payments, then constructs a single Run with Funded and period/treasury receipts.",
+      "obligation": "Trace every preselection receipt into a concrete finite-dimensional Wilson integral and a scale-uniform 3D norm estimate; the formal resource predicate alone cannot close an RG gate.",
+      "claim_strength": "candidate_only",
+      "source_url": "https://github.com/yang-mills-group/OpenAI-YM-20261028/blob/3456e5e75cf8d4cd558955a5c7638fba2d68f464/YM/Integration/NativePreselectedPostnumericPeriodRun.lean"
     }
   ],
   "global_nonclaims": [

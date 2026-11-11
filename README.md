@@ -53,6 +53,11 @@ mapping](docs/upstream-4d-lean-audit/crosswalk.json), a
 [mathematical audit](docs/upstream-4d-lean-audit/MATHEMATICAL_CROSSWALK.md),
 and a standalone [checker](tools/audit_upstream_ym4.py) with negative tests.
 **Research only:** no 3D analytic result or mass-gap claim is unlocked.
+The follow-up [dependency trace](docs/upstream-4d-lean-audit/DEPENDENCY_TRACE_2.md)
+identifies a fixed-census polymer-gas stability inequality, and a
+[finite 3D rational example](docs/upstream-4d-lean-audit/FINITE_GAS_TRANSFER.md)
+with an independent checker and negative controls. These are not Wilson-derived
+activities or a volume-uniform KP/RG bound.
 
 ```bash
 python tools/audit_upstream_ym4.py
