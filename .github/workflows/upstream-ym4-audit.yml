@@ -11,6 +11,8 @@ on:
       - "tests/test_finite_gas_transfer.py"
       - "tools/check_mass_gap_obligations.py"
       - "tests/test_mass_gap_obligations.py"
+      - "tools/check_finite_volume_transfer.py"
+      - "tests/test_finite_volume_transfer.py"
       - "program.yaml"
       - ".github/workflows/upstream-ym4-audit.yml"
   push:
@@ -24,6 +26,8 @@ on:
       - "tests/test_finite_gas_transfer.py"
       - "tools/check_mass_gap_obligations.py"
       - "tests/test_mass_gap_obligations.py"
+      - "tools/check_finite_volume_transfer.py"
+      - "tests/test_finite_volume_transfer.py"
       - "program.yaml"
       - ".github/workflows/upstream-ym4-audit.yml"
   workflow_dispatch:
@@ -57,6 +61,10 @@ jobs:
         run: python tools/check_mass_gap_obligations.py docs/upstream-4d-lean-audit/mass_gap_obligations.json
       - name: Continuum gap claim and arithmetic negative controls
         run: python -m unittest discover -s tests -p 'test_mass_gap_obligations.py' -v
+      - name: Finite volume geometry and Z2 gauge-transfer analogues
+        run: python tools/check_finite_volume_transfer.py
+      - name: Finite volume transfer and gauge-orbit tests
+        run: python -m unittest discover -s tests -p 'test_finite_volume_transfer.py' -v
       - name: Python syntax validation
         run: >
           python -m compileall -q tools/audit_upstream_ym4.py
@@ -66,3 +74,5 @@ jobs:
           tests/test_finite_gas_transfer.py
           tools/check_mass_gap_obligations.py
           tests/test_mass_gap_obligations.py
+          tools/check_finite_volume_transfer.py
+          tests/test_finite_volume_transfer.py
