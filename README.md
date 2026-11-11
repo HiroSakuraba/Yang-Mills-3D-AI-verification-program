@@ -44,6 +44,21 @@ program. It does not close a gate in `program.yaml` or supply a proof dependency
 for the 3D lane. In particular, the coefficient frontier near `x = 0.6273` is not
 a physical clustering or mass-gap claim.
 
+## External 4D Lean construction: source-pinned transfer audit
+
+The [October 2026 4D Lean crosswalk](docs/upstream-4d-lean-audit/README.md) maps
+15 specific original/review interfaces to existing 3D gates and identifies where
+four-dimensional hypotheses cannot be imported. It includes a [machine-readable
+mapping](docs/upstream-4d-lean-audit/crosswalk.json), a
+[mathematical audit](docs/upstream-4d-lean-audit/MATHEMATICAL_CROSSWALK.md),
+and a standalone [checker](tools/audit_upstream_ym4.py) with negative tests.
+**Research only:** no 3D analytic result or mass-gap claim is unlocked.
+
+```bash
+python tools/audit_upstream_ym4.py
+python -m unittest discover -s tests -p 'test_upstream_ym4_audit.py'
+```
+
 ## Quick start
 
 ```bash
