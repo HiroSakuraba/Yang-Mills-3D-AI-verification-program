@@ -87,6 +87,27 @@ The audit's PASS means **rational calculations and non-claim guards pass**.
 It does not certify the conditional analytic hypotheses, let alone a physical
 3D/4D continuum mass gap; the proof-gate DAG is unchanged.
 
+## Fourth tranche: finite-volume transfer and density audit
+
+The [finite-volume transfer audit](FINITE_VOLUME_TRANSFER_AUDIT_4.md)
+makes the proposed fixed-strong-coupling full physical spectral
+bound explicit, including its conditional SU(2) Wilson-slab
+identity, common-rate Dobrushin comparison, and density of
+gauge-invariant centered time-slice vectors. **These analytic
+premises require independent expert review.**
+
+A standalone exact [geometry and finite-group transfer checker](../../tools/check_finite_volume_transfer.py)
+and its [adversarial tests](../../tests/test_finite_volume_transfer.py)
+verify the 3D link-support graph and an exactly enumerated
+finite **Z2** gauge-transfer analogue. This is **not** a
+computer proof of SU(2) transfer positivity, a full physical
+gap, or a continuum mass gap, and changes no `program.yaml` gate.
+
+```sh
+python tools/check_finite_volume_transfer.py
+python -m unittest discover -s tests -p 'test_finite_volume_transfer.py' -v
+```
+
 ## Next analytic research tranche
 
 A. Trace `constructionRun` → campaign selection → actual numeric source estimates, recording theorem hypotheses and dependence on dimension, volume, scale and gauge.
