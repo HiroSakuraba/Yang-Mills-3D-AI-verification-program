@@ -62,6 +62,31 @@ Neither the source trace nor the finite algebra establishes bounds for actual
 SU(2) Wilson activities, uniform polymer norms, RG contraction or a mass gap.
 The next mathematical obligation is to derive and certify such coefficients.
 
+## Third tranche: conditional spectral gap and continuum obstruction
+
+The [spectral bridge](SPECTRAL_GAP_BRIDGE_3.md) proves an abstract,
+positive-spectral-measure implication: one common exponential moment rate on
+a **dense vacuum-orthogonal physical family** gives a global spectral gap.
+It proposes, for independent review, an all-spatial-slice extension of the
+existing 3D strong-coupling transfer argument at finite spatial volume.
+
+Crucially, the fixed-coupling Dobrushin condition `12 beta < 1`
+and the physical 3D trajectory `beta(a) = 4/(g3_squared*a)` cannot
+hold together as `a -> 0`. Polynomial prefactors in lattice time and
+single-channel bounds also cannot be silently promoted to continuum gaps.
+
+The [mass-gap obligation ledger](mass_gap_obligations.json) and its
+independent scope/arithmetic audit prevent this promotion:
+
+```sh
+python tools/check_mass_gap_obligations.py docs/upstream-4d-lean-audit/mass_gap_obligations.json
+python -m unittest discover -s tests -p 'test_mass_gap_obligations.py' -v
+```
+
+The audit's PASS means **rational calculations and non-claim guards pass**.
+It does not certify the conditional analytic hypotheses, let alone a physical
+3D/4D continuum mass gap; the proof-gate DAG is unchanged.
+
 ## Next analytic research tranche
 
 A. Trace `constructionRun` → campaign selection → actual numeric source estimates, recording theorem hypotheses and dependence on dimension, volume, scale and gauge.
